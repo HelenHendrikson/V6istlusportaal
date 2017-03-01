@@ -1,0 +1,10 @@
+[15-Feb-2017 16:32:50 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /webpages/lauri/public_html/application/controllers/Welcome.php on line 24
+[15-Feb-2017 16:32:51 Europe/Tallinn] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /webpages/lauri/public_html/application/controllers/Welcome.php on line 24
+[15-Feb-2017 16:35:57 Europe/Tallinn] PHP Fatal error:  Call to undefined function base_url() in /webpages/lauri/public_html/application/views/welcome_message.php on line 10
+[15-Feb-2017 16:35:57 Europe/Tallinn] PHP Fatal error:  Call to undefined function base_url() in /webpages/lauri/public_html/application/views/welcome_message.php on line 10
+[22-Feb-2017 10:14:49 Europe/Tallinn] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /webpages/lauri/public_html/application/views/main.php on line 23
+[22-Feb-2017 10:15:25 Europe/Tallinn] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /webpages/lauri/public_html/application/views/main.php on line 32
+[22-Feb-2017 10:15:26 Europe/Tallinn] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /webpages/lauri/public_html/application/views/main.php on line 32
+[22-Feb-2017 10:15:27 Europe/Tallinn] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /webpages/lauri/public_html/application/views/main.php on line 32
+[22-Feb-2017 10:15:27 Europe/Tallinn] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /webpages/lauri/public_html/application/views/main.php on line 32
+[22-Feb-2017 10:15:27 Europe/Tallinn] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /webpages/lauri/public_html/application/views/main.php on line 32
