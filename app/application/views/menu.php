@@ -31,6 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	            <ul class="nav navbar-nav">
 	            	<li><a href="" class="navbar-brand">Veebirakenduste loomine</a></li>
 	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/">Avalehekülg</a></li>
+	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/otsing">Otsing</a></li>
 	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/kkk">Korduma kippuvad küsimused</a></li>
 	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/reklaam">Reklaam</a></li>
 	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/kontakt">Kontakt</a></li>

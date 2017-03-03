@@ -27,13 +27,20 @@ class Welcome extends CI_Controller {
 		
 	}
 	
-	public function kkk()
+	public function KKK()
 	{
 		$title['title'] = 'VRL - KKK';
 		$this->load->view('menu', $title);	
-		$this->load->view('kkk');
+		$this->load->view('KKK');
 		$this->load->view('footer');
-		
+
+	}
+	
+		public function otsing()
+	{
+		$title['title'] = 'VRL - searchPage';
+		$this->load->view('menu', $title);	
+		$this->load->view('searchPage');
 	}
 	
 }
