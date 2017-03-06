@@ -43,10 +43,5 @@ class Welcome extends CI_Controller {
 		$this->load->view('searchPage');
 	}
 	
-	public function login()
-	{
-		$title['title'] = 'VRL -login';
-		$this->load->view('menu',$title);
-		$this->load->view('login');
-	}
+
 }
