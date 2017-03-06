@@ -36,11 +36,17 @@ class Welcome extends CI_Controller {
 
 	}
 	
-		public function otsing()
+	public function otsing()
 	{
 		$title['title'] = 'VRL - searchPage';
 		$this->load->view('menu', $title);	
 		$this->load->view('searchPage');
 	}
 	
+	public function login()
+	{
+		$title['title'] = 'VRL -login';
+		$this->load->view('menu',$title);
+		$this->load->view('login');
+	}
 }

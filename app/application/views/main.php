@@ -1,7 +1,7 @@
 <div class="container">
 	<h3>Ilus avalehekülg</h3>
 	<!-- Stack the columns on mobile by making one full-width and the other half-width -->
-	<div class="table-responsive">
+	<!--<div class="table-responsive">
 		<table class="table">
 			<thead>
 			<tr>
@@ -31,7 +31,7 @@
 			<?php } ?>
 			</tbody>
 		</table>
-	</div>
+	</div> -->
 
 </div>
 
