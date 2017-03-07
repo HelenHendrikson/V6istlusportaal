@@ -34,7 +34,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	             
 	            </ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="<?php echo base_url(); ?>index.php/welcome/logsisse">Logi sisse</a></li>	
+					<!--<li><a href="<?php echo base_url(); ?>index.php/welcome/logsisse">Logi sisse</a></li>	-->
+					<button type="button" class="btnlogin">Logi sisse</button>
+			
 				</ul>
 	        </div>
 	    </div>

@@ -5,7 +5,7 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-color: #fff;
+    
 }
 
 body {
@@ -24,13 +24,9 @@ body {
 	display: block;
 }
 
-a {
-  background-color: transparent;
-}
-
 
 .navbar-default {
-	background-color: #a6b3e2;
+	background-color: #a1bad8;
 	border-color: #e7e7e7;
 	font-size: 1.5em;
 }
@@ -57,11 +53,12 @@ a {
 
 .navbar-left > li {
 	float: left;
+	margin-left: 10px;
 }
 
 .navbar-right > li {
 	float: right;
-	margin-right: -15px;
+	margin-right: -20px;
 }
 
 .nav {
@@ -69,21 +66,38 @@ a {
   padding-left: 0;
   list-style: none;
 }
+
+
 .nav > li {
   position: relative;
   display: block;
+  background-color: #a1bad8;
 }
+
+
 .nav > li > a {
   position: relative;
   display: block;
   padding: 10px 15px;
+
 }
 
-li a{
-	text-align: center;
-	display: block;
-	color: #a6b3e2;
-	padding: 16px;
+li a: hover {
+	background-color: white;
+	color: white;
+}
+
+.btnlogin{
+	position: relative;
+	background-color: white;
+	float: right;
+	font-size: 1.2em;
 	
 }
+
+
+
+
+
+
 
