@@ -1,7 +1,7 @@
 <div class="container">
 	<h3>Ilus avalehekülg</h3>
 	<a href="<?php echo base_url(); ?>index.php/welcome/">Spordialad</a>
-	<p><a href="<?php echo base_url(); ?>index.php/ajutine/registreerimine">Ajutine registreerimislink</a></p>
+	<p><a href="<?php echo base_url(); ?>index.php/ajutine/register_form">Ajutine registreerimislink</a></p>
 
 	<!-- Stack the columns on mobile by making one full-width and the other half-width -->
 	<!--<div class="table-responsive">
