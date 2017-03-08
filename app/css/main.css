@@ -1,0 +1,65 @@
+html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+    line-height: 1.42857143;
+    color: #333;
+    
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+.container {
+	margin-top: 55px;
+}
+
+
+#content {
+	z-index:auto;
+	margin:auto;
+	width: 80%;
+	height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	position:relative;
+}
+
+
+
+.content-layout {
+	background: #a1bad8;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 1000px;
+	max-width: 1000px;
+	
+}
+
+.col {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#picture {
+	width: 95px;
+	height: 110px;
+	padding: 0;
+	float: left;
+	border-radius: 10px;
+	margin-top: 60px;
+	margin-left: 70px;
+}
+
+
+
+
+
+
+
+

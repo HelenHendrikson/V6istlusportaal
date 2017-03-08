@@ -2,14 +2,21 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 1.2em;
     line-height: 1.42857143;
     color: #333;
     
 }
 
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
 body {
     margin: 0;
+	
+	background: -webkit-linear-gradient(#27409a, white);
+	height: 1200px;
 }
 
 code,kbd,pre,samp {
@@ -28,7 +35,7 @@ body {
 .navbar-default {
 	background-color: #a1bad8;
 	border-color: #e7e7e7;
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 
 .navbar {
@@ -49,8 +56,6 @@ body {
 	margin-left: 15px;
 }
 
-
-
 .navbar-left > li {
 	float: left;
 	margin-left: 10px;
@@ -60,6 +65,7 @@ body {
 	float: right;
 	margin-right: -20px;
 }
+
 
 .nav {
   margin-bottom: 0;
@@ -72,32 +78,60 @@ body {
   position: relative;
   display: block;
   background-color: #a1bad8;
+  padding: 1em 0.5em
 }
 
 
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  ;
 
 }
 
-li a: hover {
-	background-color: white;
-	color: white;
-}
-
-.btnlogin{
-	position: relative;
-	background-color: white;
-	float: right;
-	font-size: 1.2em;
+li a {
+    color: #000;
+    text-decoration: none;
 	
 }
 
+li a:hover:not(.active) {
+   color: white;
+}
 
 
+.btnlogin{
+	position: auto;
+	background-color: white;
+	float: right;
+	font-size: 20px;
+	padding: 0.6em 0.5em;
+	border-radius: 2px solid;
+	margin-right: 50px;
+	margin-top: 11px;
+}
 
+.btnlogin:hover {
+    background-color: grey; 
+    color: white;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.avaleht {
+	position: relative;
+	owerflow: hidden;
+}
+
+#imglanguage {
+	float: right;
+	margin-right: -170px;
+	margin-top: 20px;
+	width: 50px;
+	height: 30px;
+}
 
 
 
