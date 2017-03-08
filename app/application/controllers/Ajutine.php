@@ -7,7 +7,6 @@ class Ajutine extends CI_Controller {
 	function __construct() 
 	{
 		parent::__construct();
-		$this->load->model('sportlaste_model');
 	}
 		
 	public function register_form()
@@ -35,6 +34,7 @@ class Ajutine extends CI_Controller {
 		//echo $data['eesnimi'];
 		//echo $data['perenimi'];
 		
+		$this->load->model('sportlaste_model');
 		$this->sportlaste_model->form_insert($data);
 		//Loading View
 	}

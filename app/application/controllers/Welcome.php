@@ -43,5 +43,16 @@ class Welcome extends CI_Controller {
 		$this->load->view('searchPage');
 	}
 	
+	public function get_data() 
+	{ 
+		$this->load->model('sportlaste_model');
+
+		$keyword = array('data' => $this->input->get('keyword'));		
+		$data['results'] = $this->sportlaste_model->search($keyword["data"]);
+		
+        $title['title'] = 'VRL - searchPage';
+		$this->load->view('menu', $title);	
+		$this->load->view('searchPage', $data);
+	}
 
 }

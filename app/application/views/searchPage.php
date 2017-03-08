@@ -21,6 +21,19 @@
 
 
 <h1>Siia peaks tegema sportlaste otsingu</h1>
+<br/>
+	
+<form action="<?php echo base_url(); ?>index.php/welcome/get_data", method="get", accept-charset="UTF-8">
+	<p><input type="text", name="keyword">
+	<input type="submit" value="Otsi"></p>
+</form>
 
+<?php if(isset($results)){ ?>
+	<br/>
+	<?php foreach($results as $result){ ?>
+		<p><?php echo $result->eesnimi ?></p>
+	<?php } ?>
+<?php } ?>
+	
 </body>
 </html>

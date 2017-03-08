@@ -19,7 +19,7 @@
 	
 </head>
 <body>
-	<form action="<?php echo base_url(); ?>index.php/ajutine/data_submitted/", method="post">
+	<form action="<?php echo base_url(); ?>index.php/ajutine/data_submitted/", method="post", accept-charset="UTF-8">
 		<d1><b>See on ajutine registreerimisleht</b></d1>
 		<p>Kasutajanimi: <input type="text", name="kasutajanimi">
 		<p>Eesnimi: <input type="text", name="eesnimi">
