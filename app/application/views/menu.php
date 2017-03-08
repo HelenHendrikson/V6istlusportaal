@@ -22,25 +22,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 </head>
 <body>
-	<nav class="navbar navbar-default">
-	    <div class="container-fluid">
-	
-	        <!--Menu Items-->
-	        <div class="navbar-header">
-	            <ul class="nav navbar-nav navbar-left">
-	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/">Spordialad</a></li>
-	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/otsing">Otsing</a></li> 
-	               <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/kkk">Korduma kippuvad küsimused</a></li>
-	             
-	            </ul>
-				<ul class="nav navbar-nav navbar-right">
-					<!--<li><a href="<?php echo base_url(); ?>index.php/welcome/logsisse">Logi sisse</a></li>	-->
-					<button type="button" class="btnlogin">Logi sisse</button>
-			
-				</ul>
-	        </div>
-	    </div>
-	</nav>
+	<div class="avaleht">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+		
+				<!--Menu Items-->
+				<div class="navbar-header">
+					<ul class="nav navbar-nav navbar-left">
+						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/">Spordialad</a></li>
+						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/otsing">Otsing</a></li> 
+					   <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/kkk">Korduma kippuvad küsimused</a></li>  
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<button type="button" class="btnlogin">Logi sisse</button>
+						<img src="/app/css/eng.png" id="imglanguage" >
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
 </body>
 	
 	

@@ -1,40 +1,35 @@
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>css/main.css"  type="text/css" />  
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	
+
+</head>
+
 <div class="container">
-	<h3>Ilus avalehekülg</h3>
 	<a href="<?php echo base_url(); ?>index.php/welcome/">Spordialad</a>
 	<p><a href="<?php echo base_url(); ?>index.php/ajutine/registreerimine">Ajutine registreerimislink</a></p>
-
-	<!-- Stack the columns on mobile by making one full-width and the other half-width -->
-	<!--<div class="table-responsive">
-		<table class="table">
-			<thead>
-			<tr>
-				<th>Nimi</th>
-				<th>Tel nr</th>
-				<th>E-mail</th>
-				<th>Kategooria</th>
-				<th>Kirjeldus</th>
-				<th>Algus</th>
-				<th>Lõpp</th>
-				<th>Asukoht</th>
-
-			</tr>
-			</thead>
-			<tbody>
-			<?php for ($i = 1; $i < 6; $i++) { ?>
-				<tr>
-					<td>Nimi <?php echo $i?></td>
-					<td>Tel nr <?php echo $i?></td>
-					<td>E-mail <?php echo $i?></td>
-					<td>Kategooria <?php echo $i?></td>
-					<td>Kirjeldus <?php echo $i?></td>
-					<td>Algus <?php echo $i?></td>
-					<td>Lõpp <?php echo $i?></td>
-					<td>Asukoht <?php echo $i?></td>
-				</tr>
-			<?php } ?>
-			</tbody>
-		</table>
-	</div> -->
-
+	
+	<section id="content">
+		<div class="content-layout">
+			<div class="row">
+				<div class="col" >
+				<img src="/app/css/vibu.png" id="picture">
+				</div>
+				<div class="col" >
+				<img src="/app/css/rattasõit.png" id="picture">
+				</div>
+				<div class="col" >
+				<img src="/app/css/ujumine.png" id="picture">
+				</div>
+				<div class="col" ></div>
+			</div>
+		</div>
+	</section>
+	
 </div>
+
+
 
