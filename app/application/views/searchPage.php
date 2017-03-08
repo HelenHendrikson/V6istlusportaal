@@ -32,8 +32,8 @@
 	<br/>
 	<?php foreach($results as $result){ ?>
 		<p><?php echo $result->eesnimi ?></p>
-	<?php } ?>
-<?php } ?>
+	<?php } 
+} ?>
 	
 </body>
 </html>
