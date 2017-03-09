@@ -34,11 +34,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					   <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/kkk">Korduma kippuvad küsimused</a></li>  
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
 						<button type="button" class="btnlogin"><a href="<?php echo base_url(); ?>index.php/welcome/login"> Logi sisse </a></button>
-=======
-                        <button type="button" class="btnlogin"><a href="<?php echo base_url(); ?>index.php/welcome/login"> Logi sisse</a></button>
->>>>>>> c2bda5d557db391f2930156b4e92cb554990046c
+    
 						<img src="/app/css/eng.png" id="languageimg"/>
 						<img src="/app/css/est.png" id="languageimg"/>
 					</ul>
