@@ -2,42 +2,29 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ajutine extends CI_Controller {
-	
-	
-	function __construct() 
-	{
-		parent::__construct();
-		$this->load->model('sportlaste_model');
-	}
-		
-	public function register_form()
+
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see https://codeigniter.com/user_guide/general/urls.html
+	 */
+	public function registreerimine()
 	{
 		$title['title'] = 'ajutiselt';
 		$this->load->view('menu', $title);	
 		$this->load->view('ajutine_registreerimine');
 	}
 	
-	
-	public function data_submitted() 
-	{
-		$data = array(
-		'kasutajanimi' => $this->input->post('kasutajanimi'),
-		'eesnimi' => $this->input->post('eesnimi'),
-		'perenimi' => $this->input->post('perenimi'),
-		'meil' => $this->input->post('meiliaadress'),
-		'parool' => $this->input->post('parool')
-		);
-		
-		// Show submitted data on view page again.
-		//$this->load->view("menu", $data);
-		//$this->load->view("ajutine_registreerimine", $data);
-		//echo $data['kasutajanimi'];
-		//echo $data['eesnimi'];
-		//echo $data['perenimi'];
-		
-		$this->sportlaste_model->form_insert($data);
-		//Loading View
-	}
 }
 
 

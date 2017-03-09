@@ -16,7 +16,7 @@ body {
     margin: 0;
 	
 	background: -webkit-linear-gradient(#27409a, white);
-	height: 1200px;
+	height: 1400px;
 }
 
 code,kbd,pre,samp {
@@ -67,6 +67,7 @@ body {
 }
 
 
+
 .nav {
   margin-bottom: 0;
   padding-left: 0;
@@ -105,7 +106,6 @@ li a:hover:not(.active) {
 	background-color: white;
 	float: right;
 	font-size: 20px;
-	padding: 0.6em 0.5em;
 	border-radius: 2px solid;
 	margin-right: 50px;
 	margin-top: 11px;
@@ -122,16 +122,18 @@ li a:hover:not(.active) {
 
 .avaleht {
 	position: relative;
-	owerflow: hidden;
+	overflow: hidden;
 }
 
-#imglanguage {
-	float: right;
-	margin-right: -170px;
-	margin-top: 20px;
+#languageimg {
+	height: 33px;
 	width: 50px;
-	height: 30px;
+	margin-right: 50px;
+	margin-top: 11px;
+	float: right;
+	
 }
+
 
 
 
