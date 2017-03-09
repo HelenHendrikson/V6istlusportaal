@@ -2,6 +2,25 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ajutine extends CI_Controller {
+<<<<<<< HEAD
+
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see https://codeigniter.com/user_guide/general/urls.html
+	 */
+	public function registreerimine()
+=======
 	
 	
 	function __construct() 
@@ -10,12 +29,15 @@ class Ajutine extends CI_Controller {
 	}
 		
 	public function register_form($message = null)
+>>>>>>> b9072c5384a7512c35e3081482cbff69f2c869e4
 	{
 		$title['title'] = 'ajutiselt';
 		$this->load->view('menu', $title);	
 		$this->load->view('ajutine_registreerimine', $message);
 	}
 	
+<<<<<<< HEAD
+=======
 	
 	public function data_submitted() 
 	{
@@ -55,6 +77,7 @@ class Ajutine extends CI_Controller {
         }
 		
 	}
+>>>>>>> b9072c5384a7512c35e3081482cbff69f2c869e4
 }
 
 
