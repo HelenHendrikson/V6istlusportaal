@@ -2,13 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ajutine extends CI_Controller {
-
-
-	public function registreerimine()
-    {
-
-    }
-    
 		
 	public function register_form($message = null)
 	{
