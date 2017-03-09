@@ -16,8 +16,8 @@ class Welcome extends CI_Controller {
 	public function KKK()
 	{
 		$title['title'] = 'VRL - KKK';
-		$this->load->view('menu', $title);	
-		$this->load->view('KKK');
+		//$this->load->view('menu', $title);	
+		$this->load->view('treenerRegabSportlastvaade');
 		$this->load->view('footer');
 
 	}
