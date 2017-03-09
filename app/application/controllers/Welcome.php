@@ -19,7 +19,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('menu', $title);	
 		$this->load->view('treenerRegabSportlastvaade');
 		$this->load->view('footer');
-
 	}
 	
 	public function otsing()

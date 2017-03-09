@@ -29,21 +29,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<!--Menu Items-->
 				<div class="navbar-header">
 					<ul class="nav navbar-nav navbar-left">
-						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/">Spordialad</a></li>
-						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/otsing">Otsing</a></li> 
-					   <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/kkk">Korduma kippuvad küsimused</a></li>  
+						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/"><?php echo $this->lang->line('spordialad');?></a></li>
+						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/otsing"><?php echo $this->lang->line('otsing');?></a></li>
+					   <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/kkk"><?php echo $this->lang->line('voistlused');?></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<button type="button" class="btnlogin"><a href="<?php echo base_url(); ?>index.php/welcome/login"> Logi sisse </a></button>
-    
-						<img src="/app/css/eng.png" id="languageimg"/>
-						<img src="/app/css/est.png" id="languageimg"/>
+                        <a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
+                            <img src="/app/css/eng.png" id="languageimg"/>
+                        </a>
+                        <a href='<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/estonian'>
+                            <img src="/app/css/est.png" id="languageimg"/>
+                        </a>
+
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</div>
-
-	
-	
-
