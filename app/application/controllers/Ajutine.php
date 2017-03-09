@@ -44,7 +44,7 @@ class Ajutine extends CI_Controller {
 		
 		if ($this->form_validation->run())
 		{
-			unset($data[parooli_kinnitus]);   //eemaldan kinnituse parooli enne adnmebaasi info laadimist
+			unset($data["parooli_kinnitus"]);   //eemaldan kinnituse parooli enne adnmebaasi info laadimist
 			$this->load->model('sportlaste_model');
 			$this->sportlaste_model->form_insert($data);
 			redirect("welcome");
@@ -56,6 +56,6 @@ class Ajutine extends CI_Controller {
 		
 	}
 }
-?>
+
 
 

@@ -9,7 +9,7 @@
 </head>
 
 <div class="container">
-	<a href="<?php echo base_url(); ?>index.php/welcome/">Spordialad</a>
+	<a href="<?php echo base_url(); ?>index.php/welcome/"><?php echo $this->lang->line('spordialad');?></a>
 	<p><a href="<?php echo base_url(); ?>index.php/ajutine/register_form">Ajutine registreerimislink</a></p>
 	
 	<section id="content">
