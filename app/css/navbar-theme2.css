@@ -16,16 +16,14 @@ body {
     margin: 0;
 	
 	background: -webkit-linear-gradient(#27409a, white);
-	height: 1400px;
+	height: 100em;
 }
 
 code,kbd,pre,samp {
 	font-family: monospace, monospace;
 	
 }
-* {
-	box-sizing: border-box;
-	}
+
 	
 body {
 	display: block;
@@ -78,7 +76,7 @@ body {
 .nav > li {
   position: relative;
   display: block;
-  background-color: #a1bad8;
+  background-color: transparent;
   padding: 1em 0.5em
 }
 
@@ -88,6 +86,35 @@ body {
   display: block;
   ;
 
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar-nav > li {
+    float: left;
+    display: inline-block;
+  }
+  .navbar-nav > li.navbar-right {
+    float: right !important;
+  }
+}
+
+
+@media (min-width: 768px) {
+	.navbar-default{
+		width: 100%;
+		text-align: center;
+	}
+	.navbar-default > li {
+		float: left;
+		display: inline-block;
+	}
+	.navbar-default > li.navbar-right {
+		float: right !important;
+  }
 }
 
 li a {

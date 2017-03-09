@@ -14,6 +14,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 .container {
 	margin-top: 55px;
+	height: 52em;
 }
 
 
@@ -21,21 +22,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 	z-index:auto;
 	margin:auto;
 	width: 80%;
-	height: 50%;
+	height: 52em;
 	background-size: cover;
 	background-attachment: fixed;
 	position:relative;
 }
 
-#content1 {
-	z-index:auto;
-	margin:auto;
-	width: 80%;
-	height: 50%;
-	background-size: cover;
-	background-attachment: fixed;
-	position:relative;
-}
+
 
 
 
@@ -52,10 +45,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 	
 }
 
-.col {
-	margin-left: 10px;
-	margin-right: 10px;
-}
 
 #picture {
 	width: 95px;
@@ -72,6 +61,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 	width: 50px;
 	float: left;
 }
+
+
+
+
+
+
 
 
 

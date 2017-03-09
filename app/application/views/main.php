@@ -9,16 +9,16 @@
 	<section id="content">
 		<div class="content-layout">
 			<div class="row">
-				<div class="col" >
+				<div class="col-xs-6" >
 				<img src="/app/css/vibu.png" id="picture">
 				</div>
-				<div class="col" >
+				<div class="col-xs-6" >
 				<img src="/app/css/rattasõit.png" id="picture">
 				</div>
-				<div class="col" >
+				<div class="col-xs-6" >
 				<img src="/app/css/ujumine.png" id="picture">
 				</div>
-				<div class="col" ></div>
+				<div class="col-xs-6" ></div>
 			</div>
 		</div> 
 	</section> 
