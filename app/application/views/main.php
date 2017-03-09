@@ -12,7 +12,11 @@
 
 <div class="container">
 	<a href="<?php echo base_url(); ?>index.php/welcome/">Spordialad</a>
+<<<<<<< HEAD
 	<p><a href="<?php echo base_url(); ?>index.php/ajutine/registreerimine">Ajutine registreerimislink</a></p>
+=======
+	<p><a href="<?php echo base_url(); ?>index.php/ajutine/register_form">Ajutine registreerimislink</a></p>
+>>>>>>> b9072c5384a7512c35e3081482cbff69f2c869e4
 	
 	<section id="content">
 		<div class="content-layout">
@@ -32,10 +36,13 @@
 	</section> 
 	
 </div>
+<<<<<<< HEAD
 
 
 
 ></script>
+=======
+>>>>>>> b9072c5384a7512c35e3081482cbff69f2c869e4
 
 
 

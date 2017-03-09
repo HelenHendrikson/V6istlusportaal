@@ -22,6 +22,7 @@
 
 
 <h1>Siia peaks tegema sportlaste otsingu</h1>
+<<<<<<< HEAD
 <div class="map1">
 	<div id="map" style="width:300px;height:300px;"></div>
 			<script>
@@ -40,6 +41,21 @@
 			
 			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVCm3tIKv7oYxWnIcp83Eyv_D6P8zqpu4&callback=myMap"></script>
 </div>
+=======
+<br/>
+	
+<form action="<?php echo base_url(); ?>index.php/welcome/get_data", method="get", accept-charset="UTF-8">
+	<p><input type="text", name="keyword">
+	<input type="submit" value="Otsi"></p>
+</form>
+>>>>>>> b9072c5384a7512c35e3081482cbff69f2c869e4
 
+<?php if(isset($results)){ ?>
+	<br/>
+	<?php foreach($results as $result){ ?>
+		<p><?php echo $result->eesnimi ?></p>
+	<?php } 
+} ?>
+	
 </body>
 </html>
