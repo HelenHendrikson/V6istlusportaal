@@ -17,10 +17,8 @@ class Sportlaste_model extends CI_Model{
 	
 	public function search($keyword)
 	{
-		//$this->db->like('eesnimi',$keyword);
-        //$query = $this->db->get('sportlane');
-        $query = $this->db->query(
-            "verificacion_fechas '".$keyword);
+		// hetkel leian ainult eesnimesid
+        $query = $this->db->query('call leia_sportlane("' . $keyword . '")');
         return $query->result();
 	}
 }
