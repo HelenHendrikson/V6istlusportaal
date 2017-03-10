@@ -19,7 +19,6 @@ class Ajutine extends CI_Controller {
 		'perenimi' => $this->input->post('perenimi'),
 		'meil' => $this->input->post('meil'),
 		'parool' => $this->input->post('parool'),
-		'parooli_kinnitus' => $this->input->post('parooli_kinnitus')
 		);
 		//echo $data['kasutajanimi'];
 		//echo $data['eesnimi'];
@@ -38,7 +37,6 @@ class Ajutine extends CI_Controller {
 		
 		if ($this->form_validation->run())
 		{
-			unset($data["parooli_kinnitus"]);   //eemaldan kinnituse parooli enne adnmebaasi info laadimist
 			$this->load->model('sportlaste_model');
 			$this->sportlaste_model->form_insert($data);
 			redirect("welcome");
