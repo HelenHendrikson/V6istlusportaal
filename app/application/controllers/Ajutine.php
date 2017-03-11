@@ -20,21 +20,24 @@ class Ajutine extends CI_Controller {
 		'meil' => $this->input->post('meil'),
 		'parool' => $this->input->post('parool'),
 		);
-		//echo $data['kasutajanimi'];
-		//echo $data['eesnimi'];
-		//echo $data['perenimi'];
 		
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
 
-		//kontrollin vormi sobivust
+        if ($this->security->xss_clean(data) == TRUE)
+        {
+            // Sellel lehel on scriptid keelatud
+            redirect("welcome/otsing");
+        }
+        //kontrollin vormi sobivust
         $this->form_validation->set_rules('kasutajanimi', 'Kasutajanimi', array('required', 'min_length[3]', 'max_length[30]'));
         $this->form_validation->set_rules('eesnimi', 'Eesnimi', array('required', "max_length[30]"));
         $this->form_validation->set_rules('perenimi', 'Perenimi', array('required', "max_length[30]"));
         $this->form_validation->set_rules('meil', 'Meil', array('required', "valid_email", "max_length[50]"));
         $this->form_validation->set_rules('parool', 'Parool', array('required', "min_length[6]"));
         $this->form_validation->set_rules('parooli_kinnitus', 'Parooli_kinnitus', array('required', "matches[parool]"));
-		
+
+
 		if ($this->form_validation->run())
 		{
 			$this->load->model('sportlaste_model');

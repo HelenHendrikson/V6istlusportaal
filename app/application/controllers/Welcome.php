@@ -32,7 +32,12 @@ class Welcome extends CI_Controller {
 	{ 
 		$this->load->model('sportlaste_model');
 
-		$keyword = array('data' => $this->input->get('keyword'));		
+		$keyword = array('data' => $this->input->get('keyword'));
+        if ($this->security->xss_clean($keyword) == TRUE)
+        {
+            // Leidsin xss probleemi ja hetkel suunan lihtsalt minema
+            redirect("welcome");
+        }
 		$data['results'] = $this->sportlaste_model->search($keyword["data"]);
 		
         $title['title'] = 'VRL - searchPage';
