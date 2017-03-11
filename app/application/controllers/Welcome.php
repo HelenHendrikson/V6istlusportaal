@@ -31,18 +31,26 @@ class Welcome extends CI_Controller {
 	public function get_data() 
 	{ 
 		$this->load->model('sportlaste_model');
+        $this->load->helper("security");
 
-		$keyword = array('data' => $this->input->get('keyword'));
-        if ($this->security->xss_clean($keyword) == TRUE)
+        $keyword = array('data' => $this->input->get('keyword'));
+        $cleaned = $this->security->xss_clean($keyword);
+
+        if ($cleaned == $keyword)
         {
-            // Leidsin xss probleemi ja hetkel suunan lihtsalt minema
-            redirect("welcome");
+            $data['results'] = $this->sportlaste_model->search($keyword["data"]);
+            $title['title'] = 'VRL - searchPage';
+            $this->load->view('menu', $title);
+            $this->load->view('searchPage', $data);
         }
-		$data['results'] = $this->sportlaste_model->search($keyword["data"]);
-		
-        $title['title'] = 'VRL - searchPage';
-		$this->load->view('menu', $title);	
-		$this->load->view('searchPage', $data);
+        else
+        {
+            $title['title'] = 'VRL - searchPage';
+            $this->load->view('menu', $title);
+            $this->load->view('searchPage');
+        }
+
+
 	}
 
 
