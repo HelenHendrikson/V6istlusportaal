@@ -33,11 +33,15 @@ class Ajutine extends CI_Controller {
             $this->form_validation->set_rules('eesnimi', 'Eesnimi', array('required', "max_length[30]"));
             $this->form_validation->set_rules('perenimi', 'Perenimi', array('required', "max_length[30]"));
             $this->form_validation->set_rules('meil', 'Meil', array('required', "valid_email", "max_length[50]"));
-            $this->form_validation->set_rules('parool', 'Parool', array('required', "min_length[6]"));
+            $this->form_validation->set_rules('parool', 'Parool', array('required', "min_length[6]", "max_length[256"));
             $this->form_validation->set_rules('parooli_kinnitus', 'Parooli_kinnitus', array('required', "matches[parool]"));
 
             if ($this->form_validation->run()) {
                 $this->load->model('sportlaste_model');
+
+                // räsistan parooli
+                $data["parool"] = password_hash($data["parool"], PASSWORD_BCRYPT);
+
                 $this->sportlaste_model->form_insert($data);
                 redirect("welcome");
             }
