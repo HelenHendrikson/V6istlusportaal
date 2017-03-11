@@ -45,8 +45,6 @@ body {
 }
 
 
-
-
 .container-fluid {
 	padding-right: 15px;
 	padding-left: 15px;
@@ -54,23 +52,7 @@ body {
 	margin-left: 15px;
 }
 
-.navbar-left > li {
-	float: left;
-	margin-left: 10px;
-}
 
-.navbar-right > li {
-	float: right;
-	margin-right: -20px;
-}
-
-
-
-.nav {
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
 
 
 .nav > li {
@@ -78,6 +60,7 @@ body {
   display: block;
   background-color: transparent;
   padding: 1em 0.5em
+  
 }
 
 
@@ -128,17 +111,17 @@ li a:hover:not(.active) {
 }
 
 
-.btnlogin{
+.btn{
 	position: auto;
 	background-color: white;
 	float: right;
-	font-size: 20px;
+	font-size: 1.2em;
 	border-radius: 2px solid;
-	margin-right: 50px;
+	margin-right: 20px;
 	margin-top: 11px;
 }
 
-.btnlogin:hover {
+.btn:hover {
     background-color: grey; 
     color: white;
 }
@@ -159,6 +142,15 @@ li a:hover:not(.active) {
 	margin-top: 11px;
 	float: right;
 	
+}
+
+
+//suurused
+
+@media (max-width: 991px)
+main.css:1
+body {
+    font-size: 14px;
 }
 
 
