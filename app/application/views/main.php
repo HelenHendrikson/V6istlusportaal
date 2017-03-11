@@ -10,13 +10,13 @@
 		<div class="content-layout">
 			<div class="row">
 				<div class="col" >
-				<img src="/app/css/vibu.png" id="picture">
+				<img src="<?PHP echo base_url(); ?>images/vibu.png" id="picture"/>
 				</div>
 				<div class="col" >
-				<img src="/app/css/rattasõit.png" id="picture">
+				<img src="<?PHP echo base_url(); ?>images/rattasõit.png" id="picture"/>
 				</div>
 				<div class="col" >
-				<img src="/app/css/ujumine.png" id="picture">
+				<img src="<?PHP echo base_url(); ?>images/ujumine.png" id="picture"/>
 				</div>
 				<div class="col" ></div>
 			</div>

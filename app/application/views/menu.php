@@ -37,10 +37,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<ul class="nav navbar-nav navbar-right">
 						<button type="button" class="btn"><a href="<?php echo base_url(); ?>index.php/welcome/login"> Logi sisse </a></button>
                         <a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
-                            <img src="/app/css/eng.png" id="languageimg"/>
+                            <img src="<?PHP echo base_url(); ?>images/eng.png" id="languageimg"/>
                         </a>
                         <a href='<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/estonian'>
-                            <img src="/app/css/est.png" id="languageimg"/>
+                            <img src="<?PHP echo base_url(); ?>images/est.png" id="languageimg"/>
                         </a>
 
 					</ul>
