@@ -5,6 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="170033066137-gftsp3892marqlc68sf036u5gbn0otv3.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 	<title>Avaleht</title>
 	<?php 
@@ -18,6 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	 Siia saab lisada bootstrap theme ka näiteks-->
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/navbar-theme2.css"  type="text/css" />  
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/main.css"  type="text/css" /> 
+		<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css"  type="text/css" /> 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	
 </head>
@@ -34,7 +39,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					   <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/voistlused"><?php echo $this->lang->line('voistlused');?></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<button type="button" class="btnlogin"><a href="<?php echo base_url(); ?>index.php/welcome/login"> Logi sisse </a></button>
+						<script src="<?php echo base_url(); ?>js/googlelogin.js"></script>
+						<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+						
+						<button type="button" class="btn"><a href="<?php echo base_url(); ?>index.php/welcome/login"> Logi sisse </a></button>
                         <a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
                             <img src="<?PHP echo base_url(); ?>images/eng.png" id="languageimg"/>
                         </a>

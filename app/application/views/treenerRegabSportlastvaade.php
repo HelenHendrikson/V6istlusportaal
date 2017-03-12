@@ -2,9 +2,9 @@
 
 <div class="container">
 	<section id="content">
-		<div class="content-layout">
+		<div class="container-fluid">
 			<div class="row" >
-				<div class="col-*-*">
+				<div class="col-md-4"> 
 						<B>Vali võistlus:</B> <BR>
 						<SELECT NAME="Võistlused" SIZE="20" MULTIPLE >
 						<OPTION SELECTED> Tartu Mai Jooks 05.05.2017
@@ -18,9 +18,9 @@
 				<div class="lisavoistlus">
 					<form action="<?php echo base_url(); ?>index.php/welcome/", method="input", accept-charset="UTF-8"><p><input type="text", name="voistlus"><input type="submit" value="Lisa võistlus"></p>
 					</form>
+				</div> 
 				</div>
-				</div>
-				<div class="col-*-*">
+				<div class="col-md-4"> 
 						<B>Registreeritud sportlased:</B> <BR>
 						<SELECT NAME="Sportlased" SIZE="20" MULTIPLE >
 						<OPTION SELECTED> Mari Rebane
@@ -34,7 +34,7 @@
 					<div class="registreerisportlane" >
 						<form action="<?php echo base_url(); ?>index.php/welcome/", method="input", accept-charset="UTF-8"><p><input type="text", name="voistlus"><input type="submit" value="Registreeri sportlane"></p>
 						</form>
-					</div>
+					</div> 
 				</div>
 			</div>
 		
