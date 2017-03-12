@@ -44,7 +44,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<script src="<?php echo base_url(); ?>js/googlelogin.js"></script>
 						<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 						
-						<button type="button" class="btn"><a href="<?php echo base_url(); ?>index.php/welcome/login"> Logi sisse </a></button>
+						<button type="button" class="btn"><a href="<?php echo base_url(); ?>index.php/welcome/login">
+                            <?php echo $this->lang->line('logi_sisse_nupp') ?>
+                            </a></button>
 						
                         <li class="all"><a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
                             <img src="<?PHP echo base_url(); ?>images/eng.png" id="languageimg"/>
