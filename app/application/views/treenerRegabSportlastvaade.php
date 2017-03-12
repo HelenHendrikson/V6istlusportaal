@@ -4,21 +4,20 @@
 	<section id="content">
 		<div class="container-fluid">
 			<div class="row" >
-				<div class="col-md-4"> 
-						<B>Vali võistlus:</B> <BR>
-						<SELECT NAME="Võistlused" SIZE="20" MULTIPLE >
-						<OPTION SELECTED> Tartu Mai Jooks 05.05.2017
-						<OPTION> SEB Sügisjooks
-						<OPTION> U21 MM
-						<OPTION> Võistlus1
-						<OPTION> Võistlus2
-						<OPTION> Võistlus4
-						<OPTION> Võistlus3
+				<div class="col-md-4">
+                    <form action="<?php echo base_url(); ?>index.php/welcome/voistlused" method="get" accept-charset="UTF-8">
+						<B>Tulevased võistlused:</B> <BR>
+                        <SELECT NAME="Võistlused" SIZE="20" >
+
+                            <?php if(isset($voistlused)){
+                            foreach ($voistlused as $voistlus){ ?>
+                            <OPTION value=<?php echo '"' . $voistlus->id . '"' ?>><?php echo $voistlus->nimi ?></OPTION>
+                            <?php  }
+                            } ?>
+
 						</SELECT>
-				<div class="lisavoistlus">
-					<form action="<?php echo base_url(); ?>index.php/welcome/", method="input", accept-charset="UTF-8"><p><input type="text", name="voistlus"><input type="submit" value="Lisa võistlus"></p>
+					<input type="submit" value="Vaata võistlust"></p>
 					</form>
-				</div> 
 				</div>
 				<div class="col-md-4"> 
 						<B>Registreeritud sportlased:</B> <BR>
