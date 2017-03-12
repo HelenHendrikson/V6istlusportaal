@@ -44,6 +44,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 						
+<<<<<<< HEAD
+=======
+						<button type="button" class="btn"><a href="<?php echo base_url(); ?>index.php/welcome/login">
+                            <?php echo $this->lang->line('logi_sisse_nupp') ?>
+                            </a></button>
+>>>>>>> d8a3ade76ad45607f5ab8b3056a538d45511f76d
 						
                         		<li class="all"><a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
                             		<img src="<?PHP echo base_url(); ?>images/eng.png" alt="Not found"/>
