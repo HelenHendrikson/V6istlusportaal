@@ -1,0 +1,133 @@
+html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+    line-height: 1.42857143;
+    color: #333;
+    
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+body {
+    margin: 0;
+	background: -webkit-linear-gradient(#27409a, white);
+	height: 100.5em;
+}
+
+code,kbd,pre,samp {
+	font-family: monospace, monospace;
+	
+}
+
+	
+body {
+	display: block;
+}
+
+
+.navbar-default {
+	background-color: #a1bad8;
+	border-color: #e7e7e7;
+	font-size: 1.2em;
+}
+
+.navbar {
+	position: relative;
+	min-height: 7em;
+	margin-bottom: 20px;
+	margin-top: 150px;
+	border: 1px solid transparent;
+}
+
+
+.container-fluid  {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+    margin-left: auto;
+	
+	
+}
+
+
+
+
+.nav > li {
+  position: relative;
+  display: block;
+  background-color: transparent;
+  padding: 1em 0.5em
+  
+}
+
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+
+
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar-nav > li {
+    float: left;
+    display: inline-block;
+  }
+  .navbar-right > li{
+    float: right !important;
+  }
+}
+
+
+
+
+.btn{
+	position: relative;
+	background-color: white;
+	font-size: 1.2em;
+	float: right;
+	border-radius: 2px solid;
+	margin-right: 20px;
+	margin-top: 30px;
+}
+
+.btn:hover {
+    background-color: grey; 
+    color: white;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.avaleht {
+	position: relative;
+	overflow: hidden;
+}
+
+#languageimg {
+	height: 33px;
+	width: 50px;
+	margin-right: 50px;
+	margin-top: 11px;
+	float: right;
+	
+}
+
+
+ a {
+	color: black;
+}
+
+
+
+
