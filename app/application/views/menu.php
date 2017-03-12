@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<ul class="nav navbar-nav navbar-left">
 						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/"><?php echo $this->lang->line('spordialad');?></a></li>
 						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/otsing"><?php echo $this->lang->line('otsing');?></a></li>
-					   <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/kkk"><?php echo $this->lang->line('voistlused');?></a></li>
+					   <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/voistlused"><?php echo $this->lang->line('voistlused');?></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<button type="button" class="btnlogin"><a href="<?php echo base_url(); ?>index.php/welcome/login"> Logi sisse </a></button>

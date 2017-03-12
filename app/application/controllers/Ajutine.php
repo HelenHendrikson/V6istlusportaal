@@ -21,7 +21,7 @@ class Ajutine extends CI_Controller {
             'eesnimi' => $this->input->post('eesnimi'),
             'perenimi' => $this->input->post('perenimi'),
             'meil' => $this->input->post('meil'),
-            'parool' => $this->input->post('parool'),
+            'parool' => $this->input->post('parool')
         );
 
         //teen xss tõrje
@@ -33,7 +33,7 @@ class Ajutine extends CI_Controller {
             $this->form_validation->set_rules('eesnimi', 'Eesnimi', array('required', "max_length[30]"));
             $this->form_validation->set_rules('perenimi', 'Perenimi', array('required', "max_length[30]"));
             $this->form_validation->set_rules('meil', 'Meil', array('required', "valid_email", "max_length[50]"));
-            $this->form_validation->set_rules('parool', 'Parool', array('required', "min_length[6]", "max_length[256"));
+            $this->form_validation->set_rules('parool', 'Parool', array('required', "min_length[6]", "max_length[256]"));
             $this->form_validation->set_rules('parooli_kinnitus', 'Parooli_kinnitus', array('required', "matches[parool]"));
 
             if ($this->form_validation->run()) {
