@@ -5,20 +5,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="google-signin-scope" content="profile email">
+
+    <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="170033066137-gftsp3892marqlc68sf036u5gbn0otv3.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<?php
     if(isset($title)){
     echo "<title>" . $title . "</title>";
     } else {
-    	echo "<title>Tiitli muutuja tühi</title>";
+    	echo "<title>Tiitli muutuja tĆ¼hi</title>";
 	}
     ?>
 	<!--<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css"  type="text/css" />
-	 Siia saab lisada bootstrap theme ka näiteks-->
+	 Siia saab lisada bootstrap theme ka nĆ¤iteks-->
 	 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css"  type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/main.css"  type="text/css" /> 
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/menu.css"  type="text/css" />  
@@ -41,19 +42,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 
-						<script src="<?php echo base_url(); ?>js/googlelogin.js"></script>
-						<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+
 						
-						<button type="button" class="btn"><a href="<?php echo base_url(); ?>index.php/welcome/login"> Logi sisse </a></button>
 						
-                        <li class="all"><a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
-                            <img src="<?PHP echo base_url(); ?>images/eng.png" id="languageimg"/>
-                        </a></li>
-                        <li class="all"><a href='<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/estonian'>
-                            <img src="<?PHP echo base_url(); ?>images/est.png" id="languageimg"/>
-                        </a></li>
+                        		<li class="all"><a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
+                            		<img src="<?PHP echo base_url(); ?>images/eng.png" alt="Not found"/>
+                        		</a></li>
+                        		<li class="all"><a href='<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/estonian'>
+                            		<img src="<?PHP echo base_url(); ?>images/est.png" alt="Not found" />
+                        		</a></li>
 
 					</ul>
+			<div>
+			    <button type="button" class="btn btn-default">Logi sisse</button>
+			</div>
+			<script src="<?php echo base_url(); ?>js/googlelogin.js"></script>
+			<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+				
 				</div>
 			</div>
 		</nav>

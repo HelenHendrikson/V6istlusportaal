@@ -1,4 +1,4 @@
-html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -8,13 +8,14 @@ body {
     
 }
 
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block;
 }
 
 body {
     margin: 0;
-	background: -webkit-linear-gradient(#27409a, white);
+	background: #667fca;
 	height: 100.5em;
 }
 
@@ -38,21 +39,20 @@ body {
 .navbar {
 	position: relative;
 	min-height: 7em;
-	margin-bottom: 20px;
-	margin-top: 150px;
-	border: 1px solid transparent;
+	margin-bottom: 1.250;
+	margin-top: 9.375em;
+	border: 0.063em solid transparent;
 }
 
 
 .container-fluid  {
-	padding-right: 15px;
-	padding-left: 15px;
+	padding-right: 0.938em;
+	padding-left: 0.938em;
 	margin-right: auto;
-    margin-left: auto;
+    	margin-left: auto;
 	
 	
 }
-
 
 
 
@@ -87,18 +87,13 @@ body {
   }
 }
 
-
-
-
-.btn{
-	position: relative;
-	background-color: white;
-	font-size: 1.2em;
-	float: right;
-	border-radius: 2px solid;
-	margin-right: 20px;
-	margin-top: 30px;
+.btn {
+	float:left;
+	font-size: 1.0em;
+	text-decoration: none;
 }
+
+
 
 .btn:hover {
     background-color: grey; 
@@ -114,14 +109,6 @@ body {
 	overflow: hidden;
 }
 
-#languageimg {
-	height: 33px;
-	width: 50px;
-	margin-right: 50px;
-	margin-top: 11px;
-	float: right;
-	
-}
 
 
  a {

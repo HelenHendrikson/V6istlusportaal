@@ -1,11 +1,13 @@
-html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.2em;
-    line-height: 1.42857143;
-    color: #333;
-    
+    line-height: 1.42857143em;
+    color: #333;   
+}
+
+body {
+margin:0;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
@@ -13,7 +15,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 .container {
-	margin-top: 55px;
+	margin-top: 3.438em;
 	height: 52em;
 }
 
@@ -38,22 +40,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 1000px;
-	max-width: 1000px;
+	height: 62.500em;
+	max-width: 62.500em;
 	
 	
 }
 
 
-#picture {
-	width: 95px;
-	height: 110px;
-	padding: 0;
-	float: left;
-	border-radius: 10px;
-	margin-top: 60px;
-	margin-left: 70px;
-}
 
 #map {
 	height: 60px;
@@ -64,8 +57,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 , .col-sm-4{
 	
-	margin-left: 30px;
-	margin-top: 10px;
+	margin-left: 1.875em;
+	margin-top: 0.625em;
 }
 
 
