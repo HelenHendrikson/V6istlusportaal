@@ -31,9 +31,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 
 
-
-
-.content-layout {
+.content-overlay {
 	background: #a1bad8;
 	position: absolute;
 	top: 0;
@@ -42,6 +40,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 	bottom: 0;
 	height: 1000px;
 	max-width: 1000px;
+	
 	
 }
 
@@ -61,6 +60,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 	width: 80px;
 	float: left;
 	
+}
+
+.col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 , .col-sm-4{
+	
+	margin-left: 30px;
+	margin-top: 10px;
 }
 
 
