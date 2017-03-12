@@ -6,7 +6,7 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$title['title'] = 'Avaleht';
+		$title['title'] = $this->lang->line('avaleht');
 		$this->load->view('menu', $title);
 		$this->load->view('main');
 		$this->load->view('footer');
@@ -45,7 +45,7 @@ class Welcome extends CI_Controller {
                 redirect("welcome");
             }
             $data['results'] = $this->sportlaste_model->search($keyword["data"]);
-            $title['title'] = 'VRL - searchPage';
+            $title['title'] = $this->lang->line('voistlused');
             $this->load->view('menu', $title);
             $this->load->view('searchPage', $data);
         }
