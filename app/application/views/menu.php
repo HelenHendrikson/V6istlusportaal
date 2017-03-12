@@ -15,11 +15,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     if(isset($title)){
     echo "<title>" . $title . "</title>";
     } else {
-    	echo "<title>Tiitli muutuja tĆ¼hi</title>";
+    	echo "<title>Tiitli muutuja tühi</title>";
 	}
     ?>
 	<!--<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css"  type="text/css" />
-	 Siia saab lisada bootstrap theme ka nĆ¤iteks-->
+	 Siia saab lisada bootstrap theme ka näiteks-->
 	 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css"  type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/main.css"  type="text/css" /> 
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/menu.css"  type="text/css" />  
@@ -44,12 +44,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 						
-<<<<<<< HEAD
-=======
-						<button type="button" class="btn"><a href="<?php echo base_url(); ?>index.php/welcome/login">
-                            <?php echo $this->lang->line('logi_sisse_nupp') ?>
-                            </a></button>
->>>>>>> d8a3ade76ad45607f5ab8b3056a538d45511f76d
 						
                         		<li class="all"><a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
                             		<img src="<?PHP echo base_url(); ?>images/eng.png" alt="Not found"/>

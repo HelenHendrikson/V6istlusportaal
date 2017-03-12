@@ -15,7 +15,7 @@
 					<img src="<?PHP echo base_url(); ?>images/vibu.png" alt="image not found">
 					</div>
 					<div class="col-sm-4" >
-					<img src="<?PHP echo base_url(); ?>images/rattasĆµit.png" alt="image not found">
+					<img src="<?PHP echo base_url(); ?>images/rattasõit.png" alt="image not found">
 					</div>
 					<div class="col-sm-4" >
 					<img src="<?PHP echo base_url(); ?>images/ujumine.png" alt="image not found">
