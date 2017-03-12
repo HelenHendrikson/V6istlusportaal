@@ -14,6 +14,11 @@ $lang['perenimi'] = 'Perenimi:';
 $lang['meiliaadress'] = 'Meiliaadress:';
 $lang['salasõna'] = 'Salasõna:';
 $lang['salasõna_kinnitus'] = 'Korda salasõna:';
+<<<<<<< HEAD
+=======
+$lang['registreeri'] = 'Registreeri:';
+
+>>>>>>> a0f65f6f920598783522c81ed771220452477f5f
 
 //võistluste vaade
 $lang['tulevad_võistlused'] = 'Tulevad võistlused';
