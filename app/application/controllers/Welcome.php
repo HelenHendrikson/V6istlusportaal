@@ -23,7 +23,6 @@ class Welcome extends CI_Controller {
             $data['võistlejad'] = $this -> sportlaste_model -> get_competition_competitors($voistluse_id);
         }
         $data['voistlused'] = $this->sportlaste_model->get_competitions();
-        print_r($data);
         $title['title'] = $this->lang->line('voistlused');
 		$this->load->view('menu', $title);
 		$this->load->view('treenerRegabSportlastvaade', $data);

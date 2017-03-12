@@ -7,7 +7,7 @@
 				<div class="col-md-4">
                     <form action="<?php echo base_url(); ?>index.php/welcome/voistlused" method="get" accept-charset="UTF-8">
 						<B>Tulevased võistlused:</B> <BR>
-                        <SELECT NAME="Võistlused" SIZE="20" >
+                        <SELECT NAME="võistlused" SIZE="20" >
 
                             <?php if(isset($voistlused)){
                             foreach ($voistlused as $voistlus){ ?>
@@ -15,25 +15,27 @@
                             <?php  }
                             } ?>
 
-						</SELECT>
+						</SELECT></br>
 					<input type="submit" value="Vaata võistlust"></p>
 					</form>
+
+                    <?php if(isset($voistluse_info)) {?>
+                        <d1> <?php echo $voistluse_info[0] -> nimi; ?></d1>
+                        <p> <?php echo "distants; " . $voistluse_info[0] -> distants; ?></p>
+                        <p> <?php echo "kuupäev: " . $voistluse_info[0] -> kuupäev; ?></p>
+                    <?php } ?>
+
 				</div>
-				<div class="col-md-4"> 
-						<B>Registreeritud sportlased:</B> <BR>
-						<SELECT NAME="Sportlased" SIZE="20" MULTIPLE >
-						<OPTION SELECTED> Mari Rebane
-						<OPTION> i1
-						<OPTION> i2
-						<OPTION> i3
-						<OPTION> i4
-						<OPTION> i5
-						<OPTION> i6
-						</SELECT>
-					<div class="registreerisportlane" >
-						<form action="<?php echo base_url(); ?>index.php/welcome/", method="input", accept-charset="UTF-8"><p><input type="text", name="voistlus"><input type="submit" value="Registreeri sportlane"></p>
-						</form>
-					</div> 
+
+				<div class="col-md-4">
+                    <?php if(isset($võistlejad)){ ?>
+                        <B>Registreeritud sportlased:</B> <BR>
+                        <SELECT NAME="Sportlased" SIZE="20" >
+                            <?php foreach ($võistlejad as $võistleja){ ?>
+                                <OPTION> <?php echo $võistleja-> eesnimi . " " . $võistleja-> perenimi ?></OPTION>
+                            <?php  } ?>
+                        </SELECT>
+                    <?php } ?>
 				</div>
 			</div>
 		
