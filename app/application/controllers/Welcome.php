@@ -6,7 +6,7 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$title['title'] = 'Veebirakendus';
+		$title['title'] = 'Avaleht';
 		$this->load->view('menu', $title);
 		$this->load->view('main');
 		$this->load->view('footer');
@@ -25,7 +25,7 @@ class Welcome extends CI_Controller {
         }
         $data['voistlused'] = $this->sportlaste_model->get_competitions();
         $title['title'] = $this->lang->line('voistlused');
-        print_r($data);
+
 		$this->load->view('menu', $title);
 		$this->load->view('treenerRegabSportlastvaade', $data);
 		$this->load->view('footer');

@@ -10,8 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
-	<title>Avaleht</title>
-	<?php 
+	<?php
     if(isset($title)){
     echo "<title>" . $title . "</title>";
     } else {
