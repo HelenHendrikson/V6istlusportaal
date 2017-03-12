@@ -21,9 +21,11 @@ class Welcome extends CI_Controller {
         if ($voistluse_id != "") {
             $data['voistluse_info'] = $this->sportlaste_model->get_competition_info($voistluse_id);
             $data['võistlejad'] = $this -> sportlaste_model -> get_competition_competitors($voistluse_id);
+            $data['count'] = $this -> sportlaste_model -> get_competition_competitors_count($voistluse_id);
         }
         $data['voistlused'] = $this->sportlaste_model->get_competitions();
         $title['title'] = $this->lang->line('voistlused');
+        print_r($data);
 		$this->load->view('menu', $title);
 		$this->load->view('treenerRegabSportlastvaade', $data);
 		$this->load->view('footer');

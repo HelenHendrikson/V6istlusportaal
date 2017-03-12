@@ -41,4 +41,9 @@ class Sportlaste_model extends CI_Model{
         return $query->result();
     }
 
+    public function get_competition_competitors_count($voistluse_id)
+    {
+        $query = $this->db->query('call leia_võistlusel_osalejate_arv(' . $voistluse_id . ')');
+        return $query->result();
+    }
 }

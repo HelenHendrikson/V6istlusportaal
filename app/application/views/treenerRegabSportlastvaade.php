@@ -29,6 +29,7 @@
 
 				<div class="col-md-4">
                     <?php if(isset($võistlejad)){ ?>
+                        <p>Kokku on registreerinud ennast sellele võistlusele <?php echo $count[0]->arv ?> inimest</p>
                         <B>Registreeritud sportlased:</B> <BR>
                         <SELECT NAME="Sportlased" SIZE="20" >
                             <?php foreach ($võistlejad as $võistleja){ ?>
