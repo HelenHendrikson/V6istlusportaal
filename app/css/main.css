@@ -1,78 +1,27 @@
-
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.2em;
-    line-height: 1.42857143em;
-    color: #333;   
+	background: #667fca;
 }
-
-body {
-margin:0;
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-    display: block;
-}
-
-.container {
-	margin-top: 3.438em;
-	height: 52em;
-}
-
 
 #content {
-	z-index:auto;
-	margin:auto;
-	width: 80%;
-	height: 52em;
-	background-size: cover;
-	background-attachment: fixed;
-	position:relative;
-}
-
-
-
-
-.content-overlay {
 	background: #a1bad8;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height: 62.500em;
-	max-width: 62.500em;
-	
-	
+	padding-top: 20px;
+	padding-bottom: 30px;
 }
-
-
 
 #map {
 	height: 60px;
 	width: 80px;
-	float: left;
-	
+	float: left;	
 }
 
-.col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 , .col-sm-4{
-	
-	margin-left: 1.875em;
-	margin-top: 0.625em;
+.img-ala {
+	padding-top: 10px;
+	padding-bottom: 30px;
+	width: 70px;
+	height: 100px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.img-keel {
+	width: 50px;
+	height: 30px;
+}
