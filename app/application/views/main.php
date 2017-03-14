@@ -27,22 +27,22 @@
 			<img src="/images/tennis.png"  alt="image not found" class="img-ala">
 		</div>				
 		<div class="col-xs-3 text-center" >
-			<img src="/images/tõstmine.png" alt="image not found" class="img-ala">
+			<img src="/images/tostmine.png" alt="image not found" class="img-ala">
 		</div>
 	</div>
 	
 	<div class="row">
 		<div class="col-xs-3 text-center" >
-			<img src="/images/tõstmine.png" alt="image not found" class="img-ala">
+			<img src="/images/tostmine.png" alt="image not found" class="img-ala">
 		</div>
 		<div class="col-xs-3 text-center" >
-			<img src="/images/iluvõimlemine.png"  alt="image not found" class="img-ala">
+			<img src="/images/iluvoimlemine.png"  alt="image not found" class="img-ala">
 		</div>
 		<div class="col-xs-3 text-center" >
 			<img src="/images/tennis.png"  alt="image not found" class="img-ala">
 		</div>			
 		<div class="col-xs-3 text-center" >
-			<img src="/images/tõstmine.png" alt="image not found" class="img-ala">
+			<img src="/images/tostmine.png" alt="image not found" class="img-ala">
 		</div>
 	</div>
 </div>

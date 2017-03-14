@@ -66,7 +66,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<ul class="nav navbar-nav navbar-right">
 						
 						<li>
-							<button type="button" class="btn btn-default navbar-button pull-right">Logi sisse</button>
+							<button type="button" id="login" "class="btn btn-default navbar-button pull-right" >Logi sisse</button>
+
+							
+							
 						</li>
 						<li>
 							<div class="g-signin2 pull-right" data-onsuccess="onSignIn" data-theme="dark"></div>
@@ -88,6 +91,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div><!-- /.navbar-collapse -->
 			</div>
 		</nav>
-
-		
 	</div>
