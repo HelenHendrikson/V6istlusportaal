@@ -36,7 +36,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<script src="<?php echo base_url(); ?>js/googlelogin.js"></script>
-		
+	
+	<script>
+	$(document).ready(function(){
+		$('[data-toggle="tooltip"]').tooltip();   
+	});
+	</script>
+
 
 </head>
 <body>
@@ -66,9 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<ul class="nav navbar-nav navbar-right">
 						
 						<li>
-							<button type="button" id="login" "class="btn btn-default navbar-button pull-right" >Logi sisse</button>
-
-							
+							<button type="button" id="login" "class="btn btn-default navbar-button pull-right" data-toggle="tooltip" data-placement="bottom" title="Siit saad sisse logida">Logi sisse</button>							
 							
 						</li>
 						<li>
