@@ -41,9 +41,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	<script>
 	$(document).ready(function(){
-		$('[data-toggle="tooltip"]').tooltip();   
+		$("button").tooltip();   
 	});
-	</script>
+	</script> 
 
 
 </head>
@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
+
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 						<span class="sr-only">Toggle navigation</span>
@@ -60,10 +60,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">Võistlusportaal</a>
+					<a class="navbar-brand">Võistlusportaal</a>
 				</div>
 		
-				<!-- Collect the nav links, forms, and other content for toggling -->
+
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav">
 						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/"><?php echo $this->lang->line('spordialad');?></a></li>
@@ -73,10 +73,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					<ul class="nav navbar-nav navbar-right">
 						
-						<li>
-							<button type="button" id="login" "class="btn btn-default navbar-button pull-right" data-toggle="tooltip" data-placement="bottom" title="Siit saad sisse logida">Logi sisse</button>							
+						<li> 
+							<button type="button" class="btn btn-default navbar-button pull-right" data-toggle="modal" data-target="#login-modal" data-toggle="tooltip" data-placement="bottom" data-original-title="login" >Logi sisse</button>
 							
 						</li>
+							
 						<li>
 							<div class="g-signin2 pull-right" data-onsuccess="onSignIn" data-theme="dark"></div>
 						</li>
@@ -94,7 +95,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</li>		
 
 					</ul>
-				</div><!-- /.navbar-collapse -->
+					
+				</div>
+				
 			</div>
-		</nav>
+		</nav> 
+		
+		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container" id="content">
+						<button class="btn btn primary pull-left" onclick="goBack()">Back </button>
+						<h1>Logi sisse</h1><br>
+					  <form action="" id="form">
+						<input type="text" name="user" placeholder="Username">
+						<input type="password" name="pass" placeholder="Password">
+						<input type="checkbox" checked="checked"> Remember me 
+						<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+						<input type="button" id="contact-submit" name="register" class="register registermodal-button" value="Register">
+					  </form>
+					
+				  <div class="login-help">
+					<a href="#">Forgot Password</a>
+				  </div>
+			    </div>
+			</div>
+		
+			
+			<script>
+			$(document).ready(function(){
+				$("#contact-submit").click(function(){
+					$("#form").html("<form <p <?php echo $this->lang->line('kasutajanimi');?><input type="text" name="kasutajanimi"></p> </form>");
+					});
+			});
+				
+			</script>
+			
+			
+
 	</div>
+	
+	
+</div>
+
+	
