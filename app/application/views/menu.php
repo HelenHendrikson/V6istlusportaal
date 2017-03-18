@@ -121,14 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		
 			
-			<script>
-			$(document).ready(function(){
-				$("#contact-submit").click(function(){
-					$("#form").html("<form <p <?php echo $this->lang->line('kasutajanimi');?><input type="text" name="kasutajanimi"></p> </form>");
-					});
-			});
-				
-			</script>
+			
 			
 			
 
