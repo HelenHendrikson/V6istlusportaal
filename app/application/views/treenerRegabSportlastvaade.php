@@ -2,18 +2,18 @@
 
 <div class="container" id="content">
 	<div class="row" >
-		<div class="col-xs-6 col-sm-4">
+		<div class="col-xs-6 col-sm-4", id="leftPart">
             <div class="lisavoistlus">
-                <form action="<?php echo base_url(); ?>index.php/welcome/voistlused" method="get" accept-charset="UTF-8">
+                <form>
                     <B><?php echo $this->lang->line('tulevad_võistlused') . ":"?></b> <br>
-                    <select class="form-control" name="võistlused" size="20" >
+                    <select class="form-control" name="võistlused" size="20" id="voistlusSelect">
                         <?php if(isset($voistlused)){
                             foreach ($voistlused as $voistlus){ ?>
                                 <option value="<?php echo $voistlus->id?>"><?php echo $voistlus->nimi ?></option>
                             <?php  }
                         } ?>
                     </select>
-                    <input type="submit" value="<?php echo $this->lang->line('vaata_võistlust_nupp')?>">
+                    <input id="vaata_voistlust" type="submit" value="<?php echo $this->lang->line('vaata_võistlust_nupp')?>">
                 </form>
             </div>
             <?php if(isset($voistluse_info)) {?>
