@@ -20,21 +20,10 @@
             <b id="nimev2li"> </b>
             <p id="distansiv2li"> </p>
             <p id="kuupaevav2li"> </p>
-            <p id="osalejateArv"> </p>
         </div>
 
-		<div class="col-xs-6 col-sm-4">
-            <div class="registreerisportlane" >
-                <?php if(isset($võistlejad)){ ?>
-                    <p><?php echo $this->lang->line('registreerinute_teksti_esimene_pool') . " " .  $count[0]->arv  . " " . $this->lang->line('registreerinute_teksti_teine_pool') ?></p>
-                    <B><?php echo $this->lang->line('registreeritud_sportlased') . ":" ?></b> <br>
-                    <select class="form-control" name="Sportlased" size="20" MULTIPLE >
-                        <?php foreach ($võistlejad as $võistleja){ ?>
-                            <option> <?php echo $võistleja-> eesnimi . " " . $võistleja-> perenimi ?></option>
-                        <?php  } ?>
-                    </select>
-                <?php  } ?>
-            </div>
+		<div class="col-xs-6 col-sm-4" id="rightPart">
+            <p id="osalejateArv"> </p>
         </div>
 	</div>
 </div>
