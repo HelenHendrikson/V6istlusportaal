@@ -2,10 +2,10 @@
 
 <div class="container" id="content">
 	<div class="row" >
-		<div class="col-xs-6 col-sm-4", id="leftPart">
+		<div class="col-xs-6 col-sm-4" id="leftPart">
             <div class="lisavoistlus">
                 <form>
-                    <B><?php echo $this->lang->line('tulevad_võistlused') . ":"?></b> <br>
+                    <B id="tulevasedVoistlused"><?php echo $this->lang->line('tulevad_võistlused') . ":"?></b> <br>
                     <select class="form-control" name="võistlused" size="20" id="voistlusSelect">
                         <?php if(isset($voistlused)){
                             foreach ($voistlused as $voistlus){ ?>
@@ -16,11 +16,11 @@
                     <input id="vaata_voistlust" type="submit" value="<?php echo $this->lang->line('vaata_võistlust_nupp')?>">
                 </form>
             </div>
-            <?php if(isset($voistluse_info)) {?>
-                <d1> <?php echo $voistluse_info[0] -> nimi; ?></d1>
-                <p> <?php echo $this->lang->line('distants') . ": " . $voistluse_info[0] -> distants; ?></p>
-                <p> <?php echo $this->lang->line('kuupäev') . ": " . $voistluse_info[0] -> kuupäev; ?></p>
-            <?php } ?>
+            <br>
+            <b id="nimev2li"> </b>
+            <p id="distansiv2li"> </p>
+            <p id="kuupaevav2li"> </p>
+            <p id="osalejateArv"> </p>
         </div>
 
 		<div class="col-xs-6 col-sm-4">
