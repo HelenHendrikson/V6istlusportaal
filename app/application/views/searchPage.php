@@ -18,13 +18,18 @@
             function myMap() {
                 var mapCanvas = document.getElementById("map");
                 var myCenter = new google.maps.LatLng(58.381000,26.679878);
-                var mapOptions = {center: myCenter, zoom: 15};
+                var mapOptions = {center: myCenter, zoom: 5};
                 var map = new google.maps.Map(mapCanvas,mapOptions);
                 var marker = new google.maps.Marker({
-                    position: myCenter,
-                    animation: google.maps.Animation.BOUNCE
+                    position: myCenter
                 });
+				
+				
                 marker.setMap(map);
+				google.maps.event.addListener(marker,'click',function() {
+					map.setZoom(15);
+					map.setCenter(marker.getPosition());
+				 });
             }
         </script>
     

@@ -38,6 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<script src="<?php echo base_url(); ?>js/googlelogin.js"></script>
+	<script src="<?php echo base_url(); ?>js/registreerimine.js"></script>
 	
 	<script>
 	$(document).ready(function(){
@@ -74,8 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<ul class="nav navbar-nav navbar-right">
 						
 						<li> 
-							<button type="button" class="btn btn-default navbar-button pull-right" data-toggle="modal" data-target="#login-modal" data-toggle="tooltip" data-placement="bottom" data-original-title="login" >Logi sisse</button>
-							
+							<button id="login-toggle" type="button" class="btn btn-default navbar-button pull-right" data-toggle="modal" data-modal-id="login-modal" data-target="#login-modal" data-toggle="tooltip" data-placement="bottom" data-original-title="login" >Logi sisse</button>	
 						</li>
 							
 						<li>
