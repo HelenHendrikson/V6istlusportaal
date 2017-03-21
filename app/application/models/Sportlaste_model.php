@@ -32,18 +32,18 @@ class Sportlaste_model extends CI_Model{
     public function get_competition_info($voistluse_id)
     {
         $query = $this->db->query('call võistluse_info(' . $voistluse_id . ')');
-        return $query->result();
+        return $query->result_array();
     }
 
     public function get_competition_competitors($voistluse_id)
     {
         $query = $this->db->query('call leia_võistlusel_osalejad(' . $voistluse_id . ')');
-        return $query->result();
+        return $query->result_array();
     }
 
     public function get_competition_competitors_count($voistluse_id)
     {
         $query = $this->db->query('call leia_võistlusel_osalejate_arv(' . $voistluse_id . ')');
-        return $query->result();
+        return $query->result_array();
     }
 }
