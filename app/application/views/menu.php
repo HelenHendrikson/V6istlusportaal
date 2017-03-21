@@ -100,34 +100,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 			</div>
 		</nav> 
-		
-		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    	  <div class="modal-dialog">
-				<div class="loginmodal-container" id="content">
-						<button class="btn btn primary pull-left" onclick="goBack()">Back </button>
-						<h1>Logi sisse</h1><br>
-					  <form action="" id="form">
-						<input type="text" name="user" placeholder="Username">
-						<input type="password" name="pass" placeholder="Password">
-						<input type="checkbox" checked="checked"> Remember me 
-						<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-						<input type="button" id="contact-submit" name="register" class="register registermodal-button" value="Register">
-					  </form>
-					
-				  <div class="login-help">
-					<a href="#">Forgot Password</a>
-				  </div>
-			    </div>
-			</div>
-		
-			
-			
-			
-			
-
-	</div>
-	
 	
 </div>
+
+<?php include 'sisselogimine.php' ?>
 
 	
