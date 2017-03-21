@@ -14,20 +14,31 @@
     
     <div class="map1">
         <div id="map" style="width:300px;height:300px;"></div>
+		
         <script>
             function myMap() {
                 var mapCanvas = document.getElementById("map");
                 var myCenter = new google.maps.LatLng(58.381000,26.679878);
-                var mapOptions = {center: myCenter, zoom: 5};
+                var mapOptions = {center: myCenter, zoom: 14};
                 var map = new google.maps.Map(mapCanvas,mapOptions);
                 var marker = new google.maps.Marker({
-                    position: myCenter
-                });
+                    position: myCenter,
+					map: map,
+					title: 'Vajuta et suumida'
+                }); 
 				
-				
+				var image = '/images/parking.png';
+				image.width = '20px';
+				image.height = "20px";
+				var parking = new google.maps.Marker({
+					position: {lat: 58.38, lng: 26.679},
+					map: map,
+					icon: image
+				});
+
                 marker.setMap(map);
 				google.maps.event.addListener(marker,'click',function() {
-					map.setZoom(15);
+					map.setZoom(16);
 					map.setCenter(marker.getPosition());
 				 });
             }
