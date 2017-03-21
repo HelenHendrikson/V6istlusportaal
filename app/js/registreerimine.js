@@ -31,8 +31,7 @@ $(document).ready(function(){
 		username.setAttribute('type',"text");
 		username.setAttribute('class',"form control");
 		username.setAttribute('placeholder','kasutajanimi');
-		
-		form.appendChild(username);
+		username.setAttribute('id','username');
 		
 
 		var name = document.createElement("input"); 
@@ -54,16 +53,19 @@ $(document).ready(function(){
 		
 		var password = document.createElement("input");
 		password.setAttribute('type','text');
+		password.setAttribute('class','from-control');
 		password.setAttribute('placeholder','parool');
 		
 		
 		var passwordRepeat = document.createElement("input");
 		passwordRepeat.setAttribute('type','text');
+		passwordRepeat.setAttribute('class','from-control');
 		passwordRepeat.setAttribute('placeholder','parooli kinnitus');
 		
 		var registerbutton = document.createElement("button");
 		registerbutton.setAttribute('type','button');
 		registerbutton.setAttribute('id','register');
+		registerbutton.addEventListener('click', validate);
 		registerbutton.innerHTML = "Registreeru";
 		
 		form.appendChild(username);
@@ -76,8 +78,54 @@ $(document).ready(function(){
 	
 		document.getElementById("login-container").append(form);
 		
+		function validate(){
+			var text;
+			a = true;
+			
+			if ((username.value).length > 3 && (username.value).length < 30) {
+				
+				
+			}else {
+				text = "Sisesta palun 3-30 täheline kasutajanimi";
+				a = false;
+				document.write(a);
+				document.write(username.value);
+			}
+			
+			if((name.value.length > 3 && ((name.value).length < 20)) || (lastname.value.length > 3 && (lastname.value.length < 20))) {
+				
+			
+			}else {
+				text = "Nimi on liiga pikk";
+			}
+			
+			if(password.value.length > 7 && password.value.length < 40){
+				
+			} else {
+				text = "Siesta palun vähemalt 7 täheline parool";
+			}
+			
+			if(password.value == passwordRepeat.value){
+				
+			} else {
+				text = "paroolid ei ole samad";
+			}
+			
+			
+			if(meil.value.length != 0){
+				
+			} else{
+				text = "Sisesta palun meiliaadress";
+			}	
+				
+		}
+	
+		
+		
 				
 	});
+	
+	
 			
 		
 		
