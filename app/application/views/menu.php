@@ -39,7 +39,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<script src="<?php echo base_url(); ?>js/googlelogin.js"></script>
 	<script src="<?php echo base_url(); ?>js/registreerimine.js"></script>
-	
+	<script src="<?php echo base_url(); ?>js/infoAboutCompetition.js"></script>
+
 	<script>
 	$(document).ready(function(){
 		$("button").tooltip();   
