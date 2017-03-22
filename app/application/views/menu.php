@@ -40,6 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="<?php echo base_url(); ?>js/googlelogin.js"></script>
 	<script src="<?php echo base_url(); ?>js/registreerimine.js"></script>
 	<script src="<?php echo base_url(); ?>js/infoAboutCompetition.js"></script>
+	<script src="<?php echo base_url(); ?>js/PiltideHilisemLaadimine.js"></script>
 
 	<script>
 	$(document).ready(function(){
@@ -85,13 +86,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 						<li>
 							<a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
-								<img src="<?PHP echo base_url(); ?>images/eng.png" alt="Not found" class="img-keel"/>
+								<img src="<?PHP echo base_url(); ?>images/eng.png" alt="Inglise keel" class="img-keel"/>
 							</a>
 						</li>
 
 						<li>
 							<a href='<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/estonian'>
-								<img src="<?PHP echo base_url(); ?>images/est.png" alt="Not found" class="img-keel" />
+								<img src="<?PHP echo base_url(); ?>images/est.png" alt="Eesti keel" class="img-keel" />
 							</a>
 						</li>		
 
