@@ -110,13 +110,23 @@ $(document).ready(function(){
 			
 			if (valid) {
 				console.log("sobib");
+
+				//making xml data
+                var xmlText = "<acc>" +
+                    "<username>" + username.value + "</username>" +
+					"</acc>";
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(xmlText,"text/xml");
+
+
                 $.ajax({
                     type: "POST",
                     url: "/app/index.php/welcome/sendRegistrationDataToDatabase",
-                    data: {kasutajanimi: username.value},
-                    dataType:'JSON',
-                    success: function(response){
+                    data: xmlText,
+                    dataType:'xml',
+                    success: function(data){
                     	console.log("info saadetud");
+                    	console.log(data);
                     },
                     error: function (data) {
 						console.log("error");
