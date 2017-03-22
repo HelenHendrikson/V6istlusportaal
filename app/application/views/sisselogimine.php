@@ -20,7 +20,7 @@
 					  </form>
 					
 					  <div class="login-help">
-						<a href="#">Unustasid parooli</a>
+						<a href="#">Unustasin parooli</a>
 					  </div>
 					</div> 
 				</div>

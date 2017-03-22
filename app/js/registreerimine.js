@@ -32,35 +32,52 @@ $(document).ready(function(){
 		username.setAttribute('class',"form control");
 		username.setAttribute('placeholder','kasutajanimi');
 		username.setAttribute('id','username');
+		username.setAttribute('data-toggle','tooltip');
+		username.setAttribute('data-original-title','sisesta kasutajanimi');
+		username.setAttribute('data-placement','right');
 		
 
 		var name = document.createElement("input"); 
 		name.setAttribute('type',"text");
 		name.setAttribute('class',"form control");
 		name.setAttribute('placeholder','nimi');
+		name.setAttribute('data-toggle','tooltip');
+		name.setAttribute('data-original-title','Sisesta vähemalt 2-täheline nimi');
+		name.setAttribute('data-placement','right');
 		
 		
 		var lastname = document.createElement("input"); 
 		lastname.setAttribute('type',"text");
 		lastname.setAttribute('class',"form control");
 		lastname.setAttribute('placeholder','perenimi');
+		lastname.setAttribute('data-toggle','tooltip');
+		lastname.setAttribute('data-original-title','Sisesta vähemalt 3-täheline nimi');
+		lastname.setAttribute('data-placement','right');
 		
 		var meil = document.createElement("input"); 
 		meil.setAttribute('type',"text");
 		meil.setAttribute('class',"form control");
 		meil.setAttribute('placeholder','meiliaadress');
-		
+		meil.setAttribute('data-toggle','tooltip');
+		meil.setAttribute('data-original-title','Sisesta meiliaadress');
+		meil.setAttribute('data-placement','right');
 		
 		var password = document.createElement("input");
 		password.setAttribute('type','text');
 		password.setAttribute('class','from-control');
 		password.setAttribute('placeholder','parool');
+		password.setAttribute('data-toggle','tooltip');
+		password.setAttribute('data-original-title','Sisesta vähemalt 7-täheline parool');
+		password.setAttribute('data-placement','right');
 		
 		
 		var passwordRepeat = document.createElement("input");
 		passwordRepeat.setAttribute('type','text');
 		passwordRepeat.setAttribute('class','from-control');
 		passwordRepeat.setAttribute('placeholder','parooli kinnitus');
+		passwordRepeat.setAttribute('data-toggle','tooltip');
+		passwordRepeat.setAttribute('data-original-title','Sisesta parool uuesti');
+		passwordRepeat.setAttribute('data-placement','right');
 		
 		var registerbutton = document.createElement("button");
 		registerbutton.setAttribute('type','button');
@@ -77,6 +94,10 @@ $(document).ready(function(){
 		form.appendChild(registerbutton);
 	
 		document.getElementById("login-container").append(form);
+		
+		$(document).ready(function(){
+			$("input").tooltip();   
+		});
 		
 		function validate(){
 			var text;

@@ -42,8 +42,8 @@
 					map.setCenter(marker.getPosition());
 				 });
             }
-        </script>
+        </script>  
     
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVCm3tIKv7oYxWnIcp83Eyv_D6P8zqpu4&callback=myMap"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVCm3tIKv7oYxWnIcp83Eyv_D6P8zqpu4&callback=myMap" async defer></script>
     </div>
 </div>
