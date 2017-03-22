@@ -23,13 +23,13 @@ $(document).ready(function(){
 		//Form
 		
 		var form = document.createElement("form");
-		form.setAttribute('method',"post");
-		form.setAttribute('action',"index.php/ajutine/data_submitted");
-		
-		
-		var username = document.createElement("input"); 
+		//form.setAttribute('method',"post");
+		//form.setAttribute('action',"index.php/ajutine/data_submitted");
+        form.setAttribute('class',"form control");
+
+
+        var username = document.createElement("input");
 		username.setAttribute('type',"text");
-		username.setAttribute('class',"form control");
 		username.setAttribute('placeholder','kasutajanimi');
 		username.setAttribute('id','username');
 		username.setAttribute('data-toggle','tooltip');
@@ -39,7 +39,6 @@ $(document).ready(function(){
 
 		var name = document.createElement("input"); 
 		name.setAttribute('type',"text");
-		name.setAttribute('class',"form control");
 		name.setAttribute('placeholder','nimi');
 		name.setAttribute('data-toggle','tooltip');
 		name.setAttribute('data-original-title','Sisesta vähemalt 2-täheline nimi');
@@ -48,7 +47,6 @@ $(document).ready(function(){
 		
 		var lastname = document.createElement("input"); 
 		lastname.setAttribute('type',"text");
-		lastname.setAttribute('class',"form control");
 		lastname.setAttribute('placeholder','perenimi');
 		lastname.setAttribute('data-toggle','tooltip');
 		lastname.setAttribute('data-original-title','Sisesta vähemalt 3-täheline nimi');
@@ -56,7 +54,6 @@ $(document).ready(function(){
 		
 		var meil = document.createElement("input"); 
 		meil.setAttribute('type',"text");
-		meil.setAttribute('class',"form control");
 		meil.setAttribute('placeholder','meiliaadress');
 		meil.setAttribute('data-toggle','tooltip');
 		meil.setAttribute('data-original-title','Sisesta meiliaadress');
@@ -64,7 +61,6 @@ $(document).ready(function(){
 		
 		var password = document.createElement("input");
 		password.setAttribute('type','text');
-		password.setAttribute('class','from-control');
 		password.setAttribute('placeholder','parool');
 		password.setAttribute('data-toggle','tooltip');
 		password.setAttribute('data-original-title','Sisesta vähemalt 7-täheline parool');
@@ -73,7 +69,6 @@ $(document).ready(function(){
 		
 		var passwordRepeat = document.createElement("input");
 		passwordRepeat.setAttribute('type','text');
-		passwordRepeat.setAttribute('class','from-control');
 		passwordRepeat.setAttribute('placeholder','parooli kinnitus');
 		passwordRepeat.setAttribute('data-toggle','tooltip');
 		passwordRepeat.setAttribute('data-original-title','Sisesta parool uuesti');
@@ -100,57 +95,75 @@ $(document).ready(function(){
 		});
 		
 		function validate(){
-			var text;
-			a = true;
+			var message;
+			var valid = true;
+
+			if ((username.value).length < 3 || (username.value).length > 30) {
+                message = "Sisesta palun 3-30 täheline kasutajanimi";
+                valid = false;
+                console.log(message);
+            }
 			
-			if ((username.value).length > 3 && (username.value).length < 30) {
-				
-				
-			}else {
-				text = "Sisesta palun 3-30 täheline kasutajanimi";
-				a = false;
-				document.write(a);
-				document.write(username.value);
+			if ((name.value).length < 1 || (name.value).length > 30) {
+				valid = false;
+			}
+
+            if ((lastname.value).length < 1 || (lastname.value).length > 30) {
+                valid = false;
+            }
+
+            if ((meil.value).length > 100) {
+                message = "Lubatud meili pikkus on kuni 100 tähemärki";
+                valid = false;
+            } else if (! validateEmail(meil.value)) {
+				message = "mittesobiv email";
+				valid = false;
+			}
+
+
+			if(password.value.length < 6 || password.value.length > 256){
+				valid = false;
 			}
 			
-			if((name.value.length > 3 && ((name.value).length < 20)) || (lastname.value.length > 3 && (lastname.value.length < 20))) {
-				
-			
-			}else {
-				text = "Nimi on liiga pikk";
+			if(password.value != passwordRepeat.value){
+				valid = false;
 			}
 			
-			if(password.value.length > 7 && password.value.length < 40){
-				
+			if (valid) {
+				console.log("sobib");
+                $.ajax({
+                    type: "POST",
+                    url: "/app/index.php/welcome/sendRegistrationDataToDatabase",
+                    data: {kasutajanimi: username.value},
+                    dataType:'JSON',
+                    success: function(response){
+                    	console.log("info saadetud");
+                    },
+                    error: function (data) {
+						console.log("error");
+						console.log(data);
+                    }
+				})
 			} else {
-				text = "Siesta palun vähemalt 7 täheline parool";
-			}
-			
-			if(password.value == passwordRepeat.value){
-				
-			} else {
-				text = "paroolid ei ole samad";
-			}
-			
-			
-			if(meil.value.length != 0){
-				
-			} else{
-				text = "Sisesta palun meiliaadress";
-			}	
+                var info = document.createElement("p");
+                info.innerHTML = message;
+                heading.appendChild(info);
+            }
 				
 		}
 	
-		
-		
+
 				
 	});
-	
-	
-			
-		
+
+
 		
 });
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
 
 
 		
