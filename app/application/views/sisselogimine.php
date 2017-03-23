@@ -11,7 +11,7 @@
 							<button type="button" class="btn btn primary pull-left">Back </button>
 							<h2 class="modal-title" >Logi sisse</h2><br>
 						</div>
-					  <form method="post" action="" class="login-form" id="login-form">
+					  <form action=<?php echo base_url();?>index.php/login method="post" accept-charset="UTF-8" class="login-form" id="login-form">
 						<input class="form control" type="text" name="user" placeholder="kasutajanimi">
 						<input class="form control" type="password" name="pass" placeholder="parool">
 						<input class="form control" type="checkbox" checked="checked"> Mäleta mind 

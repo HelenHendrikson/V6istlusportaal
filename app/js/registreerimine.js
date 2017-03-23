@@ -133,7 +133,7 @@ $(document).ready(function(){
 				console.log("sobib");
                 $.ajax({
                     type: "POST",
-                    url: "/app/index.php/welcome/sendRegistrationDataToDatabase",
+                    url: "/app/index.php/login/registration",
                     data: {"username" : username.value,
                     		"firstname" : name.value,
 							"lastname" : lastname.value,

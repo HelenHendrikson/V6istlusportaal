@@ -4,7 +4,7 @@
 	<div class="row" >
 		<div class="col-xs-6 col-sm-4" id="leftPart">
             <div class="lisavoistlus">
-                <form>
+                <form id="competitionForm">
                     <B id="tulevasedVoistlused"><?php echo $this->lang->line('tulevad_võistlused') . ":"?></b> <br>
                     <select class="form-control" name="võistlused" size="20" id="voistlusSelect">
                         <?php if(isset($voistlused)){

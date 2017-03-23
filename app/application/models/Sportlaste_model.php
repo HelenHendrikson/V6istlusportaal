@@ -46,4 +46,11 @@ class Sportlaste_model extends CI_Model{
         $query = $this->db->query('call leia_võistlusel_osalejate_arv(' . $voistluse_id . ')');
         return $query->result_array();
     }
+
+    public function get_account_password($username)
+    {
+        $query = $this->db->query('call get_password("' . $username . '")');
+        return $query->result();
+    }
+
 }

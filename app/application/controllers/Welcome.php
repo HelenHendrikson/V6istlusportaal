@@ -37,45 +37,6 @@ class Welcome extends CI_Controller {
     }
 
 
-    public function sendRegistrationDataToDatabase()
-    {
-        $this->load->helper(array('url', 'security'));
-
-        $data = array(
-            'kasutajanimi' => $this->input->post('username'),
-            'eesnimi' => $this->input->post('firstname'),
-            'perenimi' => $this->input->post('lastname'),
-            'meil' => $this->input->post('meil'),
-            'parool' => $this->input->post('password')
-        );
-
-        //teen xss tõrje
-        $cleaned = $this->security->xss_clean($data);
-        if ($cleaned == $data) {
-            $this->load->model('sportlaste_model');
-
-            // räsistan parooli
-            $data["parool"] = password_hash($data["parool"], PASSWORD_BCRYPT);
-
-            $this->sportlaste_model->form_insert($data);
-        }
-    
-
-
-        $test_array = array (
-            $_POST["username"] => 'kasutajanimi',
-            'foo' => 'bar',
-            'another_array' => array (
-                'stack' => 'overflow',
-            ),
-        );
-
-        $xml = new SimpleXMLElement('<root/>');
-        array_walk_recursive($test_array, array ($xml, 'addChild'));
-        echo $xml->asXML();
-    }
-
-
 	public function otsing()
 	{
         $this->load->model('sportlaste_model');
@@ -103,11 +64,5 @@ class Welcome extends CI_Controller {
         }
 
 	}
-
-
-	public function info()
-    {
-        $keyword = array('data' => $this->input->get('keyword'));
-    }
 
 }

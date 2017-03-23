@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("form").submit(function (event) {
+    $("#competitionForm").submit(function (event) {
         event.preventDefault(); // prevent page refresh)
         var form = document.getElementById("voistlusSelect");
         var voistluse_id = form.options[form.selectedIndex].value;
