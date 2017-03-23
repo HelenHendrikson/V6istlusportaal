@@ -104,11 +104,11 @@ $(document).ready(function(){
                 console.log(message);
             }
 			
-			if ((name.value).length < 1 || (name.value).length > 30) {
+			if ((name.value).length < 2 || (name.value).length > 30) {
 				valid = false;
 			}
 
-            if ((lastname.value).length < 1 || (lastname.value).length > 30) {
+            if ((lastname.value).length < 2 || (lastname.value).length > 30) {
                 valid = false;
             }
 
@@ -131,19 +131,14 @@ $(document).ready(function(){
 			
 			if (valid) {
 				console.log("sobib");
-
-				//making xml data
-                var xmlText = "<acc>" +
-                    "<username>" + username.value + "</username>" +
-					"</acc>";
-                var parser = new DOMParser();
-                var xmlDoc = parser.parseFromString(xmlText,"text/xml");
-
-
                 $.ajax({
                     type: "POST",
                     url: "/app/index.php/welcome/sendRegistrationDataToDatabase",
-                    data: xmlText,
+                    data: {"username" : username.value,
+                    		"firstname" : name.value,
+							"lastname" : lastname.value,
+                    		"meil" : meil.value,
+							"password" : password.value},
                     dataType:'xml',
                     success: function(data){
                     	console.log("info saadetud");
