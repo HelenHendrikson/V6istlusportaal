@@ -23,8 +23,6 @@ $(document).ready(function(){
 		//Form
 		
 		var form = document.createElement("form");
-		//form.setAttribute('method',"post");
-		//form.setAttribute('action',"index.php/ajutine/data_submitted");
         form.setAttribute('class',"form control");
 
 
@@ -41,7 +39,7 @@ $(document).ready(function(){
 		name.setAttribute('type',"text");
 		name.setAttribute('placeholder','nimi');
 		name.setAttribute('data-toggle','tooltip');
-		name.setAttribute('data-original-title','Sisesta vähemalt 2-täheline nimi');
+		name.setAttribute('data-original-title','Sisesta eesnimi');
 		name.setAttribute('data-placement','right');
 		
 		
@@ -49,7 +47,7 @@ $(document).ready(function(){
 		lastname.setAttribute('type',"text");
 		lastname.setAttribute('placeholder','perenimi');
 		lastname.setAttribute('data-toggle','tooltip');
-		lastname.setAttribute('data-original-title','Sisesta vähemalt 3-täheline nimi');
+		lastname.setAttribute('data-original-title','Sisesta perekonnanimi');
 		lastname.setAttribute('data-placement','right');
 		
 		var meil = document.createElement("input"); 
@@ -60,15 +58,14 @@ $(document).ready(function(){
 		meil.setAttribute('data-placement','right');
 		
 		var password = document.createElement("input");
-		password.setAttribute('type','text');
+		password.setAttribute('type','password');
 		password.setAttribute('placeholder','parool');
 		password.setAttribute('data-toggle','tooltip');
-		password.setAttribute('data-original-title','Sisesta vähemalt 7-täheline parool');
+		password.setAttribute('data-original-title','Sisesta vähemalt 6-täheline parool');
 		password.setAttribute('data-placement','right');
 		
-		
 		var passwordRepeat = document.createElement("input");
-		passwordRepeat.setAttribute('type','text');
+		passwordRepeat.setAttribute('type','password');
 		passwordRepeat.setAttribute('placeholder','parooli kinnitus');
 		passwordRepeat.setAttribute('data-toggle','tooltip');
 		passwordRepeat.setAttribute('data-original-title','Sisesta parool uuesti');
@@ -95,55 +92,51 @@ $(document).ready(function(){
 		
 		
 		function validate(){
-			var message;
+			var messages = [];
 			var valid = true;
 
-			if ((username.value).length < 3 || (username.value).length > 30) {
-                message = "Sisesta palun 3-30 täheline kasutajanimi";
+			if ((username.value).length < 4 || (username.value).length > 30) {
+                messages.push("Sisesta palun 4-30 täheline kasutajanimi");
                 valid = false;
-                console.log(message);
             }
 			
-			if ((name.value).length < 1 || (name.value).length > 30) {
+			if ((name.value).length < 2 || (name.value).length > 30) {
+				messages.push("Eeldatatud nime pikkus on 2-30 tähemärki");
 				valid = false;
 			}
 
-            if ((lastname.value).length < 1 || (lastname.value).length > 30) {
+            if ((lastname.value).length < 2 || (lastname.value).length > 30) {
+                messages.push("Eeldatatud perekonnanime pikkus on 2-30 tähemärki");
                 valid = false;
             }
 
             if ((meil.value).length > 100) {
-                message = "Lubatud meili pikkus on kuni 100 tähemärki";
+                messages.push("Lubatud meili pikkus on kuni 100 tähemärki");
                 valid = false;
             } else if (! validateEmail(meil.value)) {
-				message = "mittesobiv email";
+				messages.push("mittesobiv email");
 				valid = false;
 			}
 
 
 			if(password.value.length < 6 || password.value.length > 256){
+				messages.push("paaroli pikkus peab olema 5-256 tähemärki");
 				valid = false;
 			}
 			
 			if(password.value != passwordRepeat.value){
+				messages.push("paroolid ei kattu");
 				valid = false;
 			}
-			
 			if (valid) {
-				console.log("sobib");
-
-				//making xml data
-                var xmlText = "<acc>" +
-                    "<username>" + username.value + "</username>" +
-					"</acc>";
-                var parser = new DOMParser();
-                var xmlDoc = parser.parseFromString(xmlText,"text/xml");
-
-
                 $.ajax({
                     type: "POST",
-                    url: "/app/index.php/welcome/sendRegistrationDataToDatabase",
-                    data: xmlText,
+                    url: "/app/index.php/login/registration",
+                    data: {"username" : username.value,
+                    		"firstname" : name.value,
+							"lastname" : lastname.value,
+                    		"meil" : meil.value,
+							"password" : password.value},
                     dataType:'xml',
                     success: function(data){
                     	console.log("info saadetud");
@@ -151,13 +144,20 @@ $(document).ready(function(){
                     },
                     error: function (data) {
 						console.log("error");
-						console.log(data);
                     }
 				})
 			} else {
-                var info = document.createElement("p");
-                info.innerHTML = message;
-                heading.appendChild(info);
+                var kuvatud_info = document.getElementById("lisainfo");
+                while (kuvatud_info != null) {
+                    kuvatud_info.remove();
+                    kuvatud_info = document.getElementById("lisainfo");
+				}
+                for (var i = 0; i < messages.length; i++) {
+                    var info = document.createElement("p");
+                    info.setAttribute("id", "lisainfo");
+                    info.innerHTML = messages[i];
+                    heading.appendChild(info);
+                }
             }
 				
 		}
