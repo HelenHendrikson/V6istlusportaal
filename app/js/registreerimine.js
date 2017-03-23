@@ -90,9 +90,9 @@ $(document).ready(function(){
 	
 		document.getElementById("login-container").append(form);
 		
-		$(document).ready(function(){
-			$("input").tooltip();   
-		});
+		
+		$("input").tooltip();   
+		
 		
 		function validate(){
 			var message;
