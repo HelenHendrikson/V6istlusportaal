@@ -53,7 +53,7 @@ $(document).ready(function() {
 
                 //here I add options
                 var competitors = data["võistlejad"];
-                for (i = 0; i < competitors.length; i++){
+                for (var i = 0; i < competitors.length; i++){
                     var opt = document.createElement('option');
                     opt.innerHTML = competitors[i]["eesnimi"] + " " + competitors[i]["perenimi"];
                     selectList.appendChild(opt);
