@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 	<div class="avaleht">
 
-		<nav class="navbar navbar-default" role="navigation">
+		<nav class="navbar navbar-default">
 			<div class="container">
 
 				<div class="navbar-header">
@@ -71,13 +71,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<ul class="nav navbar-nav">
 						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/"><?php echo $this->lang->line('spordialad');?></a></li>
 						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/otsing"><?php echo $this->lang->line('otsing');?></a></li>
-					    <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/voistlused"><?php echo $this->lang->line('voistlused');?></a></li>
+					   
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
 						
 						<li> 
-							<button id="login-toggle" type="button" class="btn btn-default navbar-button" data-toggle="modal" data-modal-id="login-modal" data-target="#login-modal" data-toggle="tooltip" data-placement="bottom" data-original-title="login" >Logi sisse</button>	
+							<button id="login-toggle" type="button" class="btn btn-default navbar-button" data-toggle="modal" data-modal-id="login-modal" data-target="#login-modal" data-placement="bottom" data-original-title="login" >Logi sisse</button>	
 						</li>
 							
 						<li>

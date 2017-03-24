@@ -3,19 +3,30 @@
 $(document).ready(function(){
 
 	$("#contact-submit").click(function(e){
+		var sisu = document.getElementById("login-panel");
 		$("#login-panel").remove();
 		
 		//Heading
-		var panel = document.createElement('div');
-		panel.className="panel panel-default";
+
+
+		
+		
 		var heading = document.createElement('div');
+		heading.setAttribute('id',"head");
 		heading.className="panel-heading";
-		var	h2 = document.createElement("h1");
-		h2.className="panel-title";
-		h2.setAttribute('id','panel-title');
+		var h2 = document.createElement("h2");
+		h2.className="modal-title";
+		h2.setAttribute('id','modal-title');	
 		var t = document.createTextNode("Registreerimine"); 
 		h2.appendChild(t);
 		heading.appendChild(h2);
+		
+		var backbutton = document.createElement('button');
+		var e = document.createTextNode("Tagasi");
+		backbutton.appendChild(e);
+		backbutton.addEventListener('click',goback);
+		heading.appendChild(backbutton);
+		
 		
 		document.getElementById("login-container").append(heading);
 		
@@ -24,6 +35,7 @@ $(document).ready(function(){
 		
 		var form = document.createElement("form");
         form.setAttribute('class',"form control");
+		form.setAttribute('id',"reg-form");
 
 
         var username = document.createElement("input");
@@ -89,6 +101,16 @@ $(document).ready(function(){
 		
 		
 		$("input").tooltip();   
+		
+		
+		
+		function goback(){
+			document.getElementById("reg-form").remove();
+			document.getElementById("head").remove();
+			document.getElementById("login-container").append(sisu);
+			
+			
+		};
 		
 		
 		function validate(){
