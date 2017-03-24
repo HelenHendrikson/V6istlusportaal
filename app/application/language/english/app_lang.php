@@ -19,6 +19,10 @@ $lang['registreeri'] = 'Register';
 //võistluste vaade
 $lang['tulevad_võistlused'] = 'Upcoming competitions';
 $lang['vaata_võistlust_nupp'] = 'Check competition';
+$lang['distants'] = 'Distance';
+$lang['kuupäev'] = 'Date';
+$lang['registreerinute_teksti_esimene_pool'] = 'There are ';
+$lang['registreerinute_teksti_teine_pool'] = ' people registered to this competition';
 
 // spordialad
 $lang['vibu'] = 'Archery';

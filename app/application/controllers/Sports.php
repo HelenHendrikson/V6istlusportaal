@@ -5,10 +5,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Sports extends CI_Controller
 {
 
-    public function archery()
+    public function archery($voistluse_id = null)
     {
         $this->load->model('sportlaste_model');
 
+        if ($voistluse_id != null) {
+            $data['voistluse_info'] = $this->sportlaste_model->get_competition_info($voistluse_id);
+            $data['võistlejad'] = $this -> sportlaste_model -> get_competition_competitors($voistluse_id);
+            $data['count'] = $this -> sportlaste_model -> get_competition_competitors_count($voistluse_id);
+        }
         $data['voistlused'] = $this->sportlaste_model->get_competitions(1);
         $title['title'] = $this->lang->line('vibu');
 
@@ -99,6 +104,7 @@ class Sports extends CI_Controller
         $this->load->view('menu', $title);
         $this->load->view('treenerRegabSportlastvaade', $data);
         $this->load->view('footer');
+
     }
 
 

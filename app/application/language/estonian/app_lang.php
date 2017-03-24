@@ -20,6 +20,10 @@ $lang['registreeri'] = 'Registreeri:';
 //võistluste vaade
 $lang['tulevad_võistlused'] = 'Tulevad võistlused';
 $lang['vaata_võistlust_nupp'] = 'Vaata võistlust';
+$lang['distants'] = 'Distants';
+$lang['kuupäev'] = 'Kuupäev';
+$lang['registreerinute_teksti_esimene_pool'] = 'Kokku on registreerinud ennast sellele võistlusele ';
+$lang['registreerinute_teksti_teine_pool'] = ' inimest';
 
 // spordialad
 $lang['vibu'] = 'Vibu laskmine';
