@@ -95,8 +95,8 @@ $(document).ready(function(){
 			var messages = [];
 			var valid = true;
 
-			if ((username.value).length < 4 || (username.value).length > 30) {
-                messages.push("Sisesta palun 4-30 täheline kasutajanimi");
+			if ((username.value).length < 3 || (username.value).length > 30) {
+                messages.push("Sisesta palun 3-30 täheline kasutajanimi");
                 valid = false;
             }
 			
@@ -138,41 +138,45 @@ $(document).ready(function(){
                     		"meil" : meil.value,
 							"password" : password.value},
                     dataType:'xml',
-                    success: function(data){
-                    	console.log("info saadetud");
-                    	console.log(data);
-                    },
-                    error: function (data) {
+                    success: function(data) {
+                        console.log("info saadetud");
+                        console.log(data);
+                        var $xml = $(data);
+                        var outcome = $xml.find('outcome');
+                        outcome = outcome.text();
+                        console.log(outcome);
+                        if (outcome == "success") messages.push("Registreerimine õnnestus");
+                        else if (outcome == "failed") messages.pseudo("Server ei aktsepteerinud teie sisestatud andmeid");
+                        else messages.push("Te ei läbinud xss tõrjet");
+                        console.log(messages);
+                        showMessages(messages, heading);
+                    }, error: function (data) {
 						console.log("error");
                     }
 				})
-			} else {
-                var kuvatud_info = document.getElementById("lisainfo");
-                while (kuvatud_info != null) {
-                    kuvatud_info.remove();
-                    kuvatud_info = document.getElementById("lisainfo");
-				}
-                for (var i = 0; i < messages.length; i++) {
-                    var info = document.createElement("p");
-                    info.setAttribute("id", "lisainfo");
-                    info.innerHTML = messages[i];
-                    heading.appendChild(info);
-                }
-            }
-				
+			}
+			showMessages(messages, heading);
 		}
-	
-
-				
 	});
-
-
-		
 });
 
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
+}
+
+function showMessages(messages, heading) {
+    var kuvatud_info = document.getElementById("lisainfo");
+    while (kuvatud_info != null) {
+        kuvatud_info.remove();
+        kuvatud_info = document.getElementById("lisainfo");
+    }
+    for (var i = 0; i < messages.length; i++) {
+        var info = document.createElement("p");
+        info.setAttribute("id", "lisainfo");
+        info.innerHTML = messages[i];
+        heading.appendChild(info);
+    }
 }
 
 
