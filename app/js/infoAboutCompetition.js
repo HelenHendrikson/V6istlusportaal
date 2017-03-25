@@ -21,9 +21,14 @@ $(document).ready(function() {
         window.history.pushState(null, "", url + "/" + voistluse_id);
 
         // user goes back/forward
-        //$(window).on("popstate", function () {
-        //    fetchAndInsert(currentURLending);
-        //});
+        $(window).on("popstate", function () {
+            var currentURL = window.location.href;
+            var voistluse_id = currentURL.split("/").pop();
+            var nrIndex = currentURL.lastIndexOf(voistluse_id);
+            var url = currentURL.substring(0, nrIndex);
+            console.log(voistluse_id);
+            fetchAndInsert(voistluse_id, url);
+        });
     });
 });
 
