@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <script src="<?php echo base_url(); ?>js/logout.js"></script>
 	<script src="<?php echo base_url(); ?>js/googlelogin.js"></script>
 	<script src="<?php echo base_url(); ?>js/registreerimine.js"></script>
 	<script src="<?php echo base_url(); ?>js/infoAboutCompetition.js"></script>
@@ -83,7 +83,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li>
 							<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 						</li>
-
+						<li>
+						<button id="logging" onclick="signOut();">Sign out</a>
+						
+						</li>
+						<script src="<?php echo base_url(); ?>js/loginned.js"></script>
 						<li>
 							<a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
 								<img src="<?PHP echo base_url(); ?>images/eng.png" alt="Inglise keel" class="img-keel"/>
