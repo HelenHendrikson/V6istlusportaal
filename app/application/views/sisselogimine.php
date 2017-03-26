@@ -11,7 +11,7 @@
                 <form action="<?php echo base_url();?>index.php/login" method="post" accept-charset="UTF-8" class="form" id="login-form">
                     <div class="form-group">
                         <label for="username">Kasutajanimi</label>
-                        <input class="form-control" id="username" type="text" name="user" placeholder="kasutajanimi">
+                        <input class="form-control" id="login-username" type="text" name="user" placeholder="kasutajanimi">
                     </div>
 
                     <div class="form-group">
@@ -46,8 +46,8 @@
                 </div>
                 <form method="post" accept-charset="UTF-8" class="form" id="reg-form">
 					<div class="form-group">
-						<label for="register-username">Kasutajanimi</label>
-						<input type="text" id="register-username" placeholder="Kasutajanimi" id="username" data-toggle="tooltip" data-original-title="Sisesta kasutajanimi" data-placement="right">
+						<label for="username">Kasutajanimi</label>
+						<input type="text" placeholder="Kasutajanimi" id="register-username" data-toggle="tooltip" data-original-title="Sisesta kasutajanimi" data-placement="right">
 					</div>
 					<div class="form-group">
 						<label for="register-name">Nimi</label>
@@ -58,7 +58,7 @@
 						<input type="text" id="register-last-name" placeholder="Perekonnanimi" data-toggle="tooltip" data-original-title="Sisesta perekonnanimi" data-placement="right">
 					</div>
 						<div class="form-group">					
-						<label for="register-maril">Meiliaadress</label>
+						<label for="register-mail">Meiliaadress</label>
 						<input type="text" id="register-mail" placeholder="Meiliaadress" data-toggle="tooltip" data-original-title="Sisesta meiliaadress" data-placement="right">
                     </div>
 					<div class="form-group">

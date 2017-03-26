@@ -84,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 						</li>
 						<li>
-						<button id="logging" onclick="signOut();">Sign out</a>
+							<button id="logging" onclick="signOut();">Sign out</button>
 						
 						</li>
 						<script src="<?php echo base_url(); ?>js/loginned.js"></script>

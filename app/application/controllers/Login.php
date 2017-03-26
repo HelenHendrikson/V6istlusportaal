@@ -8,9 +8,10 @@ class Login extends CI_Controller
         $this->load->model('sportlaste_model');
 
         $data = array(
-            'username' => $this->input->post('user'),
-            'password' => $this->input->post('pass'),
+            'username' => $this->input->post('username'),
+            'password' => $this->input->post('password'),
         );
+
         $result = $this -> sportlaste_model -> get_account_password($data['username']);
         $password = $result[0] -> parool;
 
