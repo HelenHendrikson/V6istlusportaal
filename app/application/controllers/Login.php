@@ -8,8 +8,8 @@ class Login extends CI_Controller
         $this->load->model('sportlaste_model');
 
         $data = array(
-            'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
+            'username' => $this->input->post('user'),
+            'password' => $this->input->post('pass'),
         );
 
         $result = $this -> sportlaste_model -> get_account_password($data['username']);
@@ -30,7 +30,7 @@ class Login extends CI_Controller
         $this->load->helper(array('url', 'security'));
 
         $data = array(
-            'kasutajanimi' => $this->input->post('username'),
+            'kasutajanimi' => $this->input->post('login-username'),
             'eesnimi' => $this->input->post('firstname'),
             'perenimi' => $this->input->post('lastname'),
             'meil' => $this->input->post('meil'),
@@ -41,7 +41,7 @@ class Login extends CI_Controller
         $cleaned = $this->security->xss_clean($data);
         if ($cleaned == $data) {
             //kontrollin vormi sobivust ka serveris
-            $this->form_validation->set_rules('username', 'Username', array('required', 'min_length[3]', 'max_length[30]'));
+            $this->form_validation->set_rules('login-username', 'Username', array('required', 'min_length[3]', 'max_length[30]'));
             $this->form_validation->set_rules('firstname', 'Name', array('required', 'min_length[2]', "max_length[30]"));
             $this->form_validation->set_rules('lastname', 'Last name', array('required', 'min_length[2]', "max_length[30]"));
             $this->form_validation->set_rules('meil', 'E-mail', array('required', "valid_email", "max_length[100]"));
