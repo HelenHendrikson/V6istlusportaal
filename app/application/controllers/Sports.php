@@ -5,11 +5,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Sports extends CI_Controller
 {
 
-    public function archery()
+    public function archery($voistluse_id = null)
     {
         $this->load->model('sportlaste_model');
 
-        $data['voistlused'] = $this->sportlaste_model->get_competitions();
+        if ($voistluse_id != null) {
+            $data['voistluse_info'] = $this->sportlaste_model->get_competition_info($voistluse_id);
+            $data['võistlejad'] = $this -> sportlaste_model -> get_competition_competitors($voistluse_id);
+            $data['count'] = $this -> sportlaste_model -> get_competition_competitors_count($voistluse_id);
+        }
+        $data['voistlused'] = $this->sportlaste_model->get_competitions(1);
         $title['title'] = $this->lang->line('vibu');
 
         $this->load->view('menu', $title);
@@ -21,7 +26,7 @@ class Sports extends CI_Controller
     {
         $this->load->model('sportlaste_model');
 
-        $data['voistlused'] = $this->sportlaste_model->get_competitions();
+        $data['voistlused'] = $this->sportlaste_model->get_competitions(2);
         $title['title'] = $this->lang->line('ujumine');
 
         $this->load->view('menu', $title);
@@ -33,7 +38,7 @@ class Sports extends CI_Controller
     {
         $this->load->model('sportlaste_model');
 
-        $data['voistlused'] = $this->sportlaste_model->get_competitions();
+        $data['voistlused'] = $this->sportlaste_model->get_competitions(3);
         $title['title'] = $this->lang->line('tennis');
 
         $this->load->view('menu', $title);
@@ -45,7 +50,7 @@ class Sports extends CI_Controller
     {
         $this->load->model('sportlaste_model');
 
-        $data['voistlused'] = $this->sportlaste_model->get_competitions();
+        $data['voistlused'] = $this->sportlaste_model->get_competitions(4);
         $title['title'] = $this->lang->line('tõstmine');
 
         $this->load->view('menu', $title);
@@ -57,7 +62,7 @@ class Sports extends CI_Controller
     {
         $this->load->model('sportlaste_model');
 
-        $data['voistlused'] = $this->sportlaste_model->get_competitions();
+        $data['voistlused'] = $this->sportlaste_model->get_competitions(5);
         $title['title'] = $this->lang->line('vehklemine');
 
         $this->load->view('menu', $title);
@@ -69,7 +74,7 @@ class Sports extends CI_Controller
     {
         $this->load->model('sportlaste_model');
 
-        $data['voistlused'] = $this->sportlaste_model->get_competitions();
+        $data['voistlused'] = $this->sportlaste_model->get_competitions(6);
         $title['title'] = $this->lang->line('iluvõimlemine');
 
         $this->load->view('menu', $title);
@@ -81,7 +86,7 @@ class Sports extends CI_Controller
     {
         $this->load->model('sportlaste_model');
 
-        $data['voistlused'] = $this->sportlaste_model->get_competitions();
+        $data['voistlused'] = $this->sportlaste_model->get_competitions(7);
         $title['title'] = $this->lang->line('kergejõustik');
 
         $this->load->view('menu', $title);
@@ -93,12 +98,13 @@ class Sports extends CI_Controller
     {
         $this->load->model('sportlaste_model');
 
-        $data['voistlused'] = $this->sportlaste_model->get_competitions();
+        $data['voistlused'] = $this->sportlaste_model->get_competitions(8);
         $title['title'] = $this->lang->line('rattasõit');
 
         $this->load->view('menu', $title);
         $this->load->view('treenerRegabSportlastvaade', $data);
         $this->load->view('footer');
+
     }
 
 

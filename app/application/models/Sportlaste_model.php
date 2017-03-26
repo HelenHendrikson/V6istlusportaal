@@ -23,9 +23,9 @@ class Sportlaste_model extends CI_Model{
         return $query->result();
     }
 
-	public function get_competitions()
+	public function get_competitions($sports_id)
 	{
-        $query = $this->db->query('call leia_voistlused()');
+        $query = $this->db->query('call leia_voistlused(' . $sports_id .')');
         return $query->result();
 	}
 
