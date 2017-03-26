@@ -45,19 +45,33 @@
                     <div class="col-xs-12" id="heading"></div>
                 </div>
                 <form method="post" accept-charset="UTF-8" class="form" id="reg-form">
-					<label for="register-username">Kasutajanimi</label>
-                    <input type="text" id="register-username" placeholder="Kasutajanimi" id="username" data-toggle="tooltip" data-original-title="Sisesta kasutajanimi" data-placement="right">
-					<label for="register-name">Nimi</label>
-                    <input type="text" id="register-name" placeholder="Nimi" data-toggle="tooltip" data-original-title="Sisesta eesnimi" data-placement="right">
-					<label for="register-last-name">Perekonnanimi</label>
-                    <input type="text" id="register-last-name" placeholder="Perekonnanimi" data-toggle="tooltip" data-original-title="Sisesta perekonnanimi" data-placement="right">
-					<label for="register-maril">Meiliaadress</label>
-                    <input type="text" id="register-mail" placeholder="Meiliaadress" data-toggle="tooltip" data-original-title="Sisesta meiliaadress" data-placement="right">
-					<label for="register-password">Parool</label>
-                    <input type="password" id="register-password" placeholder="Parool" data-toggle="tooltip" data-original-title="Sisesta vähemalt 6-täheline parool" data-placement="right">
-					<label for="register-password-repeat">Parooli kinnitus</label>
-                    <input type="password" id="register-password-repeat" placeholder="Parooli kinnitus" data-toggle="tooltip" data-original-title="Sisesta parool uuesti" data-placement="right">
-
+					<div class="form-group">
+						<label for="register-username">Kasutajanimi</label>
+						<input type="text" id="register-username" placeholder="Kasutajanimi" id="username" data-toggle="tooltip" data-original-title="Sisesta kasutajanimi" data-placement="right">
+					</div>
+					<div class="form-group">
+						<label for="register-name">Nimi</label>
+						<input type="text" id="register-name" placeholder="Nimi" data-toggle="tooltip" data-original-title="Sisesta eesnimi" data-placement="right">
+					</div>
+					<div class="form-group">
+						<label for="register-last-name">Perekonnanimi</label>
+						<input type="text" id="register-last-name" placeholder="Perekonnanimi" data-toggle="tooltip" data-original-title="Sisesta perekonnanimi" data-placement="right">
+					</div>
+						<div class="form-group">					
+						<label for="register-maril">Meiliaadress</label>
+						<input type="text" id="register-mail" placeholder="Meiliaadress" data-toggle="tooltip" data-original-title="Sisesta meiliaadress" data-placement="right">
+                    </div>
+					<div class="form-group">
+						
+						<label for="register-password">Parool</label>
+						<input type="password" id="register-password" placeholder="Parool" data-toggle="tooltip" data-original-title="Sisesta vähemalt 6-täheline parool" data-placement="right">
+                    </div>
+					<div class="form-group">
+					
+						<label for="register-password-repeat">Parooli kinnitus</label>
+						<input type="password" id="register-password-repeat" placeholder="Parooli kinnitus" data-toggle="tooltip" data-original-title="Sisesta parool uuesti" data-placement="right">
+					</div>
+					
                     <input type="button" class="pull-right btn btn-primary" onclick="validate()" value="Registreeru" id="register-button">
 
                     <input type="button" class="pull-left btn btn-default" onclick="showLogin()" value="Logi sisse">
