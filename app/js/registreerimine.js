@@ -62,7 +62,7 @@ $(document).ready(function(){
 		if (valid) {
             $.ajax({
                 type: "POST",
-                url: "index.php/login/registration",  // andreasel oli siin /app ka veel ees
+                url: "/app/index.php/login/registration",  // andreasel oli siin /app ka veel ees
                 data: {"username" : username.value,
                 		"firstname" : name.value,
 						"lastname" : lastname.value,
@@ -77,7 +77,7 @@ $(document).ready(function(){
                     outcome = outcome.text();
                     console.log(outcome);
                     if (outcome == "success") messages.push("Registreerimine õnnestus");
-                    else if (outcome == "failed") messages.pseudo("Server ei aktsepteerinud teie sisestatud andmeid");
+                    else if (outcome == "failed") messages.push("Server ei aktsepteerinud teie sisestatud andmeid");
                     else messages.push("Te ei läbinud xss tõrjet");
                     console.log(messages);
                     showMessages(messages, heading);

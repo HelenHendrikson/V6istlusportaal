@@ -13,7 +13,8 @@ class Login extends CI_Controller
         );
 
         $result = $this -> sportlaste_model -> get_account_password($data['username']);
-        $password = $result[0] -> parool;
+        echo $result;
+        $password = $result[0]->parool;
 
 
         if (password_verify($data["password"], $password))
@@ -30,7 +31,7 @@ class Login extends CI_Controller
         $this->load->helper(array('url', 'security'));
 
         $data = array(
-            'kasutajanimi' => $this->input->post('login-username'),
+            'kasutajanimi' => $this->input->post('username'),
             'eesnimi' => $this->input->post('firstname'),
             'perenimi' => $this->input->post('lastname'),
             'meil' => $this->input->post('meil'),
@@ -41,10 +42,10 @@ class Login extends CI_Controller
         $cleaned = $this->security->xss_clean($data);
         if ($cleaned == $data) {
             //kontrollin vormi sobivust ka serveris
-            $this->form_validation->set_rules('login-username', 'Username', array('required', 'min_length[3]', 'max_length[30]'));
+            $this->form_validation->set_rules('username', 'Username', array('required', 'min_length[3]', 'max_length[30]'));
             $this->form_validation->set_rules('firstname', 'Name', array('required', 'min_length[2]', "max_length[30]"));
             $this->form_validation->set_rules('lastname', 'Last name', array('required', 'min_length[2]', "max_length[30]"));
-            $this->form_validation->set_rules('meil', 'E-mail', array('required', "valid_email", "max_length[100]"));
+            $this->form_validation->set_rules('meil', 'Mail', array('required', 'valid_email', "max_length[30]"));
             $this->form_validation->set_rules('password', 'Password', array('required', "min_length[6]", "max_length[256]"));
 
             if ($this->form_validation->run()) {
@@ -55,7 +56,7 @@ class Login extends CI_Controller
                 $this->sportlaste_model->form_insert($data);
                 $outcome = "success";
             } else {
-                $outcome = "failed";
+            $outcome = "failed";
             }
         } else {
             $outcome = "xss problem";
