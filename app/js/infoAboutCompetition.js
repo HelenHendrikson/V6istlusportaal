@@ -1,8 +1,10 @@
 $(document).ready(function() {
+    var interval;
     $("#competitionForm").submit(function (event) {
         event.preventDefault(); // prevent page refresh)
         var form = document.getElementById("voistlusSelect");
         var voistluse_id = form.options[form.selectedIndex].value;
+
 
         var currentURL = window.location.href;
         var currentURLending = currentURL.split("/").pop();
@@ -13,9 +15,6 @@ $(document).ready(function() {
             var nrIndex = currentURL.lastIndexOf("/");
             var url = currentURL.substring(0, nrIndex);
         }
-
-
-        fetchAndInsert(voistluse_id, url);
 
         // changing the url
         window.history.pushState(null, "", url + "/" + voistluse_id);
@@ -29,6 +28,11 @@ $(document).ready(function() {
             console.log(voistluse_id);
             fetchAndInsert(voistluse_id, url);
         });
+
+        clearInterval(interval);
+        fetchAndInsert(voistluse_id, url);
+        interval = setInterval(function() {fetchAndInsert(voistluse_id, url)}, 10000);
+
     });
 });
 
@@ -43,7 +47,7 @@ function fetchAndInsert(voistluse_id, url) {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "/index.php/sports/saa_voistluse_info/" + voistluse_id,
+        url: "/app/index.php/sports/saa_voistluse_info/" + voistluse_id,
         success: function (data) {
             //making important data variables
             var participants_count = data["count"][0]["arv"];
@@ -51,6 +55,7 @@ function fetchAndInsert(voistluse_id, url) {
             var distance = data["voistluse_info"][0]["distants"];
             var date = data["voistluse_info"][0]["kuupäev"];
             var language = getLanguage();
+            console.log("aaa");
 
             // Here I change html according to competition data and language
             document.getElementById("nimev2li").innerHTML = name;
@@ -58,6 +63,7 @@ function fetchAndInsert(voistluse_id, url) {
                 case 'en':
                     document.getElementById("distansiv2li").innerHTML = "Distance: " + distance;
                     document.getElementById("kuupaevav2li").innerHTML = "Date: " + date;
+
                     if (participants_count == 1)
                         document.getElementById("osalejateArv").innerHTML = "There is " + participants_count + " people registered to this competition:";
                     else
