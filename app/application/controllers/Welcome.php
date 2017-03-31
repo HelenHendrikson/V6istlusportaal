@@ -64,5 +64,18 @@ class Welcome extends CI_Controller {
         }
 
 	}
+	
+	public function annetused(){
+		$title['title'] = 'annetused';
+		$this->load->view('menu', $title);
+		$this->load->view('annetused');
+	}
+	
+	public function makseKatkestatud(){
+		$title['title'] = 'makseKatkestatud';
+		$this->load->view('menu', $title);
+		$this->load->view('makseKatkestatud');
+		
+	}
 
 }
