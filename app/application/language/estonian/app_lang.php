@@ -34,3 +34,5 @@ $lang['vehklemine'] = 'Vehklemine';
 $lang['iluvõimlemine'] = 'Iluvõimlemine';
 $lang['kergejõustik'] = 'Kergejõustik';
 $lang['rattasõit'] = 'Rattasõit';
+
+$lang["annetused"] = "Anneta";

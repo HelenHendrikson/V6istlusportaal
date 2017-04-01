@@ -33,3 +33,7 @@ $lang['vehklemine'] = 'Fencing';
 $lang['iluvõimlemine'] = 'Rhythmic gymnastics';
 $lang['kergejõustik'] = 'Sport of athletes';
 $lang['rattasõit'] = 'Cycling';
+
+//
+$lang['annetused'] = 'Donate';
+
