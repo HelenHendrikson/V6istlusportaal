@@ -4,7 +4,7 @@
 		<div class="col-xs-6 col-sm-4" id="leftPart">
             <div class="lisavoistlus">
                 <form id="competitionForm">
-                    <B id="tulevasedVoistlused"><?php echo $this->lang->line('tulevad_võistlused') . ":"?></b> <br>
+                    <h3 id="tulevasedVoistlused"><?php echo $this->lang->line('tulevad_võistlused') . ":"?></h3> <br>
                     <select class="form-control" name="võistlused" size="20" id="voistlusSelect">
                         <?php if(isset($voistlused)){
                             foreach ($voistlused as $voistlus){ ?>
@@ -13,7 +13,8 @@
                         } ?>
 
                     </select>
-                    <input id="vaata_voistlust" type="submit" value="<?php echo $this->lang->line('vaata_võistlust_nupp')?>">
+					<br>
+                    <input id="vaata_voistlust" class="btn btn-special"type="submit" value="<?php echo $this->lang->line('vaata_võistlust_nupp')?>">
                 </form>
             </div>
             <br>

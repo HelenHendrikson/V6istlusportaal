@@ -55,7 +55,7 @@ $fields = array(
         "VK_LANG"        => "EST",
         "VK_MSG"         => "Annetus",
         "VK_RETURN"      => 'http' . '://' . $_SERVER['HTTP_HOST'] .
-                                            dirname ($_SERVER['PHP_SELF']) . '/makseKatkestatud', //ajutine
+                                            dirname ($_SERVER['PHP_SELF']) . '/makseSooritatud', //ajutine
         "VK_CANCEL"      => 'http' . '://' . $_SERVER['HTTP_HOST'] .
                                             dirname ($_SERVER['PHP_SELF']) . '/makseKatkestatud',
         "VK_DATETIME"    => "2017-03-31T14:36:13+0300",
@@ -117,18 +117,19 @@ $fields["VK_MAC"] = base64_encode($signature);
 					<input type="text" name="DONATOR_NAME" id="donator">
 				</div>
 				<div class="form-group">
-					<label for="DONATOR-ACCOUNT"> Konto </label>
+					<label for="DONATOR_ACCOUNT"> Kontonumber </label>
 					<input type="text" name="DONATOR_ACCOUNT" id="bank-account">
 				</div>
 				<div class="form-group">
-					 <button class="brimary-btn" type="submit"><a href="pay.php">Maksa</a> </button>
+					<tr><td colspan="2"><input type="submit" value="Maksma" /></td></tr>
+					 <!--<button class="brimary-btn" type="submit">Maksa</a> </button>-->
 				</div>
 			</div>
 		</div>
 		
 
-                <!-- when the user clicks "Edasi panga lehele" form data is sent to the bank -->
-                <tr><td colspan="2"><input type="submit" value="Edasi panga lehele" /></td></tr>
+                <!-- when the user clicks "Edasi panga lehele" form data is sent to the bank 
+                <tr><td colspan="2"><input type="submit" value="Edasi panga lehele" /></td></tr> -->
             </table>
         </form>
 </div>

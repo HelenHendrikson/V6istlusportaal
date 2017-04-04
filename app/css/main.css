@@ -107,12 +107,26 @@ body {
 }
 
 
-@media(max-width: 768px) {
-    .modal-dialog {
-		width: 300px; /* New width for default modal */
-		margin: 30px auto;
-    }
-		
+
+
+.btn-special {
+	background-color: #849ce0;
+	border-color:#849ce0;
+	font-size: 1.2em;
+	font-family: cursive;
+	color: #020717;
 }
 
-	
+.btn-special:hover {
+	background-color: grey;
+	color: white;
+	border-color: grey;
+}
+
+.navbar-default .navbar-nav>li>a {
+	font-family: cursive;
+}
+
+.navbar-header {
+	font-family: cursive;
+}

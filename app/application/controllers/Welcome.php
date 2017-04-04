@@ -77,5 +77,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('makseKatkestatud');
 		
 	}
+	
+	public function makseSooritatud(){
+		$title['title'] = 'makseSooritatud';
+		$this->load->view('menu', $title);
+		$this->load->view('makseSooritatud');
+		
+	}
 
 }
