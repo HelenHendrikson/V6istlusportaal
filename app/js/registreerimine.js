@@ -62,7 +62,7 @@ $(document).ready(function(){
 		if (valid) {
             $.ajax({
                 type: "POST",
-                url: "/app/index.php/login/registration",  // andreasel oli siin /app ka veel ees
+                url: "/index.php/login/registration",  // andreasel oli siin /app ka veel ees
                 data: {"username" : username.value,
                 		"firstname" : name.value,
 						"lastname" : lastname.value,

@@ -19,8 +19,12 @@ $(document).ready(function() {
                     message = "Palun kontrollige oma kasutajanime";
                 } else if (outcome == "failure") {
                     message = "palun kontrollige oma kasutajanime ja parooli";
-                } else if (outcome == "success") {            //sisselogimine õnnestus
-                    $("#login-modal").hide();                           //HELEN, TÄIUSTA SEDA KOHTA
+                } else if (outcome == "success") {            
+					$("#login-modal").modal('hide');
+					$("#login-toggle").hide();
+					//document.getElementById("login-toggle").innerHTML="Logi välja"; peab vist ikka uue buttoni tegema välja logimiseks
+					
+					
                 }
 
                 var kuvatud_info = document.getElementById("lisainfo");
