@@ -19,8 +19,8 @@ $(document).ready(function() {
                     message = "Palun kontrollige oma kasutajanime";
                 } else if (outcome == "failure") {
                     message = "palun kontrollige oma kasutajanime ja parooli";
-                } else {
-                    message = "õnnestus";
+                } else if (outcome == "success") {            //sisselogimine õnnestus
+                    $("#login-modal").hide();                           //HELEN, TÄIUSTA SEDA KOHTA
                 }
 
                 var kuvatud_info = document.getElementById("lisainfo");
