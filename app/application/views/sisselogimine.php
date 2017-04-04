@@ -8,7 +8,8 @@
                     <h2 class="modal-title text-center">Logi sisse</h2>
                     <br>
                 </div>
-                <form action="<?php echo base_url();?>index.php/login" method="post" accept-charset="UTF-8" class="form" id="login-form">
+                <div class="col-xs-12" id="login_heading"></div>
+                <form method="post" accept-charset="UTF-8" class="form" id="login-form">
                     <div class="form-group">
                         <label for="username">Kasutajanimi</label>
                         <input class="form-control" id="login-username" type="text" name="user" placeholder="kasutajanimi">
@@ -25,7 +26,7 @@
                     </div>
 
                     <input class="pull-left btn btn-default" onclick="showRegister()" type="button"  name="register" value="Registreeru">
-                    <input class="pull-right btn btn-primary" type="submit" name="login" value="Logi sisse">
+                    <input class="pull-right btn btn-primary" onclick="log_in()" type="button" name="login" value="Logi sisse">
                 </form>
 
                 <div class="row">

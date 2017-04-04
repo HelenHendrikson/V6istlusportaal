@@ -8,20 +8,31 @@ class Login extends CI_Controller
         $this->load->model('sportlaste_model');
 
         $data = array(
-            'username' => $this->input->post('user'),
-            'password' => $this->input->post('pass'),
+            'username' => $this->input->post('username'),
+            'password' => $this->input->post('password'),
         );
 
-        $result = $this -> sportlaste_model -> get_account_password($data['username']);
-        echo $result;
-        $password = $result[0]->parool;
-
-
-        if (password_verify($data["password"], $password))
-        {
-            // Sisselogimine õnnestus
-            redirect("welcome");
+        $query_result = $this -> sportlaste_model -> get_account_password($data['username']);
+        $count = count($query_result);
+        if ($count == 0) {              // selle nimelist kasutajanime ei leidu
+            $result = "no account";
+        } else {
+            $password = $query_result[0]->parool;
+            if (password_verify($data["password"], $password))
+            {
+                $result = "success";
+            } else {
+                $result = "failure";
+            }
         }
+
+        $result_array = array (
+            $result => 'outcome'
+        );
+
+        $xml = new SimpleXMLElement('<root/>');
+        array_walk_recursive($result_array, array ($xml, 'addChild'));
+        echo $xml->asXML();
     }
 
 
@@ -38,37 +49,53 @@ class Login extends CI_Controller
             'parool' => $this->input->post('password')
         );
 
-        //teen xss tõrje
-        $cleaned = $this->security->xss_clean($data);
-        if ($cleaned == $data) {
-            //kontrollin vormi sobivust ka serveris
-            $this->form_validation->set_rules('username', 'Username', array('required', 'min_length[3]', 'max_length[30]'));
-            $this->form_validation->set_rules('firstname', 'Name', array('required', 'min_length[2]', "max_length[30]"));
-            $this->form_validation->set_rules('lastname', 'Last name', array('required', 'min_length[2]', "max_length[30]"));
-            $this->form_validation->set_rules('meil', 'Mail', array('required', 'valid_email', "max_length[30]"));
-            $this->form_validation->set_rules('password', 'Password', array('required', "min_length[6]", "max_length[256]"));
+        if ($this->usernameAvilable($data["kasutajanimi"])) {
+            //teen xss tõrje
+            $cleaned = $this->security->xss_clean($data);
+            if ($cleaned == $data) {
+                //kontrollin vormi sobivust ka serveris
+                $this->form_validation->set_rules('username', 'Username', array('required', 'min_length[3]', 'max_length[30]'));
+                $this->form_validation->set_rules('firstname', 'Name', array('required', 'min_length[2]', "max_length[30]"));
+                $this->form_validation->set_rules('lastname', 'Last name', array('required', 'min_length[2]', "max_length[30]"));
+                $this->form_validation->set_rules('meil', 'Mail', array('required', 'valid_email', "max_length[30]"));
+                $this->form_validation->set_rules('password', 'Password', array('required', "min_length[6]", "max_length[256]"));
 
-            if ($this->form_validation->run()) {
-                $this->load->model('sportlaste_model');
+                if ($this->form_validation->run()) {
+                    $this->load->model('sportlaste_model');
 
-                // räsistan parooli
-                $data["parool"] = password_hash($data["parool"], PASSWORD_BCRYPT);
-                $this->sportlaste_model->form_insert($data);
-                $outcome = "success";
+                    // räsistan parooli
+                    $data["parool"] = password_hash($data["parool"], PASSWORD_BCRYPT);
+                    $this->sportlaste_model->form_insert($data);
+                    $outcome = "success";
+                } else {
+                    $outcome = "failed";
+                }
             } else {
-            $outcome = "failed";
+                $outcome = "xss problem";
             }
         } else {
-            $outcome = "xss problem";
+            $outcome = "username in use";
         }
 
 
-        $test_array = array (
+        $result_array = array (
             $outcome => 'outcome'
         );
 
         $xml = new SimpleXMLElement('<root/>');
-        array_walk_recursive($test_array, array ($xml, 'addChild'));
+        array_walk_recursive($result_array, array ($xml, 'addChild'));
         echo $xml->asXML();
+    }
+
+    private function usernameAvilable($username) {
+        $this->load->model('sportlaste_model');
+
+        $query_result = $this -> sportlaste_model -> get_account_password($username);
+        $count = count($query_result);
+        if ($count == 0) {              // selle nimelist kasutajanime ei leidu
+            return true;
+        } else {
+            return false;
+        }
     }
 }
