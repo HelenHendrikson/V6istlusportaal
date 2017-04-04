@@ -8,20 +8,31 @@ class Login extends CI_Controller
         $this->load->model('sportlaste_model');
 
         $data = array(
-            'username' => $this->input->post('user'),
-            'password' => $this->input->post('pass'),
+            'username' => $this->input->post('username'),
+            'password' => $this->input->post('password'),
         );
 
-        $result = $this -> sportlaste_model -> get_account_password($data['username']);
-        echo $result;
-        $password = $result[0]->parool;
-
-
-        if (password_verify($data["password"], $password))
-        {
-            // Sisselogimine õnnestus
-            redirect("welcome");
+        $query_result = $this -> sportlaste_model -> get_account_password($data['username']);
+        $count = count($query_result);
+        if ($count == 0) {              // selle nimelist kasutajanime ei leidu
+            $result = "no account";
+        } else {
+            $password = $query_result[0]->parool;
+            if (password_verify($data["password"], $password))
+            {
+                $result = "success";
+            } else {
+                $result = "failure";
+            }
         }
+
+        $result_array = array (
+            $result => 'outcome'
+        );
+
+        $xml = new SimpleXMLElement('<root/>');
+        array_walk_recursive($result_array, array ($xml, 'addChild'));
+        echo $xml->asXML();
     }
 
 
@@ -63,12 +74,12 @@ class Login extends CI_Controller
         }
 
 
-        $test_array = array (
+        $result_array = array (
             $outcome => 'outcome'
         );
 
         $xml = new SimpleXMLElement('<root/>');
-        array_walk_recursive($test_array, array ($xml, 'addChild'));
+        array_walk_recursive($result_array, array ($xml, 'addChild'));
         echo $xml->asXML();
     }
 }
