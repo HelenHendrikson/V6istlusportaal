@@ -78,6 +78,7 @@ $(document).ready(function(){
                     console.log(outcome);
                     if (outcome == "success") messages.push("Registreerimine õnnestus");
                     else if (outcome == "failed") messages.push("Server ei aktsepteerinud teie sisestatud andmeid");
+                    else if (outcome == "username in use") messages.push("Kasutajanimi on juba kasutuses");
                     else messages.push("Te ei läbinud xss tõrjet");
                     console.log(messages);
                     showMessages(messages, heading);

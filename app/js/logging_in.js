@@ -11,8 +11,6 @@ $(document).ready(function() {
                 "password" : password.value},
             dataType:'xml',
             success: function(data) {
-                console.log("info saadud");
-                console.log(data);
                 var $xml = $(data);
                 var outcome = $xml.find('outcome').text();
 
@@ -23,7 +21,6 @@ $(document).ready(function() {
                     message = "palun kontrollige oma kasutajanime ja parooli";
                 } else {
                     message = "õnnestus";
-                    //sisselogimine õnnestus
                 }
 
                 var kuvatud_info = document.getElementById("lisainfo");
@@ -37,7 +34,6 @@ $(document).ready(function() {
                 heading.appendChild(info);
             }, error: function (data) {
                 console.log("error");
-                console.log(data);
             }
         })
     }
