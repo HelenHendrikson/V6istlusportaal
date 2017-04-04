@@ -55,7 +55,7 @@ $fields = array(
         "VK_LANG"        => "EST",
         "VK_MSG"         => "Annetus",
         "VK_RETURN"      => 'http' . '://' . $_SERVER['HTTP_HOST'] .
-                                            dirname ($_SERVER['PHP_SELF']) . '/makseSooritatud', //ajutine
+                                            dirname ($_SERVER['PHP_SELF']) . '/receive', 
         "VK_CANCEL"      => 'http' . '://' . $_SERVER['HTTP_HOST'] .
                                             dirname ($_SERVER['PHP_SELF']) . '/makseKatkestatud',
         "VK_DATETIME"    => "2017-03-31T14:36:13+0300",
@@ -100,8 +100,7 @@ $fields["VK_MAC"] = base64_encode($signature);
 
 <div class="container" id="content1">
 
-        <h1><a href="http://localhost:8080/">Pangalink-net</a></h1>
-        <p>Makse teostamise näidisrakendus <strong>"Pangalink"</strong></p>
+
 
         <form method="post" action="http://localhost:8080/banklink/swedbank-common">
             <!-- include all values as hidden form fields -->

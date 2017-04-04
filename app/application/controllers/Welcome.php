@@ -78,10 +78,10 @@ class Welcome extends CI_Controller {
 		
 	}
 	
-	public function makseSooritatud(){
-		$title['title'] = 'makseSooritatud';
+	public function receive(){
+		$title['title'] = 'receive';
 		$this->load->view('menu', $title);
-		$this->load->view('makseSooritatud');
+		$this->load->view('receive');
 		
 	}
 
