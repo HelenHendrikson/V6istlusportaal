@@ -107,29 +107,17 @@ $fields["VK_MAC"] = base64_encode($signature);
 			<?php foreach($fields as $key => $val){
 					echo '<input type="hidden" name="' .$key . '"value="' . htmlspecialchars($val). '" />' . "\n";
 				}
-?>
-		<h2 id="annetusedpealkiri" class="alert alert-info"> Siin saad teha annetuse!</h2>
-		<div class="row">
-			<div class="col-xs-6">
-				<div class="form-group">
-					<label for="DONATOR_NAME">Maksja </label>
-					<input type="text" name="DONATOR_NAME" id="donator">
-				</div>
-				<div class="form-group">
-					<label for="DONATOR_ACCOUNT"> Kontonumber </label>
-					<input type="text" name="DONATOR_ACCOUNT" id="bank-account">
-				</div>
-				<div class="form-group">
-					<tr><td colspan="2"><input type="submit" value="Maksma" /></td></tr>
-					 <!--<button class="brimary-btn" type="submit">Maksa</a> </button>-->
+?>			<div class="row">
+				<h2 id="annetusedpealkiri" class="alert"> Siin saad teha annetuse!</h2>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<h3>Korrega saab annetada 150 eurot! </h3>
+					<div class="form-group">
+						<tr><td colspan="2"><input type="submit" class="btn btn-special" value="Annetama!" /></td></tr>
+					</div>
 				</div>
 			</div>
-		</div>
-		
-
-                <!-- when the user clicks "Edasi panga lehele" form data is sent to the bank 
-                <tr><td colspan="2"><input type="submit" value="Edasi panga lehele" /></td></tr> -->
-            </table>
         </form>
 </div>
 

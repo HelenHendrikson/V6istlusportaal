@@ -37,6 +37,11 @@ body {
 	color:  black;
 }
 
+.navbar-default .navbar-brand {
+	color:#667fca;
+	font-size: 2em;
+}
+
 
 
 
@@ -116,7 +121,6 @@ body {
 	font-family: cursive;
 	color: #020717;
 	margin-right: 2em;
-	margin-bottom: 1em;
 	
 }
 
@@ -128,8 +132,17 @@ body {
 
 .navbar-default .navbar-nav>li>a {
 	font-family: cursive;
+	font-size: 1.2em;
 }
 
 .navbar-header {
 	font-family: cursive;
+}
+
+.btn2, .g-signin2{
+	margin-top: 1em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	margin-bottom: 1em;
+	
 }
