@@ -22,11 +22,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	-->
 
+
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css"  type="text/css" />  
+	
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.0.0.min.js"></script> 
+	<script>
+		if (typeof jQuery == 'undefined') {
+			document.write(unescape("%3Cscript src='/js/jquery-3.2.0.min.js' type='text/javascript'%3E%3C/script%3E"));
+		}
+	</script>
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/main.css"  type="text/css" /> 
 	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script> -->
 	
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
