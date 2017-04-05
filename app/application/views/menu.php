@@ -5,12 +5,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="170033066137-gftsp3892marqlc68sf036u5gbn0otv3.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<?php
     if(isset($title)){
@@ -36,8 +30,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="<?php echo base_url(); ?>js/logout.js"></script>
-	<script src="<?php echo base_url(); ?>js/googlelogin.js"></script>
 	<script src="<?php echo base_url(); ?>js/registreerimine.js"></script>
 	<script src="<?php echo base_url(); ?>js/infoAboutCompetition.js"></script>
 	<script src="<?php echo base_url(); ?>js/PiltideHilisemLaadimine.js"></script>
@@ -80,15 +72,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li> 
 							<button id="login-toggle" type="button" class="btn btn-default navbar-button btn-special" data-toggle="modal" data-modal-id="login-modal" data-target="#login-modal" data-placement="bottom" data-original-title="login" >Logi sisse</button>	
 						</li>
-							
-						<li>
-							<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-						</li>
-						<li>
-							<button id="logging" onclick="signOut();">Sign out</button>
-						
-						</li>
-						<script src="<?php echo base_url(); ?>js/loginned.js"></script>
 						<li>
 							<a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
 								<img src="<?PHP echo base_url(); ?>images/eng.png" alt="Inglise keel" class="img-keel"/>
