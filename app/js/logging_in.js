@@ -21,10 +21,8 @@ $(document).ready(function() {
                     message = "palun kontrollige oma kasutajanime ja parooli";
                 } else if (outcome == "success") {            
 					$("#login-modal").modal('hide');
-					$("#login-toggle").hide();
+					//$("#login-toggle").hide();        //kaotab login nupu
 					//document.getElementById("login-toggle").innerHTML="Logi välja"; peab vist ikka uue buttoni tegema välja logimiseks
-					
-					
                 }
 
                 var kuvatud_info = document.getElementById("lisainfo");
