@@ -3,15 +3,11 @@ $(document).ready(function(){
 	$("input[data-toggle=\"tooltip\"]").tooltip();   
 	$("#register-panel").hide();
 
-	window.showRegister = function() {
-		$("#register-panel").show();
-		$("#login-panel").hide();
-	}
-
 	window.showLogin = function() {
+		puhasta_registreerimise_info();
 		$("#register-panel").hide();
 		$("#login-panel").show();
-	}
+	};
 	
 	window.validate = function() {
 
@@ -62,7 +58,7 @@ $(document).ready(function(){
 		if (valid) {
             $.ajax({
                 type: "POST",
-                url: "/index.php/login/registration",  // andreasel oli siin /app ka veel ees
+                url: "/app/index.php/login/registration",  // andreasel oli siin /app ka veel ees
                 data: {"username" : username.value,
                 		"firstname" : name.value,
 						"lastname" : lastname.value,
@@ -70,17 +66,16 @@ $(document).ready(function(){
 						"password" : password.value},
                 dataType:'xml',
                 success: function(data) {
-                    console.log("info saadetud");
-                    console.log(data);
                     var $xml = $(data);
                     var outcome = $xml.find('outcome');
                     outcome = outcome.text();
-                    console.log(outcome);
-                    if (outcome == "success") messages.push("Registreerimine õnnestus");
+                    if (outcome == "success") {
+                    	showLogin();
+                    	showSuccessfulRegistrationInfo()
+                    }
                     else if (outcome == "failed") messages.push("Server ei aktsepteerinud teie sisestatud andmeid");
                     else if (outcome == "username in use") messages.push("Kasutajanimi on juba kasutuses");
                     else messages.push("Te ei läbinud xss tõrjet");
-                    console.log(messages);
                     showMessages(messages, heading);
                 }, error: function (data) {
 					console.log("error");
@@ -98,11 +93,7 @@ function validateEmail(email) {
 }
 
 function showMessages(messages, heading) {
-    var kuvatud_info = document.getElementById("lisainfo");
-    while (kuvatud_info != null) {
-        kuvatud_info.remove();
-        kuvatud_info = document.getElementById("lisainfo");
-    }
+	puhasta_registreerimise_info();
     for (var i = 0; i < messages.length; i++) {
         var info = document.createElement("p");
         info.setAttribute("id", "lisainfo");
@@ -111,8 +102,22 @@ function showMessages(messages, heading) {
     }
 }
 
+function showSuccessfulRegistrationInfo() {
+	var heading = document.getElementById("login_heading");
+	var info = document.createElement("p");
+	info.innerHTML = "Registreerimine õnnestus";
+	info.id = "registreerimisinfo";
+	heading.appendChild(info);
+}
+
+function puhasta_registreerimise_info() {
+    var kuvatud_info = document.getElementById("lisainfo");
+    while (kuvatud_info != null) {
+        kuvatud_info.remove();
+        kuvatud_info = document.getElementById("lisainfo");
+    }
+}
+
 
 		
 			
-			
-		

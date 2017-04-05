@@ -25,18 +25,36 @@ $(document).ready(function() {
 					//document.getElementById("login-toggle").innerHTML="Logi välja"; peab vist ikka uue buttoni tegema välja logimiseks
                 }
 
-                var kuvatud_info = document.getElementById("lisainfo");
-                if (kuvatud_info != null) {
-                    kuvatud_info.remove();
+                puhasta_login_info();
+                var registreerimine = document.getElementById("registreerimisinfo");     //puhastan registreeriine õnnestus kirja kui see on olemas
+                if (registreerimine != null) {
+                    registreerimine.remove();
                 }
+
                 var heading = document.getElementById("login_heading");
                 var info = document.createElement("p");
                 info.setAttribute("id", "lisainfo");
                 info.innerHTML = message;
                 heading.appendChild(info);
+                console.log(heading);
             }, error: function (data) {
                 console.log("error");
             }
         })
-    }
+    };
+
+    window.showRegister = function() {
+        puhasta_login_info();
+        $("#register-panel").show();
+        $("#login-panel").hide();
+    };
 });
+
+
+function puhasta_login_info() {
+    var kuvatud_info = document.getElementById("lisainfo");
+    if (kuvatud_info != null) {
+        kuvatud_info.remove();
+    }
+}
+
