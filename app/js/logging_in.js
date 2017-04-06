@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var url = "/app/index.php/login/";  // andreasel oli siin /app ka veel ees
 
     window.log_in = function () {
         var username = document.getElementById("login-username");
@@ -6,7 +7,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "/app/index.php/login/",  // andreasel oli siin /app ka veel ees
+            url: url,
             data: {"username" : username.value,
                 "password" : password.value},
             dataType:'xml',
@@ -23,6 +24,7 @@ $(document).ready(function() {
 					$("#login-modal").modal('hide');
 					//$("#login-toggle").hide();        //kaotab login nupu
 					//document.getElementById("login-toggle").innerHTML="Logi välja"; peab vist ikka uue buttoni tegema välja logimiseks
+                    location.reload();
                 }
 
                 puhasta_login_info();

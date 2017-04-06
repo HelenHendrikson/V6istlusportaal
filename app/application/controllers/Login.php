@@ -29,7 +29,8 @@ class Login extends CI_Controller
             {
                 $session_data = array(
                     "user_id" => $row->id,
-                    "sports_id" => $row->spordiala_id
+                    "sports_id" => $row->spordiala_id,
+                    "logged_in" => true
                 );
                 $this->session->set_userdata($session_data);
                 $result = "success";
@@ -109,5 +110,13 @@ class Login extends CI_Controller
         } else {
             return false;
         }
+    }
+
+    public function log_out() {
+        $session_items = array('user_id', 'sports_id', 'logged_in');
+        $this->session->unset_userdata($session_items);
+
+        $this->session->sess_destroy();
+        redirect("welcome");
     }
 }

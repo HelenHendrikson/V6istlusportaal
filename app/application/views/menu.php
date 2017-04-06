@@ -79,9 +79,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					<ul class="nav navbar-nav navbar-right">
 						
-						<li> 
-							<button id="login-toggle" type="button" class="btn btn-default navbar-button btn-special btn2" data-toggle="modal" data-modal-id="login-modal" data-target="#login-modal" data-placement="bottom" data-original-title="login" >Logi sisse</button>	
-						</li>
+						<li>
+                            <?php if ($this->session->userdata("logged_in")) {?>
+                                <form action=<?php echo base_url(); ?>index.php/login/log_out >
+                                    <input type="submit" class="btn btn-default navbar-button btn-special btn2" value="Logi välja" />
+                                </form>
+                            <?php } else {?>
+                                <button id="login-toggle" type="button" class="btn btn-default navbar-button btn-special btn2" data-toggle="modal" data-modal-id="login-modal" data-target="#login-modal" data-placement="bottom" data-original-title="login" >Logi sisse</button>
+                            <?php } ?>
+                        </li>
 						<li>
 							<a href="<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/english">
 								<img src="<?PHP echo base_url(); ?>images/eng.png" alt="Inglise keel" class="img-keel"/>
