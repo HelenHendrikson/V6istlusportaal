@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css"  type="text/css" />  
 	
-	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.0.0.min.js"></script> 
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.0.0.min.js"></script>
 	<script>
 		if (typeof jQuery == 'undefined') {
 			document.write(unescape("%3Cscript src='/js/jquery-3.2.0.min.js' type='text/javascript'%3E%3C/script%3E"));
