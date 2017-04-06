@@ -2,6 +2,11 @@
 
 class Login extends CI_Controller
 {
+    function __construct()
+    {
+        parent::__construct();
+    }
+
 
     public function index()
     {
@@ -12,14 +17,21 @@ class Login extends CI_Controller
             'password' => $this->input->post('password'),
         );
 
-        $query_result = $this -> sportlaste_model -> get_account_password($data['username']);
-        $count = count($query_result);
-        if ($count == 0) {              // selle nimelist kasutajanime ei leidu
+        $query_result = $this -> sportlaste_model -> get_account_data($data['username']);
+        $count = $query_result->num_rows();
+        $row = $query_result->row();
+
+        if ($count == 0) {              // sellenimelist kasutajanime ei leidu
             $result = "no account";
         } else {
-            $password = $query_result[0]->parool;
+            $password = $row->parool;
             if (password_verify($data["password"], $password))
             {
+                $session_data = array(
+                    "user_id" => $row->id,
+                    "sports_id" => $row->spordiala_id
+                );
+                $this->session->set_userdata($session_data);
                 $result = "success";
             } else {
                 $result = "failure";
@@ -90,9 +102,9 @@ class Login extends CI_Controller
     private function usernameAvilable($username) {
         $this->load->model('sportlaste_model');
 
-        $query_result = $this -> sportlaste_model -> get_account_password($username);
+        $query_result = $this -> sportlaste_model -> get_account_availability($username);
         $count = count($query_result);
-        if ($count == 0) {              // selle nimelist kasutajanime ei leidu
+        if ($count == 0) {              // sellenimelist kasutajanime ei leidu
             return true;
         } else {
             return false;

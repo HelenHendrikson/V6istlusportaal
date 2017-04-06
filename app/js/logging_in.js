@@ -26,10 +26,6 @@ $(document).ready(function() {
                 }
 
                 puhasta_login_info();
-                var registreerimine = document.getElementById("registreerimisinfo");     //puhastan registreeriine õnnestus kirja kui see on olemas
-                if (registreerimine != null) {
-                    registreerimine.remove();
-                }
 
                 var heading = document.getElementById("login_heading");
                 var info = document.createElement("p");
@@ -55,6 +51,11 @@ function puhasta_login_info() {
     var kuvatud_info = document.getElementById("lisainfo");
     if (kuvatud_info != null) {
         kuvatud_info.remove();
+    }
+
+    var registreerimine = document.getElementById("registreerimisinfo");     //puhastan registreeriine õnnestus kirja kui see on olemas
+    if (registreerimine != null) {
+        registreerimine.remove();
     }
 }
 

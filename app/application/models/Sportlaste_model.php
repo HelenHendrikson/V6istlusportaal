@@ -47,10 +47,15 @@ class Sportlaste_model extends CI_Model{
         return $query->result_array();
     }
 
-    public function get_account_password($username)
+    public function get_account_data($username)
     {
-        $query = $this->db->query('call get_password("' . $username . '")');
-        return $query->result();
+        $query = $this->db->query('call get_account_data("' . $username . '")');
+        return $query;
     }
 
+    public function get_account_availability($username)
+    {
+        $query = $this->db->query('call kas_kasutaja_olemas("' . $username . '")');
+        return $query->result();
+    }
 }
