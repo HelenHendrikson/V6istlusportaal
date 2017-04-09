@@ -47,7 +47,7 @@ function fetchAndInsert(voistluse_id) {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "/app/index.php/sports/saa_voistluse_info/" + voistluse_id,
+        url: "/index.php/sports/saa_voistluse_info/" + voistluse_id,
         success: function (data) {
             //making important data variables
             var participants_count = data["count"][0]["arv"];

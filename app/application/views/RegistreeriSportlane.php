@@ -5,14 +5,12 @@
              <button type="button" class="close" data-dismiss="modal">&times;</button>
             <div class="login-panel" id="login-panel">
                 <div class="panel-header">
-                    <h2 class="modal-title text-center">Registreeri sportlane</h2>
+                    <h2 class="modal-title text-center">Võistlusele registreerimine</h2>
                     <br>
                 </div>
                 <div class="col-xs-12" id="login_heading"></div>
                  <form id="registrationForm">
-					<select class="form-control" name="registration" size="15" id="athlete_select">
-						<OPTION> <?php echo $võistleja["eesnimi"] . " " . $võistleja["perenimi"] ?></OPTION>
-					</select>
+					<input type="checkbox"> Helen Hendrikson<br>
 					<input class="btn btn-default btn-special btn2" type="button"  name="add_athlete" value="Registreeri sportlane">
 				 </form>
 			</div>
