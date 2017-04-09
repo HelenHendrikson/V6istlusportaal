@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var url = "/app/index.php/login/";  // andreasel oli siin /app ka veel ees
+    var url = "/index.php/login/";  // andreasel oli siin /app ka veel ees
 
     window.log_in = function () {
         var username = document.getElementById("login-username");
@@ -23,7 +23,6 @@ $(document).ready(function() {
                 } else if (outcome == "success") {            
 					$("#login-modal").modal('hide');
 					//$("#login-toggle").hide();        //kaotab login nupu
-					//document.getElementById("login-toggle").innerHTML="Logi välja"; peab vist ikka uue buttoni tegema välja logimiseks
                     location.reload();
                 }
 

@@ -4,7 +4,8 @@
 		<div class="col-xs-6 col-sm-4" id="leftPart">
             <div class="lisavoistlus">
                 <form id="competitionForm">
-                    <h3 id="tulevasedVoistlused"><?php echo $this->lang->line('tulevad_võistlused') . ":"?></h3> <br>
+                    <!--<h3 id="tulevasedVoistlused"><?php echo $this->lang->line('tulevad_võistlused') . ":"?></h3> <br> -->
+					<label for="voistlusSelect"id="tulevasedVoistlused"><?php echo $this->lang->line('tulevad_võistlused') . ":"?></label>
                     <select class="form-control" name="võistlused" size="20" id="voistlusSelect">
                         <?php if(isset($voistlused)){
                             foreach ($voistlused as $voistlus){ ?>
@@ -32,15 +33,17 @@
 
 		<div class="col-xs-6 col-sm-4" id="rightPart">
             <?php if(isset($võistlejad)){ ?>
-                <p id="osalejateArv"><?php echo $this->lang->line('registreerinute_teksti_esimene_pool') . " " .  $count[0]["arv"]  . " " . $this->lang->line('registreerinute_teksti_teine_pool') ?></p>
+                <!--<p id="osalejateArv"><?php echo $this->lang->line('registreerinute_teksti_esimene_pool') . " " .  $count[0]["arv"]  . " " . $this->lang->line('registreerinute_teksti_teine_pool') ?></p> -->
+				<label for="sportsmen" id="osalejateArv"><?php echo $this->lang->line('registreerinute_teksti_esimene_pool') . " " .  $count[0]["arv"]  . " " . $this->lang->line('registreerinute_teksti_teine_pool') ?></label> 
 
-                <SELECT id="sportsmen" class="form-control" name="Sportlased" size="18">
+                <select id="sportsmen" class="form-control" name="Sportlased" size="18">
                     <?php foreach ($võistlejad as $võistleja){ ?>
-                        <OPTION> <?php echo $võistleja["eesnimi"] . " " . $võistleja["perenimi"] ?></OPTION>
+                        <option> <?php echo $võistleja["eesnimi"] . " " . $võistleja["perenimi"] ?></option>
                     <?php  } ?>
-                </SELECT>
+                </select>
 				
             <?php } else { ?>
+			
                 <p id="osalejateArv"></p>
 				
             <?php } ?>

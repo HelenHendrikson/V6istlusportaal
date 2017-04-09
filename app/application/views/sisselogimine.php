@@ -11,7 +11,7 @@
                 <div class="col-xs-12" id="login_heading"></div>
                 <form method="post" accept-charset="UTF-8" class="form" id="login-form">
                     <div class="form-group">
-                        <label for="username">Kasutajanimi</label>
+                        <label for="login-username">Kasutajanimi</label>
                         <input class="form-control" id="login-username" type="text" name="user" placeholder="kasutajanimi">
                     </div>
 
@@ -47,7 +47,7 @@
                 </div>
                 <form method="post" accept-charset="UTF-8" class="form" id="reg-form">
 					<div class="form-group">
-						<label for="username">Kasutajanimi</label>
+						<label for="register-username">Kasutajanimi</label>
 						<input type="text" placeholder="Kasutajanimi" id="register-username" data-toggle="tooltip" data-original-title="Sisesta kasutajanimi" data-placement="right">
 					</div>
 					<div class="form-group">
