@@ -5,15 +5,15 @@ $(document).ready(function() {
         var form = document.getElementById("voistlusSelect");
         var voistluse_id = form.options[form.selectedIndex].value;
 
-
         var currentURL = window.location.href;
         var currentURLending = currentURL.split("/").pop();
+        var url;
         if (isNaN(currentURLending)) {
             //url last element isn't number
-            var url = currentURL;
+             url = currentURL;
         } else {
             var nrIndex = currentURL.lastIndexOf("/");
-            var url = currentURL.substring(0, nrIndex);
+            url = currentURL.substring(0, nrIndex);
         }
 
         // changing the url
@@ -43,7 +43,7 @@ function getLanguage() {
     return "et";
 }
 
-function fetchAndInsert(voistluse_id, url) {
+function fetchAndInsert(voistluse_id) {
     $.ajax({
         type: "POST",
         dataType: "json",
@@ -55,7 +55,6 @@ function fetchAndInsert(voistluse_id, url) {
             var distance = data["voistluse_info"][0]["distants"];
             var date = data["voistluse_info"][0]["kuupäev"];
             var language = getLanguage();
-            console.log("aaa");
 
             // Here I change html according to competition data and language
             document.getElementById("nimev2li").innerHTML = name;

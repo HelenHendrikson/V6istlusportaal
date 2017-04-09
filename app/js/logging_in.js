@@ -1,42 +1,39 @@
 $(document).ready(function() {
     var url = "/app/index.php/login/";  // andreasel oli siin /app ka veel ees
+    var storageUser = sessionStorage.getItem('user');
+
+    if (storageUser != null) {               //if logging in failed due to no internet connection
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {
+                "username": storageUser,
+                "password": sessionStorage.getItem('pass')
+            },
+            dataType: 'xml',
+            success: function (data) {
+                logInResultRecieved(data);
+                sessionStorage.removeItem("user");
+                sessionStorage.removeItem("pass");
+            }
+        })
+    }
 
     window.log_in = function () {
-        var username = document.getElementById("login-username");
-        var password = document.getElementById("password");
+        var username = document.getElementById("login-username").value;
+        var password = document.getElementById("password").value;
 
         $.ajax({
             type: "POST",
             url: url,
-            data: {"username" : username.value,
-                "password" : password.value},
+            data: {"username" : username,
+                "password" : password},
             dataType:'xml',
             success: function(data) {
-                var $xml = $(data);
-                var outcome = $xml.find('outcome').text();
-
-                var message;
-                if (outcome == "no account") {
-                    message = "Palun kontrollige oma kasutajanime";
-                } else if (outcome == "failure") {
-                    message = "palun kontrollige oma kasutajanime ja parooli";
-                } else if (outcome == "success") {            
-					$("#login-modal").modal('hide');
-					//$("#login-toggle").hide();        //kaotab login nupu
-					//document.getElementById("login-toggle").innerHTML="Logi välja"; peab vist ikka uue buttoni tegema välja logimiseks
-                    location.reload();
-                }
-
-                puhasta_login_info();
-
-                var heading = document.getElementById("login_heading");
-                var info = document.createElement("p");
-                info.setAttribute("id", "lisainfo");
-                info.innerHTML = message;
-                heading.appendChild(info);
-                console.log(heading);
+                logInResultRecieved(data);
             }, error: function (data) {
-                console.log("error");
+                sessionStorage.setItem('user', username);
+                sessionStorage.setItem('pass', password);
             }
         })
     };
@@ -48,6 +45,30 @@ $(document).ready(function() {
     };
 });
 
+function logInResultRecieved(data) {
+    var $xml = $(data);
+    var outcome = $xml.find('outcome').text();
+
+    var message;
+    if (outcome == "no account") {
+        message = "Palun kontrollige oma kasutajanime";
+    } else if (outcome == "failure") {
+        message = "palun kontrollige oma kasutajanime ja parooli";
+    } else if (outcome == "success") {
+        $("#login-modal").modal('hide');
+        //$("#login-toggle").hide();        //kaotab login nupu
+        //document.getElementById("login-toggle").innerHTML="Logi välja"; peab vist ikka uue buttoni tegema välja logimiseks
+        location.reload();
+    }
+
+    puhasta_login_info();
+
+    var heading = document.getElementById("login_heading");
+    var info = document.createElement("p");
+    info.setAttribute("id", "lisainfo");
+    info.innerHTML = message;
+    heading.appendChild(info);
+}
 
 function puhasta_login_info() {
     var kuvatud_info = document.getElementById("lisainfo");
