@@ -15,7 +15,7 @@
                     </select>
 					<br>
                     <input id="vaata_voistlust" class="btn btn-special"type="submit" value="<?php echo $this->lang->line('vaata_võistlust_nupp')?>">
-					<button id="login-toggle" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="add-modal" data-target="#addComp-modal">Lisa võistlus</button>
+					<!--<button id="login-toggle" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="add-modal" data-target="#addComp-modal">Lisa võistlus</button>-->
                 </form>
             </div>
             <br>
@@ -44,7 +44,7 @@
                 <p id="osalejateArv"></p>
 				
             <?php } ?>
-			<button id="login-toggle" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="registerAthlete-modal" data-target="#registerAthlete-modal">Registreeri sportlane</button>
+			<!--<button id="login-toggle" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="registerAthlete-modal" data-target="#registerAthlete-modal">Registreeri sportlane</button>-->
         </div>
 	</div>
 	
