@@ -1,8 +1,7 @@
 $(document).ready(function() {
-<<<<<<< HEAD
     var url = "/index.php/login/";  // andreasel oli siin /app ka veel ees
-=======
-    var url = "/app/index.php/login/";  // andreasel oli siin /app ka veel ees
+    //var url = "/app/index.php/login/";  // andreasel oli siin /app ka veel ees
+
     var storageUser = sessionStorage.getItem('user');
 
     if (storageUser != null) {               //if logging in failed due to no internet connection
@@ -21,7 +20,6 @@ $(document).ready(function() {
             }
         })
     }
->>>>>>> dc3be269849d9e38b2a44312c412d3c661793a4b
 
     window.log_in = function () {
         var username = document.getElementById("login-username").value;
@@ -34,32 +32,7 @@ $(document).ready(function() {
                 "password" : password},
             dataType:'xml',
             success: function(data) {
-<<<<<<< HEAD
-                var $xml = $(data);
-                var outcome = $xml.find('outcome').text();
-
-                var message;
-                if (outcome == "no account") {
-                    message = "Palun kontrollige oma kasutajanime";
-                } else if (outcome == "failure") {
-                    message = "palun kontrollige oma kasutajanime ja parooli";
-                } else if (outcome == "success") {            
-					$("#login-modal").modal('hide');
-					//$("#login-toggle").hide();        //kaotab login nupu
-                    location.reload();
-                }
-
-                puhasta_login_info();
-
-                var heading = document.getElementById("login_heading");
-                var info = document.createElement("p");
-                info.setAttribute("id", "lisainfo");
-                info.innerHTML = message;
-                heading.appendChild(info);
-                console.log(heading);
-=======
                 logInResultRecieved(data);
->>>>>>> dc3be269849d9e38b2a44312c412d3c661793a4b
             }, error: function (data) {
                 sessionStorage.setItem('user', username);
                 sessionStorage.setItem('pass', password);
