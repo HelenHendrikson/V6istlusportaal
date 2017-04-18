@@ -15,6 +15,11 @@ class Sportlaste_model extends CI_Model{
             . '", "' . $data['meil'] . '", "' . $data['parool'] . '")');
     }
 
+    function add_competition($data)
+    {
+        $this->db->query('call lisa_voistlus("' . $data['name'] . '", "' .  $data['date'] . '", "' . $data['distance']
+            . '", "' .  $data['sports_id'] . '")');
+    }
 
 	public function search($keyword)
 	{

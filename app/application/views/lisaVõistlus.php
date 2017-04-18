@@ -21,8 +21,9 @@
 					<div class="form-group">
                         <label for="comp_distance">Võistluse distants</label>
                         <input class="form-control" id="comp_distance" type="text" name="distance" placeholder="distants">
+                        <input type="hidden" id="sports_id" value="<?php echo $this->session->userdata("sports_id")?>">
                     </div>
-					<input class="btn btn-default btn-special btn2" type="button"  name="add_comp" value="Lisa">
+					<input class="btn btn-default btn-special btn2" type="button" onclick="add_competition()" name="add_comp" value="Lisa">
 				</form>
 			</div>
 		</div>
