@@ -15,6 +15,7 @@ class Sports extends CI_Controller
             $data['count'] = $this -> sportlaste_model -> get_competition_competitors_count($voistluse_id);
         }
         $data['voistlused'] = $this->sportlaste_model->get_competitions(1);
+        $data['id'] = 1;
         $title['title'] = $this->lang->line('vibu');
 
         $this->load->view('menu', $title);
@@ -27,6 +28,7 @@ class Sports extends CI_Controller
         $this->load->model('sportlaste_model');
 
         $data['voistlused'] = $this->sportlaste_model->get_competitions(2);
+        $data['id'] = 2;
         $title['title'] = $this->lang->line('ujumine');
 
         $this->load->view('menu', $title);
@@ -39,6 +41,7 @@ class Sports extends CI_Controller
         $this->load->model('sportlaste_model');
 
         $data['voistlused'] = $this->sportlaste_model->get_competitions(3);
+        $data['id'] = 3;
         $title['title'] = $this->lang->line('tennis');
 
         $this->load->view('menu', $title);
@@ -51,6 +54,7 @@ class Sports extends CI_Controller
         $this->load->model('sportlaste_model');
 
         $data['voistlused'] = $this->sportlaste_model->get_competitions(4);
+        $data['id'] = 4;
         $title['title'] = $this->lang->line('tõstmine');
 
         $this->load->view('menu', $title);
@@ -63,6 +67,7 @@ class Sports extends CI_Controller
         $this->load->model('sportlaste_model');
 
         $data['voistlused'] = $this->sportlaste_model->get_competitions(5);
+        $data['id'] = 5;
         $title['title'] = $this->lang->line('vehklemine');
 
         $this->load->view('menu', $title);
@@ -75,6 +80,7 @@ class Sports extends CI_Controller
         $this->load->model('sportlaste_model');
 
         $data['voistlused'] = $this->sportlaste_model->get_competitions(6);
+        $data['id'] = 6;
         $title['title'] = $this->lang->line('iluvõimlemine');
 
         $this->load->view('menu', $title);
@@ -87,6 +93,7 @@ class Sports extends CI_Controller
         $this->load->model('sportlaste_model');
 
         $data['voistlused'] = $this->sportlaste_model->get_competitions(7);
+        $data['id'] = 7;
         $title['title'] = $this->lang->line('kergejõustik');
 
         $this->load->view('menu', $title);
@@ -99,6 +106,7 @@ class Sports extends CI_Controller
         $this->load->model('sportlaste_model');
 
         $data['voistlused'] = $this->sportlaste_model->get_competitions(8);
+        $data['id'] = 8;
         $title['title'] = $this->lang->line('rattasõit');
 
         $this->load->view('menu', $title);
