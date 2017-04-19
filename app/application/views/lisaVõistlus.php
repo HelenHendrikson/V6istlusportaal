@@ -8,14 +8,14 @@
                     <h2 class="modal-title text-center">Lisa võistlus</h2>
                     <br>
                 </div>
-                <div class="col-xs-12" id="login_heading"></div>
+                <div class="col-xs-12" id="comp_heading"></div>
                 <form method="post" accept-charset="UTF-8" class="form" id="login-form">
                     <div class="form-group">
                         <label for="comp_name">Võistluse nimi</label>
                         <input class="form-control" id="comp_name" type="text" name="name" placeholder="nimi">
                     </div>
 					<div class="form-group">
-                        <label for="comp_date">Võistluse kuupäev</label>
+                        <label for="comp_date">Võistluse kuupäev vormis: aastaarv - kuu numbrina - päev numbrina (nt 2018-01-01)</label>
                         <input class="form-control" id="comp_date" type="text" name="date" placeholder="kuupäev">
                     </div>
 					<div class="form-group">

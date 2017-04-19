@@ -9,13 +9,28 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
+            dataType: "json",
             url: "/app/index.php/competitions/new_comp/",
             data: {"name" : name,
                 "date" : date,
                 "sports_id" : sports,
                 "distance" : distance},
             success: function(data) {
-                console.log("asi ok")
+                if (data == "ok") {
+                    $("#addComp-modal").modal('hide');
+                    location.reload();
+                } else {
+                    var kuvatud_info = document.getElementById("lisainfo");    //eemaldan vana kirja kui see on olemas
+                    if (kuvatud_info != null) {
+                        kuvatud_info.remove();
+                    }
+
+                    var heading = document.getElementById("comp_heading");
+                    var info = document.createElement("p");
+                    info.setAttribute("id", "lisainfo");
+                    info.innerHTML = "Palun kontrollida sisendeid";
+                    heading.appendChild(info);
+                }
             }
         })
     }

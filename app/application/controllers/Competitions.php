@@ -23,6 +23,12 @@ class Competitions extends CI_Controller
         $cleaned = $this->security->xss_clean($data);
         if ($cleaned == $data) {
             $this->sportlaste_model->add_competition($data);
+
+            $this->result = "ok";
+            $this->output->set_content_type('application/json')->set_output(json_encode($this->result));
+        } else {
+            $this->result = "fail";
+            $this->output->set_content_type('application/json')->set_output(json_encode($this->result));
         }
     }
 }
