@@ -111,8 +111,12 @@ $fields["VK_MAC"] = base64_encode($signature);
 				<div class="col-xs-6">
 					<h3>Korrega saab annetada 150 eurot! </h3>
 					<div class="form-group">
-						<tr><td colspan="2"><input type="submit" class="btn btn-special" value="Annetama!" /></td></tr>
-						<!--<input type="submit" class="btn btn-special" value="Annetama!" /> -->
+						<!--<tr><td colspan="2"><input type="submit" class="btn btn-special" value="Annetama!" /></td></tr> -->
+					 <input type="submit" class="btn btn-special" value="Annetama!" />
+						
+						
+						<!--<button type="submit">Annetama</button> -->
+						
 
 						
 					</div>

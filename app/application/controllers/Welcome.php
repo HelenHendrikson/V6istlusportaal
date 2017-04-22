@@ -61,6 +61,7 @@ class Welcome extends CI_Controller {
             $title['title'] = 'VRL - searchPage';
             $this->load->view('menu', $title);
             $this->load->view('searchPage');
+			$this->load->view('footer');
         }
 
 	}
@@ -69,12 +70,14 @@ class Welcome extends CI_Controller {
 		$title['title'] = 'annetused';
 		$this->load->view('menu', $title);
 		$this->load->view('annetused');
+		$this->load->view('footer');
 	}
 	
 	public function makseKatkestatud(){
 		$title['title'] = 'makseKatkestatud';
 		$this->load->view('menu', $title);
 		$this->load->view('makseKatkestatud');
+		$this->load->view('footer');
 		
 	}
 	
@@ -82,6 +85,16 @@ class Welcome extends CI_Controller {
 		$title['title'] = 'receive';
 		$this->load->view('menu', $title);
 		$this->load->view('receive');
+		$this->load->view('footer');
+		
+	}
+	
+	public function sitemap(){
+		$title['title'] = 'sitemap';
+		$this->load->view('menu', $title);
+		$this->load->view('sitemap');
+		$this->load->view('footer');
+		
 		
 	}
 
