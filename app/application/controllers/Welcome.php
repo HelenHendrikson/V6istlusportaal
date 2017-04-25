@@ -10,7 +10,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('menu', $title);
 		$this->load->view('main');
 		$this->load->view('footer');
-		
 	}
 
 
@@ -38,32 +37,36 @@ class Welcome extends CI_Controller {
 
 
 	public function otsing()
-	{
+    {
         $this->load->model('sportlaste_model');
-        $this->load->helper("security");
+        $this->load->helper(array("security", "otsingu_helper"));
 
-        $keyword = array('data' => $this->input->get('keyword'));
-        if ($keyword["data"] != "")
-        {
+        if (array_key_exists('usernames', $_POST)) {
+            trainerSubmitedSportsmen($this->sportlaste_model, $this->session->userdata("user_id"));
+        }
+
+        $keyword = array('data' => $this->input->post('keyword'));
+
+        if ($keyword["data"] != "") {
             $cleaned = $this->security->xss_clean($keyword);
-            if ($cleaned != $keyword)
-            {
+            if ($cleaned != $keyword) {
                 redirect("welcome");
             }
-            $data['results'] = $this->sportlaste_model->search($keyword["data"]);
+            $results['results'] = $this->sportlaste_model->search($keyword["data"]);
+            $results['sportsmen'] = $this->sportlaste_model->get_sportsmen($this->session->userdata("user_id"));
+
+            $data = get_trainer_search_data($results);
+
             $title['title'] = $this->lang->line('voistlused');
             $this->load->view('menu', $title);
             $this->load->view('searchPage', $data);
         }
-        else
-        {
-
+        else {
             $title['title'] = 'VRL - searchPage';
             $this->load->view('menu', $title);
             $this->load->view('searchPage');
-			$this->load->view('footer');
+            $this->load->view('footer');
         }
-
 	}
 	
 	public function annetused(){
@@ -78,7 +81,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('menu', $title);
 		$this->load->view('makseKatkestatud');
 		$this->load->view('footer');
-		
 	}
 	
 	public function receive(){
@@ -86,7 +88,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('menu', $title);
 		$this->load->view('receive');
 		$this->load->view('footer');
-		
 	}
 	
 	public function sitemap(){
@@ -94,8 +95,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('menu', $title);
 		$this->load->view('sitemap');
 		$this->load->view('footer');
-		
-		
 	}
-
 }
+
+

@@ -3,7 +3,7 @@
 	
 	<div class="col-xs-6 col-xs-offset-5">
 		<h3>
-			<a class="footerText" href="/index.php/welcome/sitemap">Sitemap</a>
+			<a class="footerText" href="<?php echo base_url(); ?>index.php/welcome/sitemap">Sitemap</a>
 		</h3>
 
 	</div>

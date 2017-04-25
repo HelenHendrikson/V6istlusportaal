@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-    <body>
 <?php
 
 // STEP 1. Setup private key
@@ -125,5 +121,3 @@ $fields["VK_MAC"] = base64_encode($signature);
         </form>
 </div>
 
-</body>
-</html>

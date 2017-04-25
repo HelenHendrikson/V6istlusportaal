@@ -9,7 +9,7 @@ class Sportlaste_model extends CI_Model{
 	}
 	
 	
-	function form_insert($data)
+	public function form_insert($data)
 	{
         $this->db->query('call lisa_sportlane("' . $data['kasutajanimi'] . '", "' .  $data['eesnimi']. '", "' . $data['perenimi']
             . '", "' . $data['meil'] . '", "' . $data['parool'] . '")');
@@ -25,6 +25,13 @@ class Sportlaste_model extends CI_Model{
 	{
 		// hetkel leian ainult eesnimesid
         $query = $this->db->query('call leia_sportlane("' . $keyword . '")');
+        return $query->result();
+    }
+
+    public function get_sportsmen($keyword)
+	{
+		// hetkel leian ainult eesnimesid
+        $query = $this->db->query('call leia_treeneri_sportlased("' . $keyword . '")');
         return $query->result();
     }
 
@@ -62,5 +69,18 @@ class Sportlaste_model extends CI_Model{
     {
         $query = $this->db->query('call kas_kasutaja_olemas("' . $username . '")');
         return $query->result();
+    }
+
+    public function connect_trainer_and_sportsman($trainer_id, $sportsman_id) {
+        $this->db->query('call lisa_treenerile_sportlane(' . $trainer_id . ', ' . $sportsman_id . ')');
+    }
+
+    public function disconnect_trainer_and_sportsman($trainer_id, $sportsman_id) {
+        $this->db->query('call eemalda_treenerilt_sportlane(' . $trainer_id . ', ' . $sportsman_id . ')');
+    }
+
+    public function get_sports_id($voistluse_id) {
+	    $query = $this->db->query('call saa_ala_id(' . $voistluse_id . ')');
+	    return $query->result_array();
     }
 }

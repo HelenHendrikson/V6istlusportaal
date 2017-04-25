@@ -1,17 +1,25 @@
 
 <div class="container" id="content">
-    <form action="<?php echo base_url(); ?>index.php/welcome/otsing" method="get" accept-charset="UTF-8">
+    <form action="<?php echo base_url(); ?>index.php/welcome/otsing" method="post" accept-charset="UTF-8">
         <p><input type="text" name="keyword">
+
             <input type="submit" value=<?php echo $this->lang->line('otsi_nupp')?>></p>
     </form>
-    
-    <?php if(isset($results)){ ?>
-        <br/>
-        <?php foreach($results as $result){ ?>
-            <p><?php echo $result->eesnimi ?></p>
+    <?php if(isset($worked)){ ?>
+        <form action="<?php echo base_url(); ?>index.php/welcome/otsing" method="post" accept-charset="UTF-8">
+    <?php foreach($worked as $result) {
+        if ($result[2]) { ?>
+            <p><input type="checkbox" name="usernames[]" value="<?php echo $result[0] ?>" checked> <?php echo $result[1] ?></p>
+        <?php } else { ?>
+            <p><input type="checkbox" name="usernames[]" value="<?php echo $result[0] ?>"> <?php echo $result[1] ?></p>
         <?php }
-    } ?>
-    
+    }?>
+            <input type="submit" name="formSubmit" value="Submit" />
+        </form>
+    <?php } ?>
+
+    </form>
+
     <div class="map1">
         <div id="map" style="width:300px;height:300px;"></div>
 		
