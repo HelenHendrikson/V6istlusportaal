@@ -28,6 +28,13 @@ class Sportlaste_model extends CI_Model{
         return $query->result();
     }
 
+    public function get_sportsmen($keyword)
+	{
+		// hetkel leian ainult eesnimesid
+        $query = $this->db->query('call leia_treeneri_sportlased("' . $keyword . '")');
+        return $query->result();
+    }
+
 	public function get_competitions($sports_id)
 	{
         $query = $this->db->query('call leia_voistlused(' . $sports_id .')');

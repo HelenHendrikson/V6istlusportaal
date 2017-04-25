@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-    <body>
 <?php
 
 // STEP 1. Setup private key
@@ -102,7 +98,7 @@ $fields["VK_MAC"] = base64_encode($signature);
         <form method="post" action="http://localhost:8080/banklink/swedbank-common">
             <!-- include all values as hidden form fields -->
 			<?php foreach($fields as $key => $val){
-					echo '<input type="hidden" name="' .$key . ' "value="' . htmlspecialchars($val). '" />' . "\n";
+					echo '<input type="hidden" name="' .$key . ' " value="' . htmlspecialchars($val). '" />' . "\n";
 				}
 ?>			<div class="row">
 				<h2 id="annetusedpealkiri" class="alert"> Siin saad teha annetuse!</h2>
@@ -125,5 +121,3 @@ $fields["VK_MAC"] = base64_encode($signature);
         </form>
 </div>
 
-</body>
-</html>
