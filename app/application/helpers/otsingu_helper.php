@@ -4,8 +4,7 @@ if ( ! function_exists('trainerSubmitedSportsmen'))
 {
     function trainerSubmitedSportsmen($model, $trainer_id){
         $users = $_POST['usernames'];           //these are the users, that the coach selected before clicking "submit"
-        //print_r($users);
-        //print_r($_SESSION['results']["worked"]);
+
         foreach ($_SESSION['results']["worked"] as $searched) {
             $searchedSportsmanID = $searched[0];
             $alreadySportsman = $searched[2];
@@ -23,10 +22,6 @@ if ( ! function_exists('trainerSubmitedSportsmen'))
             } else if (!$sportsmanChecked and $alreadySportsman) {
                 $model->disconnect_trainer_and_sportsman($trainer_id, $searchedSportsmanID);
             }
-
-
-            //print_r($searched);
-            //echo "-------------";
         }
         unset($_SESSION['results']);
     }

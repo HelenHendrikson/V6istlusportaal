@@ -47,8 +47,9 @@ function fetchAndInsert(voistluse_id) {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "/index.php/sports/saa_voistluse_info/" + voistluse_id,
+        url: "/app/index.php/sports/saa_voistluse_info/" + voistluse_id,
         success: function (data) {
+            console.log(data);
             //making important data variables
             var participants_count = data["count"][0]["arv"];
             var name = data["voistluse_info"][0]["nimi"];
@@ -58,6 +59,11 @@ function fetchAndInsert(voistluse_id) {
 
             // Here I change html according to competition data and language
             document.getElementById("nimev2li").innerHTML = name;
+            if (data["alatreener"]) {
+                $("#registerSportsmenButton").show();
+            } else {
+                $("#registerSportsmenButton").hide();
+            }
             switch (language) {
                 case 'en':
                     document.getElementById("distansiv2li").innerHTML = "Distance: " + distance;

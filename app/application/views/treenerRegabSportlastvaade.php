@@ -5,7 +5,7 @@
             <div class="lisavoistlus">
                 <form id="competitionForm">
                     <!--<h3 id="tulevasedVoistlused"><?php echo $this->lang->line('tulevad_võistlused') . ":"?></h3> <br> -->
-					<label for="voistlusSelect"id="tulevasedVoistlused"><?php echo $this->lang->line('tulevad_võistlused') . ":"?></label>
+					<label for="voistlusSelect" id="tulevasedVoistlused"><?php echo $this->lang->line('tulevad_võistlused') . ":"?></label>
                     <select class="form-control" name="võistlused" size="20" id="voistlusSelect">
                         <?php if(isset($voistlused)){
                             foreach ($voistlused as $voistlus){ ?>
@@ -15,7 +15,7 @@
 
                     </select>
 					<br>
-                    <input id="vaata_voistlust" class="btn btn-special"type="submit" value="<?php echo $this->lang->line('vaata_võistlust_nupp')?>">
+                    <input id="vaata_voistlust" class="btn btn-special" type="submit" value="<?php echo $this->lang->line('vaata_võistlust_nupp')?>">
                     <?php if ($this->session->userdata("sports_id") == $id) {?>
                     <button id="login-toggle" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="add-modal"
                             data-target="#addComp-modal">Lisa võistlus</button>
@@ -50,9 +50,12 @@
                 <p id="osalejateArv"></p>
 				
             <?php }
-            if ($this->session->userdata("sports_id") == $id) {?>
-            <button id="login-toggle" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="registerAthlete-modal"
+            if ($this->session->userdata("sports_id") == $id and isset($võistlejad)) {?>
+            <button id="registerSportsmenButton" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="registerAthlete-modal"
                     data-target="#registerAthlete-modal">Registreeri sportlane</button>
+            <?php } else { ?>
+                <button id="registerSportsmenButton" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="registerAthlete-modal"
+                        data-target="#registerAthlete-modal" style="display: none;">Registreeri sportlane</button>
             <?php } ?>
         </div>
 	</div>

@@ -122,6 +122,12 @@ class Sports extends CI_Controller
         $this->data['voistluse_info'] = $this->sportlaste_model->get_competition_info($voistluse_id);
         $this->data['võistlejad'] = $this -> sportlaste_model -> get_competition_competitors($voistluse_id);
         $this->data['count'] = $this -> sportlaste_model -> get_competition_competitors_count($voistluse_id);
+        $alaID = $this -> sportlaste_model -> get_sports_id($voistluse_id);
+        if ($alaID[0]["spordiala_id"] == $this->session->userdata("sports_id")) {
+            $this->data['alatreener'] = true;
+        } else {
+            $this->data['alatreener'] = false;
+        }
         $this->output->set_content_type('application/json')->set_output(json_encode($this->data));
     }
 }

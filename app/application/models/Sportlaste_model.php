@@ -78,4 +78,9 @@ class Sportlaste_model extends CI_Model{
     public function disconnect_trainer_and_sportsman($trainer_id, $sportsman_id) {
         $this->db->query('call eemalda_treenerilt_sportlane(' . $trainer_id . ', ' . $sportsman_id . ')');
     }
+
+    public function get_sports_id($voistluse_id) {
+	    $query = $this->db->query('call saa_ala_id(' . $voistluse_id . ')');
+	    return $query->result_array();
+    }
 }
