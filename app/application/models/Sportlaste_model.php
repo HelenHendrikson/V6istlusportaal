@@ -28,10 +28,9 @@ class Sportlaste_model extends CI_Model{
         return $query->result();
     }
 
-    public function get_sportsmen($keyword)
+    public function get_sportsmen($trainer)
 	{
-		// hetkel leian ainult eesnimesid
-        $query = $this->db->query('call leia_treeneri_sportlased("' . $keyword . '")');
+        $query = $this->db->query('call leia_treeneri_sportlased("' . $trainer . '")');
         return $query->result();
     }
 
@@ -50,6 +49,12 @@ class Sportlaste_model extends CI_Model{
     public function get_competition_competitors($voistluse_id)
     {
         $query = $this->db->query('call leia_võistlusel_osalejad(' . $voistluse_id . ')');
+        return $query->result_array();
+    }
+
+    public function get_competition_competitors_id($voistluse_id)
+    {
+        $query = $this->db->query('call leia_võistlusel_osalejate_id(' . $voistluse_id . ')');
         return $query->result_array();
     }
 
@@ -82,5 +87,10 @@ class Sportlaste_model extends CI_Model{
     public function get_sports_id($voistluse_id) {
 	    $query = $this->db->query('call saa_ala_id(' . $voistluse_id . ')');
 	    return $query->result_array();
+    }
+
+    public function get_trainer_sportsmen_with_names($trainer) {
+        $query = $this->db->query('call leia_treeneri_sportlased_nimedega("' . $trainer . '")');
+        return $query->result();
     }
 }

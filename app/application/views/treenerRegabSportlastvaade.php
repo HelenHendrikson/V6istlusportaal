@@ -51,11 +51,11 @@
 				
             <?php }
             if ($this->session->userdata("sports_id") == $id and isset($võistlejad)) {?>
-            <button id="registerSportsmenButton" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="registerAthlete-modal"
-                    data-target="#registerAthlete-modal">Registreeri sportlane</button>
+                <button id="registerSportsmenButton" onclick="regan()" type="button" class="btn btn-default btn-special btn2"
+                    ">Registreeri sportlane</button>
             <?php } else { ?>
-                <button id="registerSportsmenButton" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="registerAthlete-modal"
-                        data-target="#registerAthlete-modal" style="display: none;">Registreeri sportlane</button>
+                <button id="registerSportsmenButton" onclick="regan()" type="button" class="btn btn-default btn-special btn2"
+                        style="display: none;">Registreeri sportlane</button>
             <?php } ?>
         </div>
 	</div>

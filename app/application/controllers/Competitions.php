@@ -31,4 +31,15 @@ class Competitions extends CI_Controller
             $this->output->set_content_type('application/json')->set_output(json_encode($this->result));
         }
     }
+
+    function comp_info_for_trainer() {
+        $this->load->model('sportlaste_model');
+
+        $voistluse_id = $this->input->post('voistlus');
+
+        $this->data['trainer_sportsmen'] = $this->sportlaste_model->get_trainer_sportsmen_with_names($this->session->userdata("user_id"));
+        $this->data['registered_sportsmen'] = $this->sportlaste_model->get_competition_competitors_Id($voistluse_id);
+
+        $this->output->set_content_type('application/json')->set_output(json_encode($this->data));
+    }
 }

@@ -25,7 +25,6 @@ $(document).ready(function() {
             var voistluse_id = currentURL.split("/").pop();
             var nrIndex = currentURL.lastIndexOf(voistluse_id);
             var url = currentURL.substring(0, nrIndex);
-            console.log(voistluse_id);
             fetchAndInsert(voistluse_id, url);
         });
 
@@ -49,7 +48,6 @@ function fetchAndInsert(voistluse_id) {
         dataType: "json",
         url: "/app/index.php/sports/saa_voistluse_info/" + voistluse_id,
         success: function (data) {
-            console.log(data);
             //making important data variables
             var participants_count = data["count"][0]["arv"];
             var name = data["voistluse_info"][0]["nimi"];
@@ -59,11 +57,6 @@ function fetchAndInsert(voistluse_id) {
 
             // Here I change html according to competition data and language
             document.getElementById("nimev2li").innerHTML = name;
-            if (data["alatreener"]) {
-                $("#registerSportsmenButton").show();
-            } else {
-                $("#registerSportsmenButton").hide();
-            }
             switch (language) {
                 case 'en':
                     document.getElementById("distansiv2li").innerHTML = "Distance: " + distance;
@@ -104,6 +97,21 @@ function fetchAndInsert(voistluse_id) {
                 var opt = document.createElement('option');
                 opt.innerHTML = competitors[i]["eesnimi"] + " " + competitors[i]["perenimi"];
                 selectList.appendChild(opt);
+            }
+
+            var registerbtn = document.getElementById("registerSportsmenButton");
+            if (registerbtn != null)
+                registerbtn.remove();
+
+            if (data["alatreener"]) {                   //it shows register button for trainers
+                var btn = document.createElement("BUTTON");        // Create a <button> element
+                var t = document.createTextNode("Registreeri sportlane");       // Create a text node
+                btn.appendChild(t);                                // Append the text to <button>
+                btn.id = "registerSportsmenButton";
+                btn.className = "btn btn-default btn-special btn2";
+                btn.type = "button";
+                btn.onclick = regan;
+                myDiv.appendChild(btn);
             }
         },
         error: function () {
