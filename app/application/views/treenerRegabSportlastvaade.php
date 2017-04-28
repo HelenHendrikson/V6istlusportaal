@@ -20,6 +20,7 @@
                     <button id="login-toggle" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="add-modal"
                             data-target="#addComp-modal">Lisa võistlus</button>
                     <?php }?>
+					<input id="eemalda_voistlus" class="btn btn-special" type="submit" value="Eemalda võistlus">
                 </form>
             </div>
             <br>
