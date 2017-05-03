@@ -1,15 +1,15 @@
 
 <div class="modal fade" id="addComp-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="loginmodal-container" id="login-container">
+        <div class="loginmodal-container" id="comp-container">
              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <div class="login-panel" id="login-panel">
+            <div class="login-panel" id="comp-panel">
                 <div class="panel-header">
                     <h2 class="modal-title text-center">Lisa võistlus</h2>
                     <br>
                 </div>
                 <div class="col-xs-12" id="comp_heading"></div>
-                <form method="post" accept-charset="UTF-8" class="form" id="login-form">
+                <form method="post" accept-charset="UTF-8" class="form" id="comp-form">
                     <div class="form-group">
                         <label for="comp_name">Võistluse nimi</label>
                         <input class="form-control" id="comp_name" type="text" name="name" placeholder="nimi">

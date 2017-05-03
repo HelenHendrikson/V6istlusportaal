@@ -15,12 +15,14 @@
 
                     </select>
 					<br>
-                    <input id="vaata_voistlust" class="btn btn-special" type="submit" value="<?php echo $this->lang->line('vaata_võistlust_nupp')?>">
-                    <?php if ($this->session->userdata("sports_id") == $id) {?>
+                    <input id="vaata_voistlust" class="btn btn-special" type="submit" name="check_comp" value="<?php echo $this->lang->line('vaata_võistlust_nupp')?>">
+                    <?php if ($this->session->userdata("sports_id") == $id || $this->session->userdata("sports_id") == 9) {?>
                     <button id="login-toggle" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="add-modal"
                             data-target="#addComp-modal">Lisa võistlus</button>
                     <?php }?>
-					<input id="eemalda_voistlus" class="btn btn-special" type="submit" value="Eemalda võistlus">
+                    <?php if ($this->session->userdata("sports_id") == 9) {?>
+					    <button  value="remove_comp" class="btn btn-special" type="submit">Eemalda võistlus</button>
+                    <?php }?>
                 </form>
             </div>
             <br>

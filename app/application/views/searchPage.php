@@ -18,7 +18,6 @@
         </form>
     <?php } ?>
 
-    </form>
 
     <div class="map1">
         <div id="map" style="width:300px;height:300px;"></div>

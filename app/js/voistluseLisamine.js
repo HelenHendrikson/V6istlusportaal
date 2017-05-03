@@ -5,7 +5,6 @@ $(document).ready(function() {
         var date = document.getElementById("comp_date").value;
         var distance = document.getElementById("comp_distance").value;
         var sports = document.getElementById("sports_id").value;
-        console.log(sports);
 
         $.ajax({
             type: "POST",
