@@ -2,12 +2,16 @@ $(document).ready(function() {
     var check_competition = true;
     $(function () {
         $("#competitionForm button").click(function (ev) {      //jõuan siia ainult siis, kui vajutataks eeemalda nupp
+            event.preventDefault(); // prevent page refresh)
             var form = document.getElementById("voistlusSelect");
             var voistluse_id = form.options[form.selectedIndex].value;
             $.ajax({
                 type: "POST",
                 dataType: "json",
-                url: "/app/index.php/sports/eemalda_voistlus/" + voistluse_id
+                url: "/app/index.php/competitions/eemalda_voistlus/" + voistluse_id,
+                success: function (data) {
+                    location.reload();
+                }
             });
             check_competition = false;
         });
@@ -15,41 +19,41 @@ $(document).ready(function() {
         var interval;
         $("#competitionForm").submit(function (event) {
             if (check_competition) {
-            event.preventDefault(); // prevent page refresh)
-            var form = document.getElementById("voistlusSelect");
-            var voistluse_id = form.options[form.selectedIndex].value;
+                event.preventDefault(); // prevent page refresh)
+                var form = document.getElementById("voistlusSelect");
+                var voistluse_id = form.options[form.selectedIndex].value;
 
-            var currentURL = window.location.href;
-            var currentURLending = currentURL.split("/").pop();
-            console.log(currentURL);
-            var url;
-            if (isNaN(currentURLending)) {
-                //url last element isn't number
-                url = currentURL;
-            } else {
-                var nrIndex = currentURL.lastIndexOf("/");
-                url = currentURL.substring(0, nrIndex);
-            }
-
-            // changing the url
-            window.history.pushState(null, "", url + "/" + voistluse_id);
-
-            // user goes back/forward
-            $(window).on("popstate", function () {
                 var currentURL = window.location.href;
-                var voistluse_id = currentURL.split("/").pop();
-                var nrIndex = currentURL.lastIndexOf(voistluse_id);
-                var url = currentURL.substring(0, nrIndex);
-                fetchAndInsert(voistluse_id, url);
-            });
+                var currentURLending = currentURL.split("/").pop();
+                console.log(currentURL);
+                var url;
+                if (isNaN(currentURLending)) {
+                    //url last element isn't number
+                    url = currentURL;
+                } else {
+                    var nrIndex = currentURL.lastIndexOf("/");
+                    url = currentURL.substring(0, nrIndex);
+                }
 
-            clearInterval(interval);
-            fetchAndInsert(voistluse_id, url);
-            interval = setInterval(function () {
-                fetchAndInsert(voistluse_id, url)
-            }, 10000);
-        }});
-    })
+                // changing the url
+                window.history.pushState(null, "", url + "/" + voistluse_id);
+
+                // user goes back/forward
+                $(window).on("popstate", function () {
+                    var currentURL = window.location.href;
+                    var voistluse_id = currentURL.split("/").pop();
+                    var nrIndex = currentURL.lastIndexOf(voistluse_id);
+                    var url = currentURL.substring(0, nrIndex);
+                    fetchAndInsert(voistluse_id, url);
+                });
+
+                clearInterval(interval);
+                fetchAndInsert(voistluse_id, url);
+                interval = setInterval(function () {
+                    fetchAndInsert(voistluse_id, url)
+                }, 10000);
+            }});
+         })
     });
 
 

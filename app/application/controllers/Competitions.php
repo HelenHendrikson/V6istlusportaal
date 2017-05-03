@@ -12,7 +12,6 @@ class Competitions extends CI_Controller
         $this->load->model('sportlaste_model');
         $this->load->helper(array('url', 'security'));
 
-
         $data = array(
             'name' => $this->input->post('name'),
             'date' => $this->input->post('date'),
@@ -41,5 +40,12 @@ class Competitions extends CI_Controller
         $this->data['registered_sportsmen'] = $this->sportlaste_model->get_competition_competitors_Id($voistluse_id);
 
         $this->output->set_content_type('application/json')->set_output(json_encode($this->data));
+    }
+
+    public function eemalda_voistlus($voistluse_id)
+    {
+        $this->load->model('sportlaste_model');
+        $this->sportlaste_model->remove_competition($voistluse_id);
+        $this->output->set_content_type('application/json')->set_output(json_encode(1));    //lihtsalt tagastan midagi et anda märku, et minu tegevus on lõppenud
     }
 }

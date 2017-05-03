@@ -96,6 +96,7 @@ class Sportlaste_model extends CI_Model{
 
     public function remove_competition($voistluse_id) {
         $this->db->query('call eemalda_voistlus(' . $voistluse_id . ')');
+        $this->db->query('call eemalda_voistluse_data(' . $voistluse_id . ')');
     }
 
 }

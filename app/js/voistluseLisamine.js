@@ -5,6 +5,26 @@ $(document).ready(function() {
         var date = document.getElementById("comp_date").value;
         var distance = document.getElementById("comp_distance").value;
         var sports = document.getElementById("sports_id").value;
+        if (sports == 9) {
+            var currentURL = window.location.href;
+            if (currentURL.indexOf("archery") != -1) {
+                sports = 1;
+            } else if (currentURL.indexOf("swimming") != -1) {
+                sports = 2
+            } else if (currentURL.indexOf("tennis") != -1) {
+                sports = 3
+            } else if (currentURL.indexOf("weightlifting") != -1) {
+                sports = 4
+            } else if (currentURL.indexOf("fencing") != -1) {
+                sports = 5
+            } else if (currentURL.indexOf("rhythmic_gymnastics") != -1) {
+                sports = 6
+            } else if (currentURL.indexOf("sport_of_athletics") != -1) {
+                sports = 7
+            } else if (currentURL.indexOf("cycling") != -1) {
+                sports = 8
+            }
+        }
 
         $.ajax({
             type: "POST",

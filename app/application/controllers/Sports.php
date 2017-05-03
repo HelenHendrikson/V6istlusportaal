@@ -130,10 +130,4 @@ class Sports extends CI_Controller
         }
         $this->output->set_content_type('application/json')->set_output(json_encode($this->data));
     }
-
-    public function eemalda_voistlus($voistluse_id)
-    {
-        $this->load->model('sportlaste_model');
-        $this->sportlaste_model->remove_competition($voistluse_id);
-    }
 }
