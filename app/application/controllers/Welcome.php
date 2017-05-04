@@ -42,7 +42,7 @@ class Welcome extends CI_Controller {
             $this->load->model('sportlaste_model');
             $this->load->helper(array("security", "otsingu_helper"));
 
-            if (array_key_exists('usernames', $_POST)) {
+            if (array_key_exists('usnames', $_POST)) {
                 trainerSubmitedSportsmen($this->sportlaste_model, $this->session->userdata("user_id"));
             }
 
@@ -105,10 +105,33 @@ class Welcome extends CI_Controller {
 	public function admin()
     {
         if ($this->session->userdata("sports_id") == 9) {   // tagan ligipääsu lehele ainult adminil
+            $this->load->model('sportlaste_model');
             $title['title'] = 'treeneriteks tegemine';
-            $this->load->view('menu', $title);
-            $this->load->view('treeneriteHaldamine');
-            $this->load->view('footer');
+
+            if (isset($_POST["user"])) {
+                if ($_POST["user"] != "" || $_POST["user"]!= "admin"){
+                    $result = $this->sportlaste_model->getId($_POST["user"]);
+                    print_r($result);
+                    $this->sportlaste_model->assignTrainer($result[0]["id"], $_POST["sportsSelect"]);
+                }
+            }
+
+            $keyword = array('data' => $this->input->post('keyword'));
+            if ($keyword["data"] != "") {                               //kuvan otsinu põhjal infot
+                $cleaned = $this->security->xss_clean($keyword);
+                if ($cleaned != $keyword) {
+                    redirect("welcome");
+                }
+                $results['data'] = $this->sportlaste_model->search($keyword["data"]);
+
+                $this->load->view('menu', $title);
+                $this->load->view('treeneriteHaldamine', $results);
+                $this->load->view('footer');
+            } else {                                                                //esialgne vaade
+                $this->load->view('menu', $title);
+                $this->load->view('treeneriteHaldamine');
+                $this->load->view('footer');
+            }
         }
     }
 }
