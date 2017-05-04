@@ -111,8 +111,8 @@ class Welcome extends CI_Controller {
             if (isset($_POST["user"])) {
                 if ($_POST["user"] != "" || $_POST["user"]!= "admin"){
                     $result = $this->sportlaste_model->getId($_POST["user"]);
-                    print_r($result);
-                    $this->sportlaste_model->assignTrainer($result[0]["id"], $_POST["sportsSelect"]);
+                    if (!empty($result)) 
+                        $this->sportlaste_model->assignTrainer($result[0]["id"], $_POST["sportsSelect"]);
                 }
             }
 
