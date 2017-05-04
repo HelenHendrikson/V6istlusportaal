@@ -74,7 +74,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav navbar-nav">
 						<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/"><?php echo $this->lang->line('spordialad');?></a></li>
-                        <?php if ($this->session->userdata("sports_id") != NULL) {?>
+                        <?php if ($this->session->userdata("sports_id") == 9) {?>
+                            <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/admin"><?php echo $this->lang->line('treenerite_haldamine');?></a></li>
+                        <?php } else if ($this->session->userdata("sports_id") != NULL) {?>
                             <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/otsing"><?php echo $this->lang->line('otsing');?></a></li>
                         <?php } ?>
                         <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/annetused"><?php echo $this->lang->line('annetused');?></a></li>

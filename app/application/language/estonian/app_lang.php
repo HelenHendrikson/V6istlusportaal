@@ -36,3 +36,5 @@ $lang['kergejõustik'] = 'Kergejõustik';
 $lang['rattasõit'] = 'Rattasõit';
 
 $lang["annetused"] = "Anneta";
+$lang['treenerite_haldamine'] = 'Halda treenereid';
+

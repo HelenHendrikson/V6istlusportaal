@@ -1,5 +1,5 @@
 
-<div class="container" id="content">
+<div class="container container2" id="content">
     <form action="<?php echo base_url(); ?>index.php/welcome/otsing" method="post" accept-charset="UTF-8">
         <p><input type="text" name="keyword">
 

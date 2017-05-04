@@ -38,64 +38,79 @@ class Welcome extends CI_Controller {
 
 	public function otsing()
     {
-        $this->load->model('sportlaste_model');
-        $this->load->helper(array("security", "otsingu_helper"));
+        if ($this->session->userdata("sports_id") != null) {   // et igaüks url-i muutes ei saaks sellele lehele ligi
+            $this->load->model('sportlaste_model');
+            $this->load->helper(array("security", "otsingu_helper"));
 
-        if (array_key_exists('usernames', $_POST)) {
-            trainerSubmitedSportsmen($this->sportlaste_model, $this->session->userdata("user_id"));
-        }
-
-        $keyword = array('data' => $this->input->post('keyword'));
-
-        if ($keyword["data"] != "") {
-            $cleaned = $this->security->xss_clean($keyword);
-            if ($cleaned != $keyword) {
-                redirect("welcome");
+            if (array_key_exists('usernames', $_POST)) {
+                trainerSubmitedSportsmen($this->sportlaste_model, $this->session->userdata("user_id"));
             }
-            $results['results'] = $this->sportlaste_model->search($keyword["data"]);
-            $results['sportsmen'] = $this->sportlaste_model->get_sportsmen($this->session->userdata("user_id"));
 
-            $data = get_trainer_search_data($results);
+            $keyword = array('data' => $this->input->post('keyword'));
 
-            $title['title'] = $this->lang->line('voistlused');
-            $this->load->view('menu', $title);
-            $this->load->view('searchPage', $data);
-        }
-        else {
-            $title['title'] = 'VRL - searchPage';
-            $this->load->view('menu', $title);
-            $this->load->view('searchPage');
-            $this->load->view('footer');
+            if ($keyword["data"] != "") {
+                $cleaned = $this->security->xss_clean($keyword);
+                if ($cleaned != $keyword) {
+                    redirect("welcome");
+                }
+                $results['results'] = $this->sportlaste_model->search($keyword["data"]);
+                $results['sportsmen'] = $this->sportlaste_model->get_sportsmen($this->session->userdata("user_id"));
+
+                $data = get_trainer_search_data($results);
+
+                $title['title'] = $this->lang->line('voistlused');
+                $this->load->view('menu', $title);
+                $this->load->view('searchPage', $data);
+            } else {
+                $title['title'] = 'VRL - searchPage';
+                $this->load->view('menu', $title);
+                $this->load->view('searchPage');
+                $this->load->view('footer');
+            }
         }
 	}
 	
-	public function annetused(){
+	public function annetused()
+    {
 		$title['title'] = 'annetused';
 		$this->load->view('menu', $title);
 		$this->load->view('annetused');
 		$this->load->view('footer');
 	}
 	
-	public function makseKatkestatud(){
+	public function makseKatkestatud()
+    {
 		$title['title'] = 'makseKatkestatud';
 		$this->load->view('menu', $title);
 		$this->load->view('makseKatkestatud');
 		$this->load->view('footer');
 	}
 	
-	public function receive(){
+	public function receive()
+    {
 		$title['title'] = 'receive';
 		$this->load->view('menu', $title);
 		$this->load->view('receive');
 		$this->load->view('footer');
 	}
 	
-	public function sitemap(){
+	public function sitemap()
+    {
 		$title['title'] = 'sitemap';
 		$this->load->view('menu', $title);
 		$this->load->view('sitemap');
 		$this->load->view('footer');
 	}
+
+	public function admin()
+    {
+        if ($this->session->userdata("sports_id") == 9) {   // tagan ligipääsu lehele ainult adminil
+            $title['title'] = 'treeneriteks tegemine';
+            $this->load->view('menu', $title);
+            $this->load->view('treeneriteHaldamine');
+            $this->load->view('footer');
+        }
+    }
 }
 
 
