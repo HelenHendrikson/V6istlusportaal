@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-xs-12" id="sportsmen_register_heading"></div>
                 <form id="registrationForm">
-                     <input class="btn btn-default btn-special btn2" type="button"  name="add_athlete" value="Registreeri sportlane">
+                     <input class="btn btn-default btn-special btn2" type="submit" name="add_athlete" value="Registreeri sportlane">
 				 </form>
 			</div>
 		</div>

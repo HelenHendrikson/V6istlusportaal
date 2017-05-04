@@ -99,4 +99,12 @@ class Sportlaste_model extends CI_Model{
         $this->db->query('call eemalda_voistluse_data(' . $voistluse_id . ')');
     }
 
+    public function add_sportsmen_to_competition($competitor, $competition) {
+        $this->db->query('call lisa_sportlane_voistlema(' . $competitor . ', ' . $competition .')');
+    }
+
+    public function remove_sportsmen_from_competition($competitor, $competition) {
+        $this->db->query('call eemalda_sportlane_voistlemast(' . $competitor . ', ' . $competition .')');
+    }
+
 }

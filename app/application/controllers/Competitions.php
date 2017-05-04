@@ -48,4 +48,23 @@ class Competitions extends CI_Controller
         $this->sportlaste_model->remove_competition($voistluse_id);
         $this->output->set_content_type('application/json')->set_output(json_encode(1));    //lihtsalt tagastan midagi et anda märku, et minu tegevus on lõppenud
     }
+
+    public function register_sportsmen() {
+        $this->load->model('sportlaste_model');
+        $voistluse_id = $_POST['voistlus'];
+
+        if(isset($_POST['reg'])) {
+            foreach ($_POST['reg'] as $id) {
+                $this->sportlaste_model->add_sportsmen_to_competition($id, $voistluse_id);
+            }
+        }
+
+        if(isset($_POST['rem'])) {
+            foreach ($_POST['rem'] as $id) {
+                $this->sportlaste_model->remove_sportsmen_from_competition($id, $voistluse_id);
+            }
+        }
+        $this->output->set_content_type('application/json')->set_output(json_encode(1));    //lihtsalt tagastan midagi et anda märku, et minu tegevus on lõppenud
+    }
+
 }
