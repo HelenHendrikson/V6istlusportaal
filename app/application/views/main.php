@@ -4,7 +4,7 @@
 
 
 
-<div class="container" id="content1">
+<div class="container container2" id="content1">
 
 	<div class="row">
 		<div class="col-xs-3 text-center" >

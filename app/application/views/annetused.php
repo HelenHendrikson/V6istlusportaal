@@ -91,7 +91,7 @@ $fields["VK_MAC"] = base64_encode($signature);
 // ==========================================================================
 ?>
 
-<div class="container" id="content1">
+<div class="container container2" id="content1">
 
 
 
