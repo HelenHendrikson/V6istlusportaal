@@ -1,5 +1,5 @@
 
-<div class="container" id="content">
+<div class="container container2" id="content">
 	<div class="row" >
 		<div class="col-xs-6 col-sm-4" id="leftPart">
             <div class="lisavoistlus">
