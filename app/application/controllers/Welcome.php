@@ -40,10 +40,8 @@ class Welcome extends CI_Controller {
     {
         $this->load->model('sportlaste_model');
         $this->load->helper(array("security", "otsingu_helper"));
-        echo "abbb";
 
         if (array_key_exists('usernames', $_POST)) {
-            echo "aa";
             trainerSubmitedSportsmen($this->sportlaste_model, $this->session->userdata("user_id"));
         }
 
