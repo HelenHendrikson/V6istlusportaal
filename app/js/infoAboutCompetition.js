@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var check_competition = true;
     $(function () {
-        $("#competitionForm button").click(function (ev) {      //jõuan siia ainult siis, kui vajutataks eeemalda nupp
+        $("#competitionForm button").click(function (event) {      //jõuan siia ainult siis, kui vajutataks eeemalda nupp
             event.preventDefault(); // prevent page refresh)
             var form = document.getElementById("voistlusSelect");
             var voistluse_id = form.options[form.selectedIndex].value;
