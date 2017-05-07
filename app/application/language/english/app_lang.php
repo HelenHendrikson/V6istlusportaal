@@ -36,4 +36,5 @@ $lang['rattasõit'] = 'Cycling';
 
 //
 $lang['annetused'] = 'Donate';
+$lang['treenerite_haldamine'] = 'Manage trainers';
 

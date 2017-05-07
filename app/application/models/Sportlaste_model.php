@@ -107,4 +107,13 @@ class Sportlaste_model extends CI_Model{
         $this->db->query('call eemalda_sportlane_voistlemast(' . $competitor . ', ' . $competition .')');
     }
 
+    public function getId($username){
+        $query = $this->db->query('call saa_kasutaja_id("' . $username . '")');
+        return $query->result_array();
+    }
+
+    public function assignTrainer($user_id, $sports_id) {
+        $this->db->query('call määra_treener(' . $user_id . ", " . $sports_id .')');
+    }
+
 }

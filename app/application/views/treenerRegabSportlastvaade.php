@@ -21,7 +21,7 @@
                             data-target="#addComp-modal">Lisa võistlus</button>
                     <?php }?>
                     <?php if ($this->session->userdata("sports_id") == 9) {?>
-					    <button  value="remove_comp" class="btn btn-special" type="submit">Eemalda võistlus</button>
+					    <button value="remove_comp" class="btn btn-special" type="submit">Eemalda võistlus</button>
                     <?php }?>
                 </form>
             </div>
@@ -55,7 +55,7 @@
             <?php }
             if ($this->session->userdata("sports_id") == $id and isset($võistlejad)) {?>
                 <button id="registerSportsmenButton" onclick="regan()" type="button" class="btn btn-default btn-special btn2"
-                    ">Registreeri sportlane</button>
+                        >Registreeri sportlane</button>
             <?php } else { ?>
                 <button id="registerSportsmenButton" onclick="regan()" type="button" class="btn btn-default btn-special btn2"
                         style="display: none;">Registreeri sportlane</button>
