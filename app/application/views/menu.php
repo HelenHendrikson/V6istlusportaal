@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
 	<?php
     if(isset($title)){
     echo "<title>" . $title . "</title>";
@@ -87,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li>
                             <?php if ($this->session->userdata("logged_in")) {?>
                                 <form action=<?php echo base_url(); ?>index.php/login/log_out >
-                                    <input type="submit" class="btn btn-default navbar-button btn-special btn2" value="Logi välja" />
+                                    <input id="logout" type="submit" class="btn btn-default navbar-button btn-special btn2" value="<?php echo $this->lang->line('log_out_button');?>" />
                                 </form>
                             <?php } else {?>
                                 <button id="login-toggle" type="button" class="btn btn-default navbar-button btn-special btn2" data-toggle="modal" data-modal-id="login-modal" data-target="#login-modal" data-placement="bottom" data-original-title="login" >Logi sisse</button>

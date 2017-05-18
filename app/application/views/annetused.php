@@ -101,14 +101,14 @@ $fields["VK_MAC"] = base64_encode($signature);
 					echo '<input type="hidden" name="' .$key . ' " value="' . htmlspecialchars($val). '" />' . "\n";
 				}
 ?>			<div class="row">
-				<h2 id="annetusedpealkiri" class="alert"> Siin saad teha annetuse!</h2>
+				<h2 id="annetusedpealkiri" class="alert"> <?php echo $this->lang->line('annetused_heading');?>!</h2>
 			</div>
 			<div class="row">
 				<div class="col-xs-6">
-					<h3>Korrega saab annetada 150 eurot! </h3>
+					<h3><?php echo $this->lang->line('donate_sum_text');?>! </h3>
 					<div class="form-group">
 						<!--<tr><td colspan="2"><input type="submit" class="btn btn-special" value="Annetama!" /></td></tr> -->
-					 <input type="submit" class="btn btn-special" value="Annetama!" />
+					 <input type="submit" class="btn btn-special" value="<?php echo $this->lang->line('donate_button');?>!" />
 						
 						
 						<!--<button type="submit">Annetama</button> -->

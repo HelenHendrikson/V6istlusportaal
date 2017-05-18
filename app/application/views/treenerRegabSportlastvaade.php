@@ -18,10 +18,10 @@
                     <input id="vaata_voistlust" class="btn btn-special" type="submit" name="check_comp" value="<?php echo $this->lang->line('vaata_võistlust_nupp')?>">
                     <?php if ($this->session->userdata("sports_id") == $id || $this->session->userdata("sports_id") == 9) {?>
                     <button id="login-toggle" type="button" class="btn btn-default btn-special btn2" data-toggle="modal" data-modal-id="add-modal"
-                            data-target="#addComp-modal">Lisa võistlus</button>
+                            data-target="#addComp-modal"><?php echo $this->lang->line('lisa_võistlust_nupp');?></button>
                     <?php }?>
                     <?php if ($this->session->userdata("sports_id") == 9) {?>
-					    <button value="remove_comp" class="btn btn-special" type="submit">Eemalda võistlus</button>
+					    <button value="remove_comp" class="btn btn-special" type="submit"><?php echo $this->lang->line('eemalda_võistlus_nupp');?></button>
                     <?php }?>
                 </form>
             </div>
