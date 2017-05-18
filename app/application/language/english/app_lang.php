@@ -60,4 +60,18 @@ $lang['iluvõimlemise_treener'] = "Rhythmic gymnastics trainer";
 $lang['kergejõustikku_treener'] = "Sports of athletes trainer";
 $lang['rattasõidu_treener'] = "Cycling trainer";
 
+// võistluse lisamine
+$lang['add_comp'] = "Add a competiton";
+$lang['comp_name'] = "Competition name";
+$lang['comp_date'] = "Competition date in style: year-mounth-day (example: 2018-01-01)";
+$lang['comp_distance'] = "Competition distance";
+$lang['add_btn'] = "Add";
+$lang['name_placeholder'] = "Name";
+$lang['date_placeholder'] = "Date";
+$lang['distance_placeholder'] = "Distance";
+
+// sportlaste registreerimine
+$lang['register_sportsmen'] = "Register sportsmen";
+$lang['register_sportsmen_toggle'] = "Register sportsmen";
+$lang['registering_info'] = "Register sportsmen to competitions";
 

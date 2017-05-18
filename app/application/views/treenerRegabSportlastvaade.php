@@ -55,10 +55,10 @@
             <?php }
             if ($this->session->userdata("sports_id") == $id and isset($võistlejad)) {?>
                 <button id="registerSportsmenButton" onclick="regan()" type="button" class="btn btn-default btn-special btn2"
-                        >Registreeri sportlane</button>
+                        ><?php echo $this->lang->line('register_sportsmen')?></button>
             <?php } else { ?>
                 <button id="registerSportsmenButton" onclick="regan()" type="button" class="btn btn-default btn-special btn2"
-                        style="display: none;">Registreeri sportlane</button>
+                        style="display: none;"><?php echo $this->lang->line('register_sportsmen')?></button>
             <?php } ?>
         </div>
 	</div>

@@ -90,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <input id="logout" type="submit" class="btn btn-default navbar-button btn-special btn2" value="<?php echo $this->lang->line('log_out_button');?>" />
                                 </form>
                             <?php } else {?>
-                                <button id="login-toggle" type="button" class="btn btn-default navbar-button btn-special btn2" data-toggle="modal" data-modal-id="login-modal" data-target="#login-modal" data-placement="bottom" data-original-title="login" >Logi sisse</button>
+                                <button id="login-toggle" type="button" class="btn btn-default navbar-button btn-special btn2" data-toggle="modal" data-modal-id="login-modal" data-target="#login-modal" data-placement="bottom" data-original-title="login" ><?php echo $this->lang->line('logi_sisse_nupp');?></button>
                             <?php } ?>
                         </li>
 						<li>
@@ -103,7 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<a href='<?php echo base_url(); ?>index.php/LanguageSwitcher/switchLang/estonian'>
 								<img src="<?PHP echo base_url(); ?>images/est.png" alt="Eesti keel" class="img-keel" />
 							</a>
-						</li>		
+						</li>
 
 					</ul>
 					

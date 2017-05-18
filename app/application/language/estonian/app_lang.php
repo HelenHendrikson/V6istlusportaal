@@ -59,6 +59,18 @@ $lang['iluvõimlemise_treener'] = "Iluvõimlemise treener";
 $lang['kergejõustikku_treener'] = "Kergejõustikku treener";
 $lang['rattasõidu_treener'] = "Rattasõidu treener";
 
+// võistluse lisamine
+$lang['add_comp'] = "Lisa võistlus";
+$lang['comp_name'] = "Võistluse nimi";
+$lang['comp_date'] = "Võistluse kuupäev vormis: aastaarv - kuu numbrina - päev numbrina (nt 2018-01-01)";
+$lang['comp_distance'] = "Võistluse distants";
+$lang['add_btn'] = "Lisa";
+$lang['name_placeholder'] = "Nimi";
+$lang['date_placeholder'] = "Kuupäev";
+$lang['distance_placeholder'] = "Distants";
 
-
+// sportlaste registreerimine
+$lang['register_sportsmen'] = "Registreeri sportlaseid";
+$lang['register_sportsmen_toggle'] = "Registreeri sportlased";
+$lang['registering_info'] = "Võistlusele registreerimine";
 
