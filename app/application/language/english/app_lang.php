@@ -75,3 +75,24 @@ $lang['register_sportsmen'] = "Register sportsmen";
 $lang['register_sportsmen_toggle'] = "Register sportsmen";
 $lang['registering_info'] = "Register sportsmen to competitions";
 
+// sisselogimine
+$lang['logging_in_info'] = "Log in";
+$lang['logging_in_Username'] = "Username";
+$lang['logging_in_Password'] = "Password";
+$lang['logging_in_keepPass'] = "Remember me";
+$lang['logging_in_register_btn'] = "Register";
+$lang['register_confirm_pass'] = "Forgot password";
+
+// registreerimine
+$lang['register_info'] = "Register yourself";
+$lang['register_name'] = "First name";
+$lang['register_2nd_name'] = "Second name";
+$lang['register_mail'] = "E-mail";
+$lang['register_confirm_pass'] = "Confirm password";
+// tooltipid
+$lang['register_username_tooltip'] = "Enter username";
+$lang['register_name_tooltip'] = "Enter first name";
+$lang['register_2nd_name_tooltip'] = "Enter second name";
+$lang['register_email_tooltip'] = "Enter email";
+$lang['register_password_tooltip'] = "Enter password containing at least 6 symbols";
+$lang['register_password_confirm_tooltip'] = "Repeat your password";

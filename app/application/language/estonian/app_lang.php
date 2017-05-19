@@ -74,3 +74,24 @@ $lang['register_sportsmen'] = "Registreeri sportlaseid";
 $lang['register_sportsmen_toggle'] = "Registreeri sportlased";
 $lang['registering_info'] = "Võistlusele registreerimine";
 
+// sisselogimine
+$lang['logging_in_info'] = "Logi sisse";
+$lang['logging_in_Username'] = "Kasutajanimi";
+$lang['logging_in_Password'] = "Parool";
+$lang['logging_in_keepPass'] = "Hoia parool meeles";
+$lang['logging_in_register_btn'] = "Registreeri";
+$lang['logging_in_forgot_pass'] = "Unustasin parooli";
+
+// registreerimine
+$lang['register_info'] = "Registreerimine";
+$lang['register_name'] = "Nimi";
+$lang['register_2nd_name'] = "Perekonnanimi";
+$lang['register_mail'] = "Meiliaadress";
+$lang['register_confirm_pass'] = "Parooli kinnitus";
+// tooltipid
+$lang['register_username_tooltip'] = "Sisesta kasutajanimi";
+$lang['register_name_tooltip'] = "Sisesta eesnimi";
+$lang['register_2nd_name_tooltip'] = "Sisesta perekonnanimis";
+$lang['register_email_tooltip'] = "Sisesta meiliaadress";
+$lang['register_password_tooltip'] = "Sisesta vähemalt 6-täheline parool";
+$lang['register_password_confirm_tooltip'] = "Sisesta parool uuesti";

@@ -5,34 +5,34 @@
              <button type="button" class="close" data-dismiss="modal">&times;</button>
             <div class="login-panel" id="login-panel">
                 <div class="panel-header">
-                    <h2 class="modal-title text-center">Logi sisse</h2>
+                    <h2 class="modal-title text-center"><?php echo $this->lang->line('logging_in_info')?></h2>
                     <br>
                 </div>
                 <div class="col-xs-12" id="login_heading"></div>
                 <form method="post" accept-charset="UTF-8" class="form" id="login-form">
                     <div class="form-group">
-                        <label for="login-username">Kasutajanimi</label>
-                        <input class="form-control" id="login-username" type="text" name="user" placeholder="kasutajanimi">
+                        <label for="login-username"><?php echo $this->lang->line('logging_in_Username')?></label>
+                        <input class="form-control" id="login-username" type="text" name="user" placeholder="<?php echo $this->lang->line('logging_in_Username')?>">
                     </div>
 
                     <div class="form-group">
-                        <label for="password">Parool</label>
-                        <input class="form-control" id="password" type="password" name="pass" placeholder="parool">
+                        <label for="password"><?php echo $this->lang->line('logging_in_Password')?></label>
+                        <input class="form-control" id="password" type="password" name="pass" placeholder="<?php echo $this->lang->line('logging_in_Password')?>">
                     </div>
 
                     <div class="form-group">
-                        <label for="remember">Hoia parool meeles</label>
+                        <label for="remember"><?php echo $this->lang->line('logging_in_keepPass')?></label>
                         <input  id="remember" type="checkbox" checked="checked">
                     </div>
 
-                    <input class="pull-left btn btn-default" onclick="showRegister()" type="button"  name="register" value="Registreeru">
-                    <input class="pull-right btn btn-primary" onclick="log_in()" type="button" name="login" value="Logi sisse">
+                    <input class="pull-left btn btn-default" onclick="showRegister()" type="button"  name="register" value="<?php echo $this->lang->line('logging_in_register_btn')?>">
+                    <input class="pull-right btn btn-primary" onclick="log_in()" type="button" name="login" value="<?php echo $this->lang->line('logging_in_info')?>">
                 </form>
 
                 <div class="row">
                     <div class="col-xs-12 text-center">
                         <div class="login-help">
-                            <a href="#">Unustasin parooli</a>
+                            <a href="#"><?php echo $this->lang->line('logging_in_forgot_pass')?></a>
                         </div>
                     </div>
                 </div>
@@ -40,42 +40,42 @@
 
             <div class="register-panel" id="register-panel">
                 <div class="panel-header">
-                    <h2 class="modal-title text-center">Registreerimine</h2>
+                    <h2 class="modal-title text-center"><?php echo $this->lang->line('register_info')?></h2>
                 </div>
                 <div class="row">
                     <div class="col-xs-12" id="heading"></div>
                 </div>
                 <form method="post" accept-charset="UTF-8" class="form" id="reg-form">
 					<div class="form-group">
-						<label for="register-username">Kasutajanimi</label>
-						<input type="text" placeholder="Kasutajanimi" id="register-username" data-toggle="tooltip" data-original-title="Sisesta kasutajanimi" data-placement="right">
+						<label for="register-username"><?php echo $this->lang->line('logging_in_Username')?></label>
+						<input type="text" placeholder="<?php echo $this->lang->line('logging_in_Username')?>" id="register-username" data-toggle="tooltip" data-original-title="<?php echo $this->lang->line('register_username_tooltip')?>" data-placement="right">
 					</div>
 					<div class="form-group">
-						<label for="register-name">Nimi</label>
-						<input type="text" id="register-name" placeholder="Nimi" data-toggle="tooltip" data-original-title="Sisesta eesnimi" data-placement="right">
+						<label for="register-name"><?php echo $this->lang->line('register_name')?></label>
+						<input type="text" id="register-name" placeholder="<?php echo $this->lang->line('register_name')?>" data-toggle="tooltip" data-original-title="<?php echo $this->lang->line('register_name_tooltip')?>" data-placement="right">
 					</div>
 					<div class="form-group">
-						<label for="register-last-name">Perekonnanimi</label>
-						<input type="text" id="register-last-name" placeholder="Perekonnanimi" data-toggle="tooltip" data-original-title="Sisesta perekonnanimi" data-placement="right">
+						<label for="register-last-name"><?php echo $this->lang->line('register_2nd_name')?></label>
+						<input type="text" id="register-last-name" placeholder="<?php echo $this->lang->line('register_2nd_name')?>" data-toggle="tooltip" data-original-title="<?php echo $this->lang->line('register_2nd_name_tooltip')?>" data-placement="right">
 					</div>
 						<div class="form-group">					
-						<label for="register-mail">Meiliaadress</label>
-						<input type="text" id="register-mail" placeholder="Meiliaadress" data-toggle="tooltip" data-original-title="Sisesta meiliaadress" data-placement="right">
+						<label for="register-mail"><?php echo $this->lang->line('register_mail')?></label>
+						<input type="text" id="register-mail" placeholder="<?php echo $this->lang->line('register_mail')?>" data-toggle="tooltip" data-original-title="<?php echo $this->lang->line('register_email_tooltip')?>" data-placement="right">
                     </div>
 					<div class="form-group">
 						
-						<label for="register-password">Parool</label>
-						<input type="password" id="register-password" placeholder="Parool" data-toggle="tooltip" data-original-title="Sisesta vähemalt 6-täheline parool" data-placement="right">
+						<label for="register-password"><?php echo $this->lang->line('logging_in_Password')?></label>
+						<input type="password" id="register-password" placeholder="<?php echo $this->lang->line('logging_in_Password')?>" data-toggle="tooltip" data-original-title="<?php echo $this->lang->line('register_password_tooltip')?>" data-placement="right">
                     </div>
 					<div class="form-group">
 					
-						<label for="register-password-repeat">Parooli kinnitus</label>
-						<input type="password" id="register-password-repeat" placeholder="Parooli kinnitus" data-toggle="tooltip" data-original-title="Sisesta parool uuesti" data-placement="right">
+						<label for="register-password-repeat"><?php echo $this->lang->line('register_confirm_pass')?></label>
+						<input type="password" id="register-password-repeat" placeholder="<?php echo $this->lang->line('register_confirm_pass')?>" data-toggle="tooltip" data-original-title="<?php echo $this->lang->line('register_password_confirm_tooltip')?>" data-placement="right">
 					</div>
 					
-                    <input type="button" class="pull-right btn btn-primary" onclick="validate()" value="Registreeru" id="register-button">
+                    <input type="button" class="pull-right btn btn-primary" value="<?php echo $this->lang->line('logging_in_register_btn')?>" id="register-button" onclick="validate()">
 
-                    <input type="button" class="pull-left btn btn-default" onclick="showLogin()" value="Logi sisse">
+                    <input type="button" class="pull-left btn btn-default" onclick="showLogin()" value="<?php echo $this->lang->line('logging_in_info')?>">
 
                 </form>
             </div>

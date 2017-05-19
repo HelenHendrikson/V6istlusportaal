@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    var url = "/index.php/login/";  // andreasel oli siin /app ka veel ees
-    //var url = "/app/index.php/login/";  // andreasel oli siin /app ka veel ees
+    //var url = "/index.php/login/";  // andreasel oli siin /app ka veel ees
+    var url = "/app/index.php/login/";  // andreasel oli siin /app ka veel ees
 
     var storageUser = sessionStorage.getItem('user');
 
@@ -48,18 +48,23 @@ $(document).ready(function() {
 });
 
 function logInResultRecieved(data) {
+    var language = getLanguage();
     var $xml = $(data);
     var outcome = $xml.find('outcome').text();
 
     var message;
     if (outcome == "no account") {
-        message = "Palun kontrollige oma kasutajanime";
+        if (language == 'et')
+            message = "Palun kontrollige oma kasutajanime";
+        else
+            message = "Please check your username"
     } else if (outcome == "failure") {
-        message = "palun kontrollige oma kasutajanime ja parooli";
+        if (language == 'et')
+            message = "Palun kontrollige oma kasutajanime ja parooli";
+        else
+            message = "Please check your username and password"
     } else if (outcome == "success") {
         $("#login-modal").modal('hide');
-        //$("#login-toggle").hide();        //kaotab login nupu
-        //document.getElementById("login-toggle").innerHTML="Logi välja"; peab vist ikka uue buttoni tegema välja logimiseks
         location.reload();
     }
 
@@ -82,5 +87,12 @@ function puhasta_login_info() {
     if (registreerimine != null) {
         registreerimine.remove();
     }
+}
+
+function getLanguage() {
+    var text = document.getElementById("login-toggle").innerHTML;
+    if (text == 'Log in')
+        return "en";
+    return "et";
 }
 
